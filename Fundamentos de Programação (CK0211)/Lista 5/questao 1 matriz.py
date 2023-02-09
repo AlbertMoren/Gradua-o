@@ -9,12 +9,15 @@ def crie_matriz(n_linhas, n_colunas, valor):
             linha.append(valor)		        # coloque linha na matriz
         matriz.append(linha)	
     return matriz
+
 mat = crie_matriz(3,5,0)
 cont = 0
+
 for i in range(len(mat)):   #Valida a regra de negocio
     for j in range(len(mat[i])):
         mat[i][j] = randint(10,25)
         if mat[i][j] > 15 and mat[i][j] < 20:
             cont+=1
+            
 print(mat)
 print(f"Tem {cont} elementos entre 15 e 20")
