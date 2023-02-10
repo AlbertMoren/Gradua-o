@@ -36,7 +36,5 @@ for linha in mat:                               #Imprimir a matriz na tela
     for valor in linha:
         print(f" {valor:3} |",end=' ')
     print("")
-    
-print(f"O maior elemento fica na linha {linha_maior+1} coluna {coluna_maior+1} e é o valor {maior}\nO menor elemento fica na linha {linha_menor+1} coluna {coluna_menor+1} e é o valor {menor}")
 
-    
+print(f"O maior elemento fica na linha {linha_maior+1} coluna {coluna_maior+1} e é o valor {maior}\nO menor elemento fica na linha {linha_menor+1} coluna {coluna_menor+1} e é o valor {menor}")
