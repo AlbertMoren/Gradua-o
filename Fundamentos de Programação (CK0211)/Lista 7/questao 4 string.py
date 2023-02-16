@@ -3,21 +3,26 @@ a) Eliminação de espaços no início da frase.
 b) Eliminação de espaços no fim da frase.
 c) Eliminação de espaços duplicados entre palavras.'''
 
-def sub_rotina(texto):
+def sub_rotina_editar(texto):
     lista = list(texto)
     lista1 = []
-    cont = 0
-    print(len(lista))
+    last = lista[-1]
     for i in range(len(lista)):
-        if i-1 == len(lista):
-            break
-        elif lista[i] != " " and lista[i+1] != " ":
-            lista1.append(lista[i])
+        if lista[i] != ' ' or last != ' ':
+           lista1.append(lista[i]) 
+           last = lista[i]
     texto = "".join(lista1)
     return texto
 
+def sub_rotina_contabilizar(texto):
+    lista = list(texto)
+    cont = 0
+    for i in range(len(lista)):
+        if lista[i] == " ":
+            cont+=1
+    return cont+1
 
 #Main
 texto = input("Insira um texto: ").lower()
-texto = sub_rotina(texto)
-print(texto)
+texto = sub_rotina_editar(texto)
+print(f"Essa frase contém {sub_rotina_contabilizar(texto)} palavras")
