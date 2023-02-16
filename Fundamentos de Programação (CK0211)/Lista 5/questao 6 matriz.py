@@ -1,5 +1,8 @@
 '''Faça um programa que preencha uma matriz 20 X 10 com números inteiros, e some cada uma das colunas, armazenando o resultado da soma em um vetor. A seguir, o programa deverá multiplicar cada elemento da matriz pela soma da coluna e mostrar a matriz resultante.'''
 
+#minha assinatura 
+print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+
 from random import randint
 
 def crie_matriz(n_linhas, n_colunas, valor):   #Criar matriz desejada

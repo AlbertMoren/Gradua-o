@@ -1,5 +1,8 @@
 '''Faça um programa que receba uma frase e mostre quantas letras diferentes ela contém'''
 
+#minha assinatura 
+print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+
 def sub_rotina_contabilizar(text):
     lista = list(text)
     lista1 = []

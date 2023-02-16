@@ -1,6 +1,9 @@
 '''Elabore um programa que preencha uma matriz M de ordem 4 X 6 e uma segunda matriz N de ordem 6 X 4, calcule e imprima a soma das linhas de M com as colunas de N.'''
 from random import randint
 
+#minha assinatura 
+print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+
 def crie_matriz(n_linhas, n_colunas, valor):   #Criar matriz desejada
     matriz = [] # lista vazia
     for i in range(n_linhas):

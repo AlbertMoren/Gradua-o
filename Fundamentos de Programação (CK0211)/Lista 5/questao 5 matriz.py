@@ -3,6 +3,9 @@
 ■ o total vendido em cada semana durante todo o ano;
 ■ o total vendido pela loja no ano.'''
 
+#minha assinatura 
+print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+
 from random import uniform
 
 def crie_matriz(n_linhas, n_colunas, valor):   #Criar matriz desejada

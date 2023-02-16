@@ -2,6 +2,10 @@
 ■ os números múltiplos de 2;
 ■ os números múltiplos de 3;
 ■ os números múltiplos de 2 e de 3'''
+
+#minha assinatura 
+print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+
 vetor_geral = []
 vetor_2 =[]
 vetor_3 = []

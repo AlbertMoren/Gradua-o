@@ -3,6 +3,9 @@ a) Eliminação de espaços no início da frase.
 b) Eliminação de espaços no fim da frase.
 c) Eliminação de espaços duplicados entre palavras.'''
 
+#minha assinatura 
+print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+
 def sub_rotina_editar(texto):
     lista = list(texto)
     lista1 = []

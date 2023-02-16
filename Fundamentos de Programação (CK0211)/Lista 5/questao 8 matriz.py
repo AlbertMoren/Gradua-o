@@ -2,6 +2,9 @@
 ■ a soma das duas matrizes, resultando em uma terceira matriz também de ordem 3 X 8;
 ■ a diferença das duas matrizes, resultando em uma quarta matriz também de ordem 3 X 8'''
 
+#minha assinatura 
+print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+
 from random import randint
 
 def crie_matriz(n_linhas, n_colunas, valor):   #Criar matriz desejada

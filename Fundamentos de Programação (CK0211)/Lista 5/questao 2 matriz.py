@@ -3,6 +3,9 @@
 ■ a média dos elementos pares da matriz'''
 from random import randint
 
+#minha assinatura 
+print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+
 def crie_matriz(n_linhas, n_colunas, valor):   #Criar matriz desejada
     matriz = [] # lista vazia
     for i in range(n_linhas):

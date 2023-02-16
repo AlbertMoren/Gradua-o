@@ -1,6 +1,10 @@
 '''Faça um programa para criptografar uma frase dada pelo usuário. Na criptografia, a frase deverá ser invertida e as consoantes deverão ser trocadas por #. Exemplo:
 Frase: EU ESTOU NA ESCOLA
 Saída: A#O##E A# UO##E UE'''
+
+#minha assinatura 
+print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+
 maiusculas = ('b','c','d','f','g','h','i','j','l','m','n','p','q','r','s','t','v','x','w','y','z')
 
 def sub_rotina(texto):

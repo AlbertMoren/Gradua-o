@@ -1,4 +1,7 @@
-#Faça um programa que receba duas notas, calcule e mostre a média aritmética e a mensagem que se encontra na tabela a seguir:
+'''Faça um programa que receba duas notas, calcule e mostre a média aritmética e a mensagem que se encontra na tabela a seguir:'''
+
+#minha assinatura 
+print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
 
 n1,n2 = input("Insira as 2 notas do aluno: ").split(" ")
 n1 = float(n1)

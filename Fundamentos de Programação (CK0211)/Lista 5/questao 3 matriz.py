@@ -2,6 +2,9 @@
 ■ o maior elemento da matriz e sua respectiva posição, ou seja, linha e coluna;
 ■ o menor elemento da matriz e sua respectiva posição, ou seja, linha e coluna.'''
 
+#minha assinatura 
+print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+
 from random import randint
 
 def crie_matriz(n_linhas, n_colunas, valor):   #Criar matriz desejada

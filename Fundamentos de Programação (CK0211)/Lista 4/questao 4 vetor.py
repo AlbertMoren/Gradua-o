@@ -1,5 +1,10 @@
 '''Faça um programa que preencha um vetor com quinze elementos inteiros e verifique a existência de elementos
 iguais a 30, mostrando as posições em que apareceram.'''
+
+#minha assinatura 
+print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+
+
 lista = [0]*5
 posicoes = []
 for i in range(len(lista)):

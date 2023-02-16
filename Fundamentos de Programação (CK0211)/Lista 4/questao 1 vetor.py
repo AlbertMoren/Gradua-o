@@ -3,6 +3,10 @@
 ■ a quantidade de números pares;
 ■ todos os números ímpares;
 ■ a quantidade de números ímpares'''
+
+#minha assinatura 
+print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+
 vetor_geral = []
 vetor_par =[]
 cont_par = 0

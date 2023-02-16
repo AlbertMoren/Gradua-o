@@ -1,4 +1,8 @@
-# Faça um programa que receba três números e mostre o menor.
+'''Faça um programa que receba três números e mostre o menor.'''
+
+#minha assinatura 
+print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+
 n1,n2,n3 = input("Insira as 3 números: ").split(" ")
 n1 = int(n1)
 n2 = int(n2)

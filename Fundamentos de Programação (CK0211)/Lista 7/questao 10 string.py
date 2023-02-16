@@ -3,25 +3,29 @@
 def sub_rotina_contabilizar(text,caracter):
     lista= list(text)
     indices = []
-    indice = 0
+    indice = -1
     last = 0
     if " " in lista:
         for i in range(len(lista)):
             if lista[i] == " ":
                 indices.append(i)
         last = indices[-1]
-        print(last)
-        for last in range(len(lista)):
+        while(last != len(lista)):
             if lista[last] == caracter:
                 indice = last
+                break
+            last+=1
     else:
-        indice = -1
+        for i in range(lista):
+            if lista[i] == caracter:
+                indice = i
     return indice
 
+#main
 texto = input("Insira um texto: ").lower()
 caracteres = input("Insira um texto: ").lower()
 valor = sub_rotina_contabilizar(texto,caracteres)
 if valor >=0:
-    print(f"O '{caracteres}' se encontra na posição {valor+1} nessa na frase")
+    print(f"O '{caracteres}' se encontra na posição {valor+1} nessa na ultima palavra dessa frase")
 else:
-    print(f"O caracater {caracteres} não aparece na frase")
+    print(f"O caracater {caracteres} não aparece na ultima palavra da frase")

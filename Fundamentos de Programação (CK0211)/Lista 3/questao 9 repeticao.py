@@ -3,6 +3,10 @@
 ■ a quantidade de pessoas com peso superior a 90 kg e altura inferior a 1,50 metro; e
 ■ a porcentagem de pessoas com idade entre 10 e 30 anos entre as pessoas que medem mais de
 1,90 m'''
+
+#minha assinatura 
+print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+
 cont_idade = 0
 cont_alt = 0
 cont_geral = 0

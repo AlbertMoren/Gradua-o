@@ -5,6 +5,9 @@
 ■ dos elementos da diagonal secundária;
 ■ de todos os elementos da matriz'''
 
+#minha assinatura 
+print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+
 from random import randint
 
 def crie_matriz(n_linhas, n_colunas, valor):   #Criar matriz desejada

@@ -8,6 +8,10 @@ FAIXA ETÁRIA IDADE
 3a De 31 a 45 anos
 4a De 46 a 60 anos
 5a Acima de 60 anos'''
+
+#minha assinatura 
+print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+
 faixa1 = 0
 faixa2  = 0
 faixa3  = 0

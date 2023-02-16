@@ -1,5 +1,7 @@
-#Faça um programa que receba quatro notas de um aluno, calcule e mostre a média aritmética das notas e a
-#mensagem de aprovado ou reprovado, considerando para aprovação média 7.
+'''Faça um programa que receba quatro notas de um aluno, calcule e mostre a média aritmética das notas e a mensagem de aprovado ou reprovado, considerando para aprovação média 7.'''
+
+#minha assinatura 
+print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
 
 n1,n2,n3,n4 = input("Insira as 4 notas do aluno: ").split(" ")
 n1 = float(n1)

@@ -1,5 +1,8 @@
 '''Faça um programa que receba uma frase e um caractere e verifique em que posição da frase o caractere digitado aparece pela primeira vez.'''
 
+#minha assinatura 
+print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+
 def sub_rotina_contabilizar(text,caracter):
     lista= list(text)
     indice =0

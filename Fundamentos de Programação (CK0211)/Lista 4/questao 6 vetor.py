@@ -3,6 +3,11 @@
 ■ o total das vendas de todos os vendedores;
 ■ o maior valor a receber e o nome de quem o receberá;
 ■ o menor valor a receber e o nome de quem o receberá.'''
+
+#minha assinatura 
+print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+
+
 nome_vendedor = []
 venda_vendedor = [0]*3
 comissao_vendendor = [0]*3

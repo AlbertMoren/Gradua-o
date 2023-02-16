@@ -1,5 +1,8 @@
-#Faça um programa que calcule e mostre a área de um trapézio.
-#Sabe-se que: A = ((base maior + base menor) * altura)/2
+'''Faça um programa que calcule e mostre a área de um trapézio. Sabe-se que: A = ((base maior + base menor) * altura)/2'''
+
+#minha assinatura 
+print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+
 base_M, Base_m, altura = input("Valor da base maio, base menor e a altura:").split(" ")
 base_M = float(base_M)
 Base_m = float(Base_m)

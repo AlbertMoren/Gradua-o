@@ -9,6 +9,10 @@ escrever a mensagem Não temos estoque suficiente dessa mercadoria. Se puder ate
 a mensagem Pedido atendido. Obrigado e volte sempre;
 ■ efetuar a atualização do estoque somente se o pedido for atendido integralmente;
 ■ no final do programa, escrever os códigos dos produtos com seus respectivos estoques já atualizados.'''
+
+#minha assinatura 
+print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+
 codigo = []
 qtd = []
 for i in range(3):

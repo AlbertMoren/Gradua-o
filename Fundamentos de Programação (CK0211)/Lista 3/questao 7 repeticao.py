@@ -2,6 +2,10 @@
 ■ a quantidade de pessoas com idade superior a 50 anos;
 ■ a média das alturas das pessoas com idade entre 10 e 20 anos;
 ■ a porcentagem de pessoas com peso inferior a 40 kg entre todas as pessoas analisadas.'''
+
+#minha assinatura 
+print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+
 idade_cont = 0
 altura_cont = 0.0
 peso_cont =0

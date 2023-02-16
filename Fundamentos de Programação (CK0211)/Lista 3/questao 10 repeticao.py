@@ -1,5 +1,8 @@
-'''Faça um programa que receba dez números, calcule e mostre a soma dos números pares e a soma dos
-números primos.'''
+'''Faça um programa que receba dez números, calcule e mostre a soma dos números pares e a soma dos números primos.'''
+
+#minha assinatura 
+print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+
 pares = 0
 cont = 0
 pimos = 0

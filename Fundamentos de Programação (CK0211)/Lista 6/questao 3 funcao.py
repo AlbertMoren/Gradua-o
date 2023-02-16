@@ -1,5 +1,8 @@
 '''Elabore uma sub-rotina que receba dois números como parâmetros e retorne 0, se o primeiro número for divisível pelo segundo número. Caso contrário, deverá retornar o próximo divisor.'''
 
+#minha assinatura 
+print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+
 def sub_rotina(n1,n2):
     
     if n1%n2 == 0:

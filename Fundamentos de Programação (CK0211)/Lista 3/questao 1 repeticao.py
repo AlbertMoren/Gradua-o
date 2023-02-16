@@ -1,4 +1,6 @@
 '''Faça um programa que leia cinco grupos de quatro valores (A, B, C, D) e mostre-os na ordem lida. Em seguida, organize-os em ordem crescente e decrescente'''
+#minha assinatura 
+print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
 
 for i in range(4):
     num1, num2,num3,num4 = input("Insira 4 valores: ").split(" ")

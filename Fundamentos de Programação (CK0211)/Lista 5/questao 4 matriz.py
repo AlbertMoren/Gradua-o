@@ -6,6 +6,9 @@ O programa deverá calcular e mostrar:
 ou exame);
 ■ a média da classe'''
 
+#minha assinatura 
+print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+
 from random import uniform
 
 def crie_matriz(n_linhas, n_colunas, valor):   #Criar matriz desejada

@@ -6,6 +6,9 @@ SÃO
 MÁQUINAS
 POTENTES'''
 
+#minha assinatura 
+print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+
 def sub_rotina(texto):
     for i in range(len(texto)):
         if texto[i] != ' ':

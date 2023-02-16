@@ -1,9 +1,12 @@
-#Faça um programa que receba dois números e execute uma das operações listadas a seguir, de acordo com a
-#escolha do usuário. Se for digitada uma opção inválida, mostre mensagem de erro e termine a execução do
-#programa. As opções são:
-#a) O primeiro número elevado ao segundo número.
-#b) Raiz quadrada de cada um dos números.
-#c) Raiz cúbica de cada um dos números.
+'''Faça um programa que receba dois números e execute uma das operações listadas a seguir, de acordo com a
+escolha do usuário. Se for digitada uma opção inválida, mostre mensagem de erro e termine a execução do
+programa. As opções são:
+a) O primeiro número elevado ao segundo número.
+b) Raiz quadrada de cada um dos números.
+c) Raiz cúbica de cada um dos números.'''
+
+#minha assinatura 
+print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n") 
 
 n1,n2 = input("Digite dois números: ").split(" ")
 n1 = float(n1)

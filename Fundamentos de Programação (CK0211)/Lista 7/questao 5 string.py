@@ -1,6 +1,9 @@
 '''Faça um programa que receba duas cadeias de caracteres e verifique se a primeira cadeia digitada é permutação da segunda cadeia, ou seja, se todos os caracteres da primeira cadeia estão presentes na segunda cadeia, mesmo que em posições diferentes. Exemplo:
 “abccde” é uma permutação de “cbadce”, mas não é de “abcdef” nem de “abcde”'''
 
+#minha assinatura 
+print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+
 def sub_rotina_comparar(tex1, tex2):
     lista1 = list(tex1)
     lista2 = list(tex2)
