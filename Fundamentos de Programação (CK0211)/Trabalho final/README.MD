@@ -12,7 +12,7 @@ Requisitos:
 - 1. Cada jogador deverá (usuário/humano e computador), a cada rodada, visualizar a tabela de jogo
 atualizada na forma seguinte:
 
-![exemplo](file.PNG)
+![exemplo](../../../file.PNG)
 
 - 2. O usuário (jogador 1) deve poder escolher entre jogar com X ou O. Ao computador (jogador 2), será
 atribuído o outro símbolo.
