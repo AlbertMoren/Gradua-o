@@ -11,13 +11,8 @@ diagonais, linhas e colunas entre as camadas.
 Requisitos:
 - 1. Cada jogador deverá (usuário/humano e computador), a cada rodada, visualizar a tabela de jogo
 atualizada na forma seguinte:
-    CAMADA 1   CAMADA 2  CAMADA 3
-  1   2   3     1   2   3     1   2   3
-1   |   |   1 1   |   |   1 1   |   |   1
- ---+---+---   ---+---+---   ---+---+---
-2   |   |   2 2   |   |   2 2   |   |   2
- ---+---+---   ---+---+---   ---+---+---
-3   |   |   3 3   |   |   3 3   |   |   3
+
+!(exemplo)(C:\Users\livia\Box\file.png)
 
 - 2. O usuário (jogador 1) deve poder escolher entre jogar com X ou O. Ao computador (jogador 2), será
 atribuído o outro símbolo.
