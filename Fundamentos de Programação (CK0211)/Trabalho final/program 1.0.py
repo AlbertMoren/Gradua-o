@@ -1,8 +1,11 @@
 from random import randint
 from time import sleep
+#2 linhas necessarias para poder limpar tela
+import os
 
 #printa na tela o game
 def tela():
+    print("\n" * os.get_terminal_size().lines)
     print("\n","+="*15)
     print("\t  1   2   3 ")
     print(f"\t1 {mat[0][0]} | {mat[0][1]} | {mat[0][2]}  ")
@@ -65,6 +68,7 @@ def jogada_player():
             mat[linha-1][coluna-1] = player[0]
             flag = 0
     
+
 #Função que execulta a jogada da maquina e a valida
 def jogada_maquina():
     print("Processando jogada da máquina...")
@@ -84,108 +88,136 @@ def jogada_maquina():
 def win_conditions():
     if (mat[0][0] == "X" and mat[0][1] == "X" and mat[0][2] == "X") or (mat[0][0] == "O" and mat[0][1] == "O" and mat[0][2] == "O"):
         if(mat[0][0] == "X"):
+            tela()
             print("\n-------Parabêns, você ganhou!!!!!-------")
             return 1
         else:
+            tela()
             print("\n-------Computador venceu essa!!!!-------")
             return 1
     elif (mat[1][0] == "X" and mat[1][1] == "X" and mat[1][2] == "X") or (mat[1][0] == "O" and mat[1][1] == "O" and mat[1][2] == "O"):
         if(mat[1][0] == "X"):
+            tela()
             print("\n-------Parabêns, você ganhou!!!!!-------")
             return 1
         else:
+            tela()
             print("\n-------Computador venceu essa!!!!-------")
             return 1
     elif (mat[2][0] == "X" and mat[2][1] == "X" and mat[2][2] == "X") or (mat[2][0] == "O" and mat[2][1] == "O" and mat[2][2] == "O"):
         if(mat[2][0] == "X"):
+            tela()
             print("\n-------Parabêns, você ganhou!!!!!-------")
             return 1
         else:
+            tela()
             print("\n-------Computador venceu essa!!!!-------")
             return 1
     elif (mat[0][0] == "X" and mat[1][0] == "X" and mat[2][0] == "X") or (mat[0][0] == "O" and mat[1][0] == "O" and mat[2][0] == "O"):
         if(mat[0][0] == "X"):
+            tela()
             print("\n-------Parabêns, você ganhou!!!!!-------")
             return 1
         else:
+            tela()
             print("\n-------Computador venceu essa!!!!-------")
             return 1
     elif (mat[0][1] == "X" and mat[1][1] == "X" and mat[2][1] == "X") or (mat[0][1] == "O" and mat[1][1] == "O" and mat[2][1] == "O"):
         if(mat[0][1] == "X"):
+            tela()
             print("\n-------Parabêns, você ganhou!!!!!-------")
             return 1
         else:
+            tela()
             print("\n-------Computador venceu essa!!!!-------")
             return 1
     elif (mat[0][2] == "X" and mat[1][2] == "X" and mat[2][2] == "X") or (mat[0][2] == "O" and mat[1][2] == "O" and mat[2][2] == "O"):
         if(mat[0][2] == "X"):
+            tela()
             print("\n-------Parabêns, você ganhou!!!!!-------")
             return 1
         else:
+            tela()
             print("\n-------Computador venceu essa!!!!-------")
             return 1
     elif (mat[0][0] == "X" and mat[1][1] == "X" and mat[2][2] == "X") or (mat[0][0] == "O" and mat[1][1] == "O" and mat[2][2] == "O"):
         if(mat[0][0] == "X"):
+            tela()
             print("\n-------Parabêns, você ganhou!!!!!-------")
             return 1
         else:
+            tela()
             print("\n-------Computador venceu essa!!!!-------")
             return 1
     elif (mat[2][0] == "X" and mat[1][1] == "X" and mat[0][2] == "X") or (mat[2][0] == "O" and mat[1][1] == "O" and mat[0][2] == "O"):
         if(mat[2][0] == "X"):
+            tela()
             print("\n-------Parabêns, você ganhou!!!!!-------")
             return 1
         else:
+            tela()
             print("\n-------Computador venceu essa!!!!-------")
             return 1
     else:
         return 0
      
 def regras():
+    sleep(1)
     print("1 - Você vai selecionar o icone do seu jogador, e o complementar ficarar para o computador")
     print("2 - Para realizar a jogada basta inserir as coordenadas desejadas, como padrão temos 'linha,coluna' separado por virgula ")
     print("3 - Atualmente só temos a opção de jogar contra a máquina ")
     print("Divirta-se")
+    sleep(5)
 
 #Menu do programa
 def menu():
-    print("=+"*10)
-    print(" "*5,"Alb system")
-    print("=+"*10)
-    print("1 - jogar")
-    print("2 - placar")
-    print("3 - sair")
-    escolha = input()
-    while(escolha != '1' and escolha != '2' and escolha != '3'):
-        print("Valor incorreto, só é aceito 1,2 e 3, 'SISTEMA LIMITADO POW!!!!!' ")
+    jogar = 1
+    while(jogar == 1):
+        print()
+        print("=+"*10)
+        print(" "*5,"Alb system")
+        print("=+"*10)
         print("1 - jogar")
         print("2 - placar")
-        print("3 - sair")
+        print("3 - Regras")
+        print("4 - Sair")
         escolha = input()
-    escolha = int(escolha)
-    if escolha == 1:
-        pegar_icone()
-        tela()
-        jogada_player()
-        processar_ganhador()
-        tela()
-        jogada_maquina()
-        processar_ganhador()
-    elif escolha == 3:
-        exit()
+        while(escolha != '1' and escolha != '2' and escolha != '3' and escolha != '4'):
+            print("Valor incorreto, só é aceito 1,2,3 e 4, 'SISTEMA LIMITADO POW!!!!!' ")
+            print("1 - jogar")
+            print("2 - placar")
+            print("3 - Regras")
+            print("4 - Sair")
+            escolha = input()
+        escolha = int(escolha)
+        if escolha == 1:
+            flag = 1
+            pegar_icone()
+            while(flag == 1):
+                tela()
+                jogada_player()
+                flag = processar_ganhador()
+                if flag == 0:
+                    break
+                tela()
+                jogada_maquina()
+                flag = processar_ganhador()
+        elif escolha == 3:
+            regras()
+            print("\n" * os.get_terminal_size().lines)
+        elif escolha == 4:
+            exit()
 
 #Condição para verificar se o jogo deve finalizar
 def processar_ganhador():
     value = win_conditions()
     if value == 1:
-        tela()
-        exit()
+        sleep(2)
+        return 0
+    else:
+        return 1
 
 #main
-regras()
 mat = crie_matriz_game(3,3," ")
 player = [0]*2
-while(True):
-    menu()
-    
-    
+menu()
