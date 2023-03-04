@@ -15,7 +15,7 @@ def tela():
     print(f"\t3 {mat[2][0]} | {mat[2][1]} | {mat[2][2]}  ")
     print("+="*15)
 
-#criar a matriz do game
+#criar a matrix do game
 def crie_matriz_game(n_linhas, n_colunas, valor):
     matriz = [] # lista vazia
     for i in range(n_linhas):
@@ -68,25 +68,63 @@ def jogada_player():
             mat[linha-1][coluna-1] = player[0]
             flag = 0
     
-
 #Função que execulta a jogada da maquina e a valida
 def jogada_maquina():
-    print("Processando jogada da máquina...")
-    sleep(4)
-    linha = randint(0,3)
-    coluna = randint(0,3)
-    flag = 1
-    while(flag == 1):
-        if linha>2 or linha<0 or coluna>2 or coluna<0 or mat[linha][coluna] == "X" or mat[linha][coluna] == "O":
-            linha = randint(0,3)
-            coluna = randint(0,3)
-        else:
-            mat[linha][coluna] = player[1]
-            flag = 0
+    cont = 0
+    for i in range(len(mat)):
+        for j in range(len(mat[i])):
+            if mat[i][j] == 'X' or mat[i][j] == 'O':
+                cont+=1
+    if cont == 9:
+        print("Deu empate Negada")
+        flag = 0
+    else:
+        print("Processando jogada da máquina...")
+        sleep(4)
+        linha = randint(0,3)
+        coluna = randint(0,3)
+        flag = 1
+        while(flag == 1):
+            if linha>2 or linha<0 or coluna>2 or coluna<0 or mat[linha][coluna] == "X" or mat[linha][coluna] == "O":
+                linha = randint(0,3)
+                coluna = randint(0,3)
+            else:
+                mat[linha][coluna] = player[1]
+                flag = 0
+            
+#Função que reseta toda a matrix
+def resetar_game():
+    for i in range(len(mat)):
+        for j in range(len(mat[i])):
+            mat[i][j] = ' '
 
 #condições de vitoria
 def win_conditions():
-    if (mat[0][0] == "X" and mat[0][1] == "X" and mat[0][2] == "X") or (mat[0][0] == "O" and mat[0][1] == "O" and mat[0][2] == "O"):
+    for i in range(3):
+        if (mat[i][0] ==  mat[i][1] and mat[i][1] == mat[i][2]):
+            if(mat[0][0] == "X"):
+                tela()
+                print("\n-------Parabêns, você ganhou!!!!!-------")
+                pontuacao[0] += 1
+                return 1
+            else:
+                tela()
+                print("\n-------Computador venceu essa!!!!-------")
+                pontuacao[1] += 1
+                return 1
+    for i in range(3):
+        if (mat[0][i] ==  mat[1][i] and mat[i][i] == mat[2][i]):
+            if(mat[1][0] == "X"):
+                tela()
+                print("\n-------Parabêns, você ganhou!!!!!-------")
+                pontuacao[0] += 1
+                return 1
+            else:
+                tela()
+                print("\n-------Computador venceu essa!!!!-------")
+                pontuacao[1] += 1
+                return 1
+    if (mat[0][0] ==  mat[1][1] and mat[1][1] == mat[2][2]):
         if(mat[0][0] == "X"):
             tela()
             print("\n-------Parabêns, você ganhou!!!!!-------")
@@ -97,73 +135,7 @@ def win_conditions():
             print("\n-------Computador venceu essa!!!!-------")
             pontuacao[1] += 1
             return 1
-    elif (mat[1][0] == "X" and mat[1][1] == "X" and mat[1][2] == "X") or (mat[1][0] == "O" and mat[1][1] == "O" and mat[1][2] == "O"):
-        if(mat[1][0] == "X"):
-            tela()
-            print("\n-------Parabêns, você ganhou!!!!!-------")
-            pontuacao[0] += 1
-            return 1
-        else:
-            tela()
-            print("\n-------Computador venceu essa!!!!-------")
-            pontuacao[1] += 1
-            return 1
-    elif (mat[2][0] == "X" and mat[2][1] == "X" and mat[2][2] == "X") or (mat[2][0] == "O" and mat[2][1] == "O" and mat[2][2] == "O"):
-        if(mat[2][0] == "X"):
-            tela()
-            print("\n-------Parabêns, você ganhou!!!!!-------")
-            pontuacao[0] += 1
-            return 1
-        else:
-            tela()
-            print("\n-------Computador venceu essa!!!!-------")
-            pontuacao[1] += 1
-            return 1
-    elif (mat[0][0] == "X" and mat[1][0] == "X" and mat[2][0] == "X") or (mat[0][0] == "O" and mat[1][0] == "O" and mat[2][0] == "O"):
-        if(mat[0][0] == "X"):
-            tela()
-            print("\n-------Parabêns, você ganhou!!!!!-------")
-            pontuacao[0] += 1
-            return 1
-        else:
-            tela()
-            print("\n-------Computador venceu essa!!!!-------")
-            pontuacao[1] += 1
-            return 1
-    elif (mat[0][1] == "X" and mat[1][1] == "X" and mat[2][1] == "X") or (mat[0][1] == "O" and mat[1][1] == "O" and mat[2][1] == "O"):
-        if(mat[0][1] == "X"):
-            tela()
-            print("\n-------Parabêns, você ganhou!!!!!-------")
-            pontuacao[0] += 1
-            return 1
-        else:
-            tela()
-            print("\n-------Computador venceu essa!!!!-------")
-            pontuacao[1] += 1
-            return 1
-    elif (mat[0][2] == "X" and mat[1][2] == "X" and mat[2][2] == "X") or (mat[0][2] == "O" and mat[1][2] == "O" and mat[2][2] == "O"):
-        if(mat[0][2] == "X"):
-            tela()
-            print("\n-------Parabêns, você ganhou!!!!!-------")
-            pontuacao[0] += 1
-            return 1
-        else:
-            tela()
-            print("\n-------Computador venceu essa!!!!-------")
-            pontuacao[1] += 1
-            return 1
-    elif (mat[0][0] == "X" and mat[1][1] == "X" and mat[2][2] == "X") or (mat[0][0] == "O" and mat[1][1] == "O" and mat[2][2] == "O"):
-        if(mat[0][0] == "X"):
-            tela()
-            print("\n-------Parabêns, você ganhou!!!!!-------")
-            pontuacao[0] += 1
-            return 1
-        else:
-            tela()
-            print("\n-------Computador venceu essa!!!!-------")
-            pontuacao[1] += 1
-            return 1
-    elif (mat[2][0] == "X" and mat[1][1] == "X" and mat[0][2] == "X") or (mat[2][0] == "O" and mat[1][1] == "O" and mat[0][2] == "O"):
+    if (mat[2][0] ==  mat[1][1] and mat[0][2] ==  mat[1][1]):
         if(mat[2][0] == "X"):
             tela()
             print("\n-------Parabêns, você ganhou!!!!!-------")
@@ -191,7 +163,7 @@ def regras():
 def processar_ganhador():
     value = win_conditions()
     if value == 1:
-        sleep(2)
+        sleep(3)
         return 0
     else:
         return 1
@@ -209,9 +181,16 @@ def opcao1():
         tela()
         jogada_maquina()
         flag = processar_ganhador()
+            
+
+def opcao2():
+    sleep(1)
+    print(f"Jogador {pontuacao[0]} x {pontuacao[1]} Máquina")
+    sleep(3)
+    print("\n" * os.get_terminal_size().lines)
 
 #Menu do programa
-def menu():
+def jogo():
     jogar = 1
     while(jogar == 1):
         print()
@@ -233,11 +212,9 @@ def menu():
         escolha = int(escolha)
         if escolha == 1:
             opcao1()
+            resetar_game()
         elif escolha == 2:
-            sleep(1)
-            print(f"Jogador {pontuacao[0]} x {pontuacao[1]} Máquina")
-            sleep(3)
-            print("\n" * os.get_terminal_size().lines)
+            opcao2()
         elif escolha == 3:
             regras()
         elif escolha == 4:
@@ -247,4 +224,4 @@ def menu():
 mat = crie_matriz_game(3,3," ")
 player = [0]*2
 pontuacao = [0]*2
-menu()
+jogo()
