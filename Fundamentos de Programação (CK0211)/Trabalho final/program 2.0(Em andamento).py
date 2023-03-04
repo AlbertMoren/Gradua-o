@@ -15,6 +15,16 @@ def tela():
     print(f"\t3 {mat[2][0]} | {mat[2][1]} | {mat[2][2]}  ")
     print("+="*15)
 
+#função que criar copia uma matriz
+def clonar_matriz(matriz):
+    matriz_clone = []
+    for i in range(len(matriz)):
+        linha = [] 
+        for j in range(len(matriz[i])):
+            linha.append(matriz[i][j])
+        matriz_clone.append(linha)
+    return matriz_clone
+
 #criar a matrix do game
 def crie_matriz_game(n_linhas, n_colunas, valor):
     matriz = [] # lista vazia
@@ -77,21 +87,64 @@ def jogada_maquina():
                 cont+=1
     if cont == 9:
         print("Deu empate Negada")
-        flag = 0
     else:
-        print("Processando jogada da máquina...")
-        sleep(4)
-        linha = randint(0,3)
-        coluna = randint(0,3)
-        flag = 1
-        while(flag == 1):
-            if linha>2 or linha<0 or coluna>2 or coluna<0 or mat[linha][coluna] == "X" or mat[linha][coluna] == "O":
-                linha = randint(0,3)
-                coluna = randint(0,3)
-            else:
-                mat[linha][coluna] = player[1]
-                flag = 0
-            
+        mat_auxiliar = clonar_matriz(mat)
+        movimentoIA(mat_auxiliar)
+        
+
+#conjutos de funções para uma IA inteligente
+def movimentoIA(board):
+    possibilidades = getPosicoes(board)
+    melhor_valor = None
+    melhor_movimento = None
+    for possibiladade in possibilidades:
+        board[possibiladade[0]][possibiladade[1]] = player[0]
+        valor = minimax(board, jogador)#ajeitar essa linha
+        board[possibiladade[0]][possibiladade[1]] = ' '
+        if melhor_valor is None:
+            melhor_valor = valor
+            melhor_movimento = possibiladade
+        elif jogador == 0:#ajeitar essa linha
+            if valor > melhor_valor:
+                melhor_valor = valor
+                melhor_movimento = possibiladade
+        elif jogador == 1:#ajeitar essa linha
+            if valor < melhor_valor:
+                melhor_valor = valor
+                melhor_movimento = possibiladade
+
+    return melhor_movimento[0],melhor_movimento[1]
+
+def getPosicoes(board):
+    posicoes = []
+    for i in range(3):
+        for j in range(3):
+            if(board[i][j] == " "):
+                posicoes.append([i, j])
+    return posicoes
+
+def minimax(board):
+    ganhador = win_conditions()
+    if ganhador:
+        return score[ganhador]
+    jogador = (jogada+1)%2
+
+    possibiladade = getPosicoes(board)
+    melhor_valor = None
+    for possibiladade in possibilidades:
+        board[possibiladade[0]][possibiladade[1]] = player[0]
+        valor = minimax(board, jogador)#ajeitar essa linha
+        board[possibiladade[0]][possibiladade[1]] = ' '
+        if melhor_valor is None:
+            melhor_valor = valor
+        elif jogador == 0:#ajeitar essa linha
+            if valor > melhor_valor:
+                melhor_valor = valor
+        elif jogador == 1:#ajeitar essa linha
+            if valor < melhor_valor:
+                melhor_valor = valor
+
+#fim de conjuto de funções
 #Função que reseta toda a matrix
 def resetar_game():
     for i in range(len(mat)):
@@ -182,7 +235,6 @@ def opcao1():
         jogada_maquina()
         flag = processar_ganhador()
             
-
 def opcao2():
     sleep(1)
     print(f"Jogador {pontuacao[0]} x {pontuacao[1]} Máquina")
