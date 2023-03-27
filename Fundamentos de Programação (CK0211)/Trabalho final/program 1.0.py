@@ -1,6 +1,6 @@
 from random import randint
 from time import sleep
-#2 linhas necessarias para poder limpar tela
+#linha necessarias para poder limpar tela
 import os
 
 #printa na tela o game
@@ -77,20 +77,15 @@ def jogada_maquina():
                 cont+=1
     if cont == 9:
         print("Deu empate Negada")
-        flag = 0
     else:
         print("Processando jogada da máquina...")
         sleep(4)
-        linha = randint(0,3)
-        coluna = randint(0,3)
-        flag = 1
-        while(flag == 1):
-            if linha>2 or linha<0 or coluna>2 or coluna<0 or mat[linha][coluna] == "X" or mat[linha][coluna] == "O":
-                linha = randint(0,3)
-                coluna = randint(0,3)
-            else:
+        while True:
+            linha = randint(0,2)
+            coluna = randint(0,2)
+            if mat[linha][coluna] not in ('X','O'):
                 mat[linha][coluna] = player[1]
-                flag = 0
+                break
             
 #Função que reseta toda a matrix
 def resetar_game():
@@ -101,8 +96,9 @@ def resetar_game():
 #condições de vitoria
 def win_conditions():
     for i in range(3):
-        if (mat[i][0] ==  mat[i][1] and mat[i][1] == mat[i][2]):
-            if(mat[0][0] == "X"):
+        print(i)
+        if((mat[i][0] ==  mat[i][1]) and (mat[i][1] == mat[i][2]) and (mat[i][0] != " ")):
+            if(mat[i][0] == player[0]):
                 tela()
                 print("\n-------Parabêns, você ganhou!!!!!-------")
                 pontuacao[0] += 1
@@ -113,8 +109,8 @@ def win_conditions():
                 pontuacao[1] += 1
                 return 1
     for i in range(3):
-        if (mat[0][i] ==  mat[1][i] and mat[i][i] == mat[2][i]):
-            if(mat[1][0] == "X"):
+        if (mat[0][i] ==  mat[1][i] and mat[1][i] == mat[2][i] and mat[1][i] != " "):
+            if(mat[1][i] == player[0]):
                 tela()
                 print("\n-------Parabêns, você ganhou!!!!!-------")
                 pontuacao[0] += 1
@@ -124,7 +120,7 @@ def win_conditions():
                 print("\n-------Computador venceu essa!!!!-------")
                 pontuacao[1] += 1
                 return 1
-    if (mat[0][0] ==  mat[1][1] and mat[1][1] == mat[2][2]):
+    if (mat[0][0] ==  mat[1][1] and mat[1][1] == mat[2][2] and mat[0][0]!= " "):#diagonal principal
         if(mat[0][0] == "X"):
             tela()
             print("\n-------Parabêns, você ganhou!!!!!-------")
@@ -135,7 +131,7 @@ def win_conditions():
             print("\n-------Computador venceu essa!!!!-------")
             pontuacao[1] += 1
             return 1
-    if (mat[2][0] ==  mat[1][1] and mat[0][2] ==  mat[1][1]):
+    if (mat[2][0] ==  mat[1][1] and mat[0][2] ==  mat[1][1] and mat[2][0] != " "):#diagonal segundaria
         if(mat[2][0] == "X"):
             tela()
             print("\n-------Parabêns, você ganhou!!!!!-------")
@@ -146,7 +142,6 @@ def win_conditions():
             print("\n-------Computador venceu essa!!!!-------")
             pontuacao[1] += 1
             return 1
-        
     else:
         return 0
      
