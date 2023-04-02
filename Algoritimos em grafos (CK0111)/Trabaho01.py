@@ -1,3 +1,7 @@
+import fileinput
+import sys
+from queue import Queue
+
 class No:
     def __init__(lista,dado):
         lista.valor = dado
@@ -27,3 +31,11 @@ class Lista:
 
 indicis = [-1]*10
 vetor_de_lista = [Lista() for i in range(10)]
+
+# Processar a entrada
+for line in fileinput.input():
+    # Fazer o processamento aqui
+    print(line.rstrip())  # Exemplo: imprimir a linha de entrada sem o caractere de nova linha
+
+# Escrever a saída
+sys.stdout.flush()  # Garantir que toda a saída seja escrita
