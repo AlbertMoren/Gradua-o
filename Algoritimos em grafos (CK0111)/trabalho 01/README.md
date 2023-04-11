@@ -23,16 +23,16 @@ Observe que, no formato acima, os vértices são numerados a partir de 1.
 
 A saída, fornecida através da saída padrão, tem que estar no formato ilustrado pelo seguinte exemplo, que é a saída esperada para a entrada acima:
 
-![saida](saida.PNG)
+![saida](sprits/saida.PNG)
 
 Mais precisamente:
 
-    1. Deve ser impressa uma componente conexa por linha.
-    2. Em cada linha, os vértices devem aparecer em ordem crescente, separados por um espaço em branco, mas sem um espaço em branco após o último vértice.
-    3. A primeira linha deve ser a da componente conexa do vértice 1. A segunda linha deve ser a da componente conexa do vértice 2, exceto se ele já tiver aparecido na componente conexa do vértice 1, e assim sucessivamente, ou seja: cada uma das outras linhas contém os vértices da componente conexa do vértice de menor rótulo que não tenha aparecido nas componentes listadas em linhas anteriores.
+1. Deve ser impressa uma componente conexa por linha.
+2. Em cada linha, os vértices devem aparecer em ordem crescente, separados por um espaço em branco, mas sem um espaço em branco após o último vértice.
+3. A primeira linha deve ser a da componente conexa do vértice 1. A segunda linha deve ser a da componente conexa do vértice 2, exceto se ele já tiver aparecido na componente conexa do vértice 1, e assim sucessivamente, ou seja: cada uma das outras linhas contém os vértices da componente conexa do vértice de menor rótulo que não tenha aparecido nas componentes listadas em linhas anteriores.
 
 ###### *Importante*:
 
-    1. A saída não precisa ser escrita toda de uma vez, ou seja, você pode gerar a saída em partes. O que importa é que a saída gerada pela execução do seu programa, se considerada como um todo, esteja no formato indicado acima.
+1. A saída não precisa ser escrita toda de uma vez, ou seja, você pode gerar a saída em partes. O que importa é que a saída gerada pela execução do seu programa, se considerada como um todo, esteja no formato indicado acima.
 
-    2. Veja o arquivo `exemplos.zip` e as orientações enviadas pelo SIGAA sobre como usar as instâncias e soluções presentes nesse arquivo para testar o seu código.
+2. Veja o arquivo `exemplos.zip` e as orientações enviadas pelo SIGAA sobre como usar as instâncias e soluções presentes nesse arquivo para testar o seu código.
