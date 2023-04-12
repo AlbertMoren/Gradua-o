@@ -1,5 +1,5 @@
 ## **Universidade Federal do Ceará** | **Departamento de Computação**
-### **Disciplina: Programação – CK226** | **Professor:  Pablo Mayckon Silva Farias**
+### **Disciplina: Algoritmos em Grafos - CK226** | **Professor:  Pablo Mayckon Silva Farias**
 
 #### Informações gerais
 
