@@ -14,4 +14,4 @@ Pré-condição: V ∉ &empty; e |N| >= 3
 
 Saída: Booleano
 
-Pós-condição: ∀ y ∈ V; d(y) = n-1 e ∀ x-{y} ∈ V, d(x) = 1 onde V ≠ &empty;
+Pós-condição: ∀ y ∈ V; d(y) = n-1 e ∀ x ∈ V-{y}, d(x) = 1 onde V ≠ &empty;
