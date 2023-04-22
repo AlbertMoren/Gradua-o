@@ -6,7 +6,11 @@
 Escreva um algoritmo que receba como entrada um grafo não-direcionado e que retorne um vértice de grau máximo.
 
 Algoritimo: Vertice_de_grau_maximo
-Estrada: Grafo não direcionado G=(V,E)
+
+Entrada: Grafo não direcionado G=(V,E)
+
 Pré-condição: V \neq \u2205
+
 Saída: Um vertice "x"
-Pós-condição: \forall y \in V; d(y) <= d(x)
+
+Pós-condição: ∀ y ∈ V; d(y) ≤ d(x), onde V ≠ &empty;
