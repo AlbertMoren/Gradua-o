@@ -15,6 +15,7 @@ public class Aluno extends Pessoa {
         this.matricula = matricula;
     }
     
+    @Override
     public String toString() {
         return "Aluno [nome=" + nome + ", genero=" + sexo + ", idade=" + idade + ", matricula=" + matricula + "]";
     }
