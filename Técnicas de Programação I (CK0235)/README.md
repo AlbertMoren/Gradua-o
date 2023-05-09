@@ -1,5 +1,5 @@
 ## **Universidade Federal do Ceará** | **Departamento de Computação**
-### **Disciplina: Programação – CK226** | **Professor: Jose Antonio Fernandes De Macedo**
+### **Disciplina: Técnicas de programação 1 – CK0235** | **Professor: Jose Antonio Fernandes De Macedo**
 
 #### Informações gerais
 
