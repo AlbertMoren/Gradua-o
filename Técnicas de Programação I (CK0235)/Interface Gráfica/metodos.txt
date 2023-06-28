@@ -1,0 +1,47 @@
+#Java.awt.Componet
+
+public Conteiner gerParent()
+public void setEnabled(booleab b)
+public void setVisibli(booleab b)
+public void setForeground(Color c)
+public void setBackground(Color c)
+public synchronzined void setFont(Font f)
+public void setLocation(int x,int y)
+public void setSise(Dimension d)
+public void repaint();
+public void paint(Graphics g)
+public Graphics getGrephic()
+public synchronized void add(PopupMenu popup)
+public synchronized void remove(MenuComponent popup)
+public synchronized void addFocusListener( FocusListener l)
+public synchronized void addKeyListener(  KeyListener l)
+public synchronized void addMouseListener( MouseListener l)
+public synchronized void addMouseMotionListener( MouseMotionListener l)
+
+#java.awt.Conteiner
+
+public Component add(Component comp)
+public Component add(Component comp, int index)
+public int getComponentCount()
+public Component[] getComponents()
+public Component getComponentAt(int x, int y)
+public void remove(Component comp)
+public boolean isAncestorOf(Component c)
+public void setLayout(LayoutManager mgr)
+
+#Java.awt.window
+
+public synchronized void addWindowListener(WindowListener l)
+public void pack()
+public void show()
+public void toFront()
+public void toBack()
+
+#java.awt.Frame
+
+public synchronized void setTitle(String title)
+public synchronized void setIconImage(Image image)
+public synchronized void setMenuBar(MenuBar mb)
+public synchronized void remove(MenuComponent m)
+public synchronized void setResizable(boolean res)
+public synchronized void dispose()
