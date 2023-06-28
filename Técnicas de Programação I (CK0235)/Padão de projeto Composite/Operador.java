@@ -3,6 +3,11 @@ public class Operador extends Expressao{
     Expressao esq, dir;
     char tipoOp;
 
+    Operador(char tipo, Expressao esq,Expressao dir){
+        this.add(esq, dir);
+        this.tipoOp = tipo;
+    }
+
     @Override
     float operation() {
         float resultado;
@@ -15,8 +20,9 @@ public class Operador extends Expressao{
     }
 
     @Override
-    void add(Expressao e) {
-        
+    void add(Expressao esq, Expressao dir) {
+        this.esq = esq;
+        this.dir = dir;
     }
 
     @Override

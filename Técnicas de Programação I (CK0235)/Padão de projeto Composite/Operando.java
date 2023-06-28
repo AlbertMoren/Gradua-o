@@ -12,7 +12,7 @@ public class Operando extends Expressao {
     }
 
     @Override
-    void add(Expressao e) {
+    void add(Expressao esq, Expressao dir) {
     }
 
     @Override
