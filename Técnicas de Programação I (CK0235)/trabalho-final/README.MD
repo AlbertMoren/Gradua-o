@@ -9,13 +9,13 @@ Cada grupo deverá escolher um dos temas abaixo para desenvolver uma aplicação
 
 O programa deve ser capaz de ler um arquivo contendo uma tabela de dados (inteiros, float ou String). A primeira linha deste arquivo deve conter os nomes das colunas da tabela. Após a leitura do arquivo, o programa deverá apresentar a tabela ao usuário e permitir que o usuário escolha uma coluna para visualizar um gráfico com a distribuição dos dados dessa coluna. Além disso, o programa deverá exibir a média, moda, variância, desvio padrão, valor máximo e valor mínimo dos valores da coluna selecionada. O usuário também poderá modificar os dados da tabela apresentada e salvá-la novamente em um arquivo.
 
--O arquivo de entrada é arquivo.txt, que contém uma tabela de valores para teste.
+- O arquivo de entrada é arquivo.txt, que contém uma tabela de valores para teste.
 ![Explorer usando o programa](/Sprits/selecionaTabela.png)
--Após selecionado a tabela, os valores são printados.
+- Após selecionado a tabela, os valores são printados.
 ![Programa aberto pos selecionar o arquivo](/Sprits/AmostragemDados.png)
--Após o usuario escolher uma coluna, um grafico é gerado.
+- Após o usuario escolher uma coluna, um grafico é gerado.
 ![Grafico apos selecionar a tabela](/Sprits/Tabela%20coluna%201.png)
--O usuário pode alterar os valores de qualquer célula do programa.
+- O usuário pode alterar os valores de qualquer célula do programa.
 ![Coluna um com os valores alterados](/Sprits/Coluna%201%20alterada.png)
--Botão para salvar arquivo.
--Botão para ler um novo arquivo.
+- Botão para salvar arquivo.
+- Botão para ler um novo arquivo.
