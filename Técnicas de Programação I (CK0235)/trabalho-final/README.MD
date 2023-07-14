@@ -18,5 +18,5 @@ O programa deve ser capaz de ler um arquivo contendo uma tabela de dados (inteir
 
 ![Explorer usando o programa](/Sprits/selecionaTabela.png)
 ![Programa aberto pos selecionar o arquivo](/Sprits/AmostragemDados.png)
-![Grafico apos selecionar a tabela](/Sprits/Tabela%20coluna%201.png)
-![Coluna um com os valores alterados](/Sprits/Coluna%201%20alterada.png)
+![Grafico apos selecionar a tabela](/Sprits/TabelaColuna_1.png)
+![Coluna um com os valores alterados](/Sprits/Coluna_1_alterada.png)
