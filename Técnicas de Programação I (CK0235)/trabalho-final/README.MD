@@ -16,7 +16,7 @@ O programa deve ser capaz de ler um arquivo contendo uma tabela de dados (inteir
 - Botão para salvar arquivo.
 - Botão para ler um novo arquivo.
 
-![Explorer usando o programa](/Sprits/selecionaTabela.png)
+![Explorer usando o programa](/Sprits/selecionaTabela.PNG)
 ![Programa aberto pos selecionar o arquivo](/Sprits/AmostragemDados.png)
 ![Grafico apos selecionar a tabela](/Sprits/TabelaColuna_1.png)
 ![Coluna um com os valores alterados](/Sprits/Coluna_1_alterada.png)
