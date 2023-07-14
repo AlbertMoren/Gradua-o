@@ -17,6 +17,6 @@ O programa deve ser capaz de ler um arquivo contendo uma tabela de dados (inteir
 - Botão para ler um novo arquivo.
 
 ![Explorer usando o programa](/sprite/selecionaTabela.PNG)
-![Programa aberto pos selecionar o arquivo](/sprite/AmostragemDados.png)
+![Programa aberto pos selecionar o arquivo](AmostragemDados.png)
 ![Grafico apos selecionar a tabela](/sprite/TabelaColuna_1.png)
 ![Coluna um com os valores alterados](/sprite/Coluna_1_alterada.png)
