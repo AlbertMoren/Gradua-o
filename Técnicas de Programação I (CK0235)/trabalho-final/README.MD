@@ -13,6 +13,7 @@ O programa deve ser capaz de ler um arquivo contendo uma tabela de dados (inteir
 - Após selecionado a tabela, os valores são printados.
 - Após o usuario escolher uma coluna, um grafico é gerado.
 - O usuário pode alterar os valores de qualquer célula do programa.
+- A parti de uma coluna selecionada, extrair média,mediana, moda, variança, desvio padrão, min e max 
 - Botão para salvar arquivo.
 - Botão para ler um novo arquivo.
 
@@ -20,3 +21,4 @@ O programa deve ser capaz de ler um arquivo contendo uma tabela de dados (inteir
 ![Programa aberto pos selecionar o arquivo](./sprite/AmostragemDados.png)
 ![Grafico apos selecionar a tabela](./sprite/TabelaColuna_1.png)
 ![Coluna um com os valores alterados](./sprite/Coluna_1_alterada.png)
+![Medidas de tendências centrais](./sprite/medidas.png)
