@@ -3,7 +3,7 @@
 #minha assinatura 
 print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
 
-diagonal_M,diagonal_m = input("Informe a diagonal maior e menor").split(" ")
+diagonal_M,diagonal_m = input(print("Informe a diagonal maior e menor")).split(" ")
 
 diagonal_M = float(diagonal_M)
 diagonal_m = float(diagonal_m)
