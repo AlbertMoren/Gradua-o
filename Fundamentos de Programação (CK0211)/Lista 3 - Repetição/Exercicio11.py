@@ -9,11 +9,15 @@ print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
 value = float(input("Enter car value: "))
 
 j = 0
-print("final value | Number of istallmentes | value of installments ")
-for i in range(10):
+fees = 1.03
+print("final value | Number of istallmentes | value of installments")
+for i in range(11):
     if i == 0:
-        installments = value * 0.8
+        final_value = value * 0.8
+        installments = 0
     else:
         j+= 6
-        installments = (value * 1.03) / j
-    print("||")
+        final_value = value * fees
+        installments =  final_value / j
+        fees += 0.03
+    print(f"   R${final_value:.2f}  |          {j}           |       {installments:.2f}   ")
