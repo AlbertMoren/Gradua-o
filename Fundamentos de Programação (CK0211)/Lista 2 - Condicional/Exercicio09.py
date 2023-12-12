@@ -1,18 +1,26 @@
-'''Um banco concederá um crédito especial aos seus clientes, de acordo com o saldo médio no último ano. Faça um programa que receba o saldo médio de um cliente e calcule o valor do crédito, de acordo com a tabela a seguir. Mostre o saldo médio e o valor do crédito. SALDO MÉDIO PERCENTUAL
-Acima de R$ 400,00 30% do saldo médio
-R$ 400,00 R$ 300,00 25% do saldo médio
-R$ 300,00 R$ 200,00 20% do saldo médio
-Até R$ 200,00 10% do saldo médio'''
+'''A bank will grant special credit to its clients based on the average balance in the last year. Create a program that receives the average balance of a client and calculates the credit value according to the following table. Display the average balance and the credit value.
+AVERAGE BALANCE      PERCENTAGE
+Above R$400.00       30% of the average balance
+R$400.00 to R$300.00 25% of the average balance
+R$300.00 to R$200.00 20% of the average balance
+Up to R$200.00       10% of the average balance
+'''
 
-#minha assinatura 
+# My signature 
 print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
 
-media = float(input("Valor médio do cliente: R$"))
-if(media > 400):
-    print(f"Seu crédito séra de {(media + (media*0.3)):.2f}")
-elif(media <= 400 and media >300):
-    print(f"Seu crédito séra de {(media + (media*0.25)):.2f}")
-elif(media <= 300 and media >200):
-    print(f"Seu crédito séra de {(media + (media*0.2)):.2f}")
-elif(media <= 200):
-    print(f"Seu crédito séra de {(media + (media*0.1)):.2f}")
+# Receive the average balance
+average_balance = float(input("Enter the client's average balance: R$"))
+
+# Check the average balance range and calculate the credit value accordingly
+if average_balance > 400:
+    credit_value = average_balance + (average_balance * 0.3)
+elif 300 < average_balance <= 400:
+    credit_value = average_balance + (average_balance * 0.25)
+elif 200 < average_balance <= 300:
+    credit_value = average_balance + (average_balance * 0.2)
+elif average_balance <= 200:
+    credit_value = average_balance + (average_balance * 0.1)
+
+# Display the result
+print(f"Your average balance is R${average_balance:.2f} and your credit value is R${credit_value:.2f}")

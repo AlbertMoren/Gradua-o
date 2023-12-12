@@ -1,4 +1,4 @@
-'''Faça um programa que receba a idade de uma pessoa e mostre a mensagem de maioridade ou não.'''
+'''Create a program that receives a person's age and displays a message indicating whether they are of legal age or not.'''
 
 #minha assinatura 
 print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")

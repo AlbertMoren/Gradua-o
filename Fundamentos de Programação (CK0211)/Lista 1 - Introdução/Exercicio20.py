@@ -1,27 +1,25 @@
-'''Faça um programa que receba a medida do ângulo formado por uma escada apoiada no chão e a distância em que a escada está da parede, calcule e mostre a medida da escada para que se possa alcançar
-sua ponta.'''
+'''Create a program that receives the angle formed by a ladder leaning on the ground and the distance the ladder is from the wall, calculates and shows the length of the ladder needed to reach its tip.'''
 
 import math
 
-#minha assinatura 
+# My signature
 print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
 
+def calculate_ladder_length(angle_degrees, wall_distance):
+    # Convert the angle from degrees to radians
+    angle_radians = math.radians(angle_degrees)
 
-def calcular_comprimento_escada(angulo_graus, distancia_parede):
-    # Converter o ângulo de graus para radianos
-    angulo_radianos = math.radians(angulo_graus)
+    # Calculate the length of the ladder using the sine of the angle
+    ladder_length = wall_distance / math.sin(angle_radians)
 
-    # Calcular o comprimento da escada usando o seno do ângulo
-    comprimento_escada = distancia_parede / math.sin(angulo_radianos)
+    return ladder_length
 
-    return comprimento_escada
+# Receive user inputs
+angle = float(input("Enter the angle of the ladder (in degrees): "))
+distance = float(input("Enter the distance from the ladder to the wall: "))
 
-# Receber as entradas do usuário
-angulo = float(input("Digite o ângulo da escada (em graus): "))
-distancia = float(input("Digite a distância da escada à parede: "))
+# Calculate the length of the ladder
+length = calculate_ladder_length(angle, distance)
 
-# Calcular o comprimento da escada
-comprimento = calcular_comprimento_escada(angulo, distancia)
-
-# Exibir o resultado
-print(f"A medida da escada necessária é: {comprimento:.2f} unidades.")
+# Display the result
+print(f"The required length of the ladder is: {length:.2f} units.")

@@ -1,8 +1,11 @@
-'''Faça um programa que receba o preço de um produto, calcule e mostre o novo preço, sabendo-se que este sofreu um desconto de 10%'''
+# Program that receives the price of a product, calculates and displays the new price, knowing that it had a discount of 10%.
 
-#minha assinatura 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+# My signature
+print("=+" * 28, "\n", " " * 20, "ALB System", "\n", "=+" * 28, "\n")
 
-preco = float(input("Insira o preço do produto: R$"))
-novo_preco = preco-(preco*0.1)
-print(f"Novo preço é {novo_preco}")
+# Input the price of the product
+price = float(input("Enter the price of the product: $"))
+
+# Calculate and print the new price after a 10% discount
+new_price = price - (price * 0.1)
+print(f"The new price is ${new_price}")

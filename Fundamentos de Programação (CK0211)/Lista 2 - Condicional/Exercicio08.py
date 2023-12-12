@@ -1,10 +1,20 @@
-'''Faça um programa para calcular e mostrar o salário reajustado de um funcionário. O percentual de aumento encontra-se na tabela a seguir. SALÁRIO PERCENTUAL DE AUMENTO Até R$ 300,00 35% Acima de R$ 300,00 15%'''
+'''Create a program to calculate and display the adjusted salary of an employee. The percentage increase is in the following table:
+SALARY          PERCENTAGE INCREASE
+Up to R$300.00  35%
+Above R$300.00  15%
+'''
 
-#minha assinatura 
+# My signature 
 print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
 
-salario = float(input("Qual o salario: R$"))
-if(salario <= 300):
-    print(f"Seu novo salário séra de {(salario + (salario*0.35)):.2f}")
+# Receive the salary
+salary = float(input("Enter the salary: R$"))
+
+# Check the salary range and calculate the adjusted salary accordingly
+if salary <= 300:
+    adjusted_salary = salary + (salary * 0.35)
 else:
-    print(f"Seu novo salário séra de {(salario + (salario*0.15)):.2f}")
+    adjusted_salary = salary + (salary * 0.15)
+
+# Display the result
+print(f"Your new salary will be R${adjusted_salary:.2f}")

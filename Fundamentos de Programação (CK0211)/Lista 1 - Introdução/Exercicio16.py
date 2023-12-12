@@ -1,14 +1,13 @@
-'''Faça um programa que receba o valor dos catetos de um triângulo, calcule e mostre o valor da hipotenusa'''
+# Receive the values of the legs of a triangle, calculate and show the value of the hypotenuse
 
 import math
 
-#minha assinatura 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+# My signature
+print("=+" * 28, "\n", " " * 20, "ALB System", "\n", "=+" * 28, "\n")
 
+leg1 = float(input("Value of leg 1: "))
+leg2 = float(input("Value of leg 2: "))
 
-cateto1 = float(input("Valor do cateto 1: "))
-cateto2 = float(input("Valor do cateto 2: "))
+hypotenuse = math.sqrt(pow(leg1, 2) + pow(leg2, 2))
 
-hipo = math.sqrt(pow(cateto1,2) + pow(cateto2,2))
-
-print(f"A hipotenusa = {hipo:.2f}")
+print(f"The hypotenuse = {hypotenuse:.2f}")

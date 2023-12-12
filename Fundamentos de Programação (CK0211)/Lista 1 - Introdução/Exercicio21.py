@@ -1,20 +1,18 @@
-'''Faça um programa que receba o número de horas trabalhadas, o valor do salário mínimo e o número
-de horas extras trabalhadas, calcule e mostre o salário a receber, de acordo com as regras a seguir:
-a) a hora trabalhada vale 1/8 do salário mínimo;
-b) a hora extra vale 1/4 do salário mínimo;
-c) o salário bruto equivale ao número de horas trabalhadas multiplicado pelo valor da hora trabalhada;
-d) a quantia a receber pelas horas extras equivale ao número de horas extras trabalhadas multiplicado pelo valor
-da hora extra;
-e) o salário a receber equivale ao salário bruto mais a quantia a receber pelas horas extras.'''
+'''Create a program that receives the number of hours worked, the value of the minimum wage, and the number of overtime hours worked, calculates and shows the salary to be received, according to the following rules:
+a) the regular hour is worth 1/8 of the minimum wage;
+b) the overtime hour is worth 1/4 of the minimum wage;
+c) the gross salary is equal to the number of regular hours worked multiplied by the value of a regular hour;
+d) the amount to receive for overtime hours is equal to the number of overtime hours worked multiplied by the value of an overtime hour;
+e) the total salary to be received is equal to the gross salary plus the amount to receive for overtime hours.'''
 
-#minha assinatura 
+# My signature
 print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
 
-salario = float(input("Informe o salario minimo: "))
-horas = float(input("Informe o número de horas trabalhada: "))
-extras = float(input("Informe o total de hora extra trabalhada: "))
+salary = float(input("Enter the minimum wage: "))
+hours_worked = float(input("Enter the number of regular hours worked: "))
+overtime_hours = float(input("Enter the total number of overtime hours worked: "))
 
-valor = ((1/8) * salario) * horas
-valor = valor + (((1/4)* salario) * extras)
+regular_salary = (1/8) * salary * hours_worked
+total_salary = regular_salary + (1/4) * salary * overtime_hours
 
-print(f" O salario a ser recebido sera de {valor:.2f}")
+print(f"The total salary to be received is: {total_salary:.2f}")

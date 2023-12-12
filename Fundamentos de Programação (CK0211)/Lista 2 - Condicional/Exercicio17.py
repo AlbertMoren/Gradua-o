@@ -1,12 +1,11 @@
-'''Faça um programa que verifique a validade de uma senha fornecida pelo usuário. A senha é 4531. O
-programa deve mostrar uma mensagem de permissão de acesso ou não.'''
+#Make a program that receives a person's age and displays the message of majority or not.
 
-#minha assinatura 
+# My signature 
 print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
 
-senha = input("Enter the password: ")
+password = input("Enter the password: ")
 
-if(senha == 4531):
-    print("Permission grated")
+if password == '4531':
+    print("Permission granted")
 else:
-    print("Aceess denied")
+    print("Access denied")

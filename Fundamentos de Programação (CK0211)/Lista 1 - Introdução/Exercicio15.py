@@ -1,16 +1,20 @@
-'''João recebeu seu salário e precisa pagar duas contas atrasadas. Em razão do atraso, ele deverá pagar
-multa de 2% sobre cada conta. Faça um programa que calcule e mostre quanto restará do salário de
-João'''
+# João received his salary and needs to pay two overdue bills. Due to the delay, he must pay
+# a 2% fine on each bill. Create a program that calculates and shows how much of João's salary
+# will remain.
 
-#minha assinatura 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+# My signature
+print("=+" * 28, "\n", " " * 20, "ALB System", "\n", "=+" * 28, "\n")
 
-salario = float(input("Qual seu salario? "))
-conta1 = float(input("Qual valor da sua primeira conta"))
-conta2 = float(input("Qual valor da sua segunda conta"))
+# Input João's salary and the values of the overdue bills
+salary = float(input("What is your salary? "))
+bill1 = float(input("What is the value of your first bill? "))
+bill2 = float(input("What is the value of your second bill? "))
 
-conta1 = conta1 * 1.02
-conta2 = conta2 * 1.02
-salario = salario - (conta1 + conta2)
+# Apply a 2% fine to each bill
+bill1 *= 1.02
+bill2 *= 1.02
 
-print(f"Vai resta R${salario:.2f} do salario")
+# Calculate the remaining salary after paying the bills
+salary -= bill1 + bill2
+
+print(f"João will have R${salary:.2f} remaining from his salary.")

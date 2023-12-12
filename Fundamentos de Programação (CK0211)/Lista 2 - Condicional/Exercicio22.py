@@ -1,9 +1,10 @@
-'''Faça um programa que receba a idade e o peso de uma pessoa. De acordo com a tabela a seguir, verifique e mostre em qual grupo de risco essa pessoa se encaixa.
-IDADE                           |PESO
-                | Até 60 | Entre 60 e 90 (inclusive)|  Acima de 90
-Menores que 20  |    9   |       8                  |      7
-De 20 a 50      |    6   |       5                  |      4
-Maiores que 50  |    3   |       2                  |      1'''
+'''Create a program that receives a person's age and weight. According to the following table, check and show which risk group this person fits into.
+
+    AGE     | WEIGHT
+| Up to 60  | Between 60 and 90 (inclusive) | Above 90
+Less than 20 | 9 | 8 | 7
+20 to 50 | 6 | 5 | 4
+Over 50 | 3 | 2 | 1'''
 
 
 #minha assinatura 

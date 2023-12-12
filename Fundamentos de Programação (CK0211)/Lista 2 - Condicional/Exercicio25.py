@@ -1,6 +1,5 @@
-'''Uma empresa decidiu dar uma gratificação de Natal a seus funcionários, baseada no número de horas extras e no número de horas que o funcionário faltou ao trabalho. O valor do prêmio é obtido pela consulta à tabela que se segue, na qual:
-H = número de horas extras – (2/3 * (número de horas falta))
-H (MINUTOS)     |PRÊMIO (R$)
+'''*A company decided to give a Christmas bonus to its employees based on the number of overtime hours and the number of hours the employee missed work. The prize value is obtained by consulting the following table, where: H = number of overtime hours – (2/3 * (number of hours absent))
+H (MINUTES)     |PRIZE  (R$)
 > = 2.400       |500,00
 1.800 e 2.400   |400,00
 1.200 e 1.800   |300,00

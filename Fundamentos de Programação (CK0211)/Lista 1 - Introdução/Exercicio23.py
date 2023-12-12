@@ -1,18 +1,18 @@
-'''Faça um programa que receba a medida de dois ângulos de um triângulo, calcule e mostre a medida do terceiro ângulo. Sabe-se que a soma dos ângulos de um triângulo é 180 graus.'''
+'''Create a program that receives the measure of two angles of a triangle, calculates, and shows the measure of the third angle. It is known that the sum of the angles of a triangle is 180 degrees.'''
 
-#minha assinatura 
+# My signature
 print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
 
-def calcular_terceiro_angulo(angulo1, angulo2):
-    angulo3 = 180 - angulo1 - angulo2
-    return angulo3
+def calculate_third_angle(angle1, angle2):
+    angle3 = 180 - angle1 - angle2
+    return angle3
 
-# Receber as medidas dos dois ângulos
-angulo1 = float(input("Digite a medida do primeiro ângulo do triângulo: "))
-angulo2 = float(input("Digite a medida do segundo ângulo do triângulo: "))
+# Receive the measures of the two angles
+angle1 = float(input("Enter the measure of the first angle of the triangle: "))
+angle2 = float(input("Enter the measure of the second angle of the triangle: "))
 
-# Calcular a medida do terceiro ângulo
-angulo3 = calcular_terceiro_angulo(angulo1, angulo2)
+# Calculate the measure of the third angle
+angle3 = calculate_third_angle(angle1, angle2)
 
-# Exibir o resultado
-print(f"A medida do terceiro ângulo do triângulo é: {angulo3:.2f} graus.")
+# Display the result
+print(f"The measure of the third angle of the triangle is: {angle3:.2f} degrees.")

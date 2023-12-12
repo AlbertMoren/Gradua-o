@@ -1,11 +1,12 @@
-'''Faça um programa que receba:
-■ o código do produto comprado; e
-■ a quantidade comprada do produto.
-Calcule e mostre:
-■ o preço unitário do produto comprado, seguindo a Tabela I;
-■ o preço total da nota;
-■ o valor do desconto, seguindo a Tabela II e aplicado sobre o preço total da nota; e
-■ o preço final da nota depois do desconto'''
+'''Create a program that receives:
+■ the code of the purchased product; and
+■ the quantity purchased of the product.
+Calculate and show:
+■ the unit price of the purchased product, following Table I;
+■ the total price of the invoice;
+■ the discount amount, following Table II, applied to the total price of the invoice; and
+■ the final price of the invoice after the discount.
+'''
 
 #minha assinatura 
 print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")

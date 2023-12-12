@@ -1,12 +1,15 @@
-'''Faça um programa que receba dois números e mostre o menor'''
+'''Create a program that receives two numbers and displays the smallest one'''
 
-#minha assinatura 
+# My signature 
 print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
 
-n1,n2 = input("Insira as 2 números: ").split(" ")
+# Receive the two numbers
+n1, n2 = input("Enter 2 numbers: ").split(" ")
 n1 = int(n1)
 n2 = int(n2)
-if(n1 >= n2):
-    print(f"o número {n2} é  menor")
+
+# Compare the numbers and display the smallest one
+if n1 >= n2:
+    print(f"The number {n2} is the smallest.")
 else:
-    print(f"O número {n1} é o menor")
+    print(f"The number {n1} is the smallest.")

@@ -1,15 +1,23 @@
-'''O preço ao consumidor de um carro novo é a soma do custo de fábrica com a porcentagem do distribuidor e dos impostos, ambos aplicados ao custo de fábrica. As porcentagens encontram-se na tabela a seguir. Faça um programa que receba o custo de fábrica de um carro e mostre o preço ao consumidor. CUSTO DE FÁBRICA % DO DISTRIBUIDOR % dos IMPOSTOS
-Até R$ 12.000,00 5 isento
-Entre R$ 12.000,00 e R$ 25.000,00 10 15
-Acima de R$ 25.000,00 15 20'''
+'''The consumer price of a new car is the sum of the factory cost with the distributor and taxes percentages, both applied to the factory cost. The percentages are in the following table. Create a program that receives the factory cost of a car and displays the consumer price.
+FACTORY COST (R$)  DISTRIBUTOR (%) TAXES (%)
+Up to R$12,000.00       5               Exempt
+Between R$12,000.00 and R$25,000.00    10              15
+Above R$25,000.00       15              20
+'''
 
-#minha assinatura 
+# My signature 
 print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
 
-valor = float(input("Valor do carro: R$"))
-if(valor < 12.000):
-    print(f"valor do carro séra de {(valor + (valor*0.05))}")
-elif(valor := 12.000 and valor <25.000):
-    print(f"valor do carro séra de {(valor + (valor*0.1)+ (valor*0.15))}")
+# Receive the factory cost
+factory_cost = float(input("Enter the car's factory cost: R$"))
+
+# Check the factory cost range and calculate the consumer price accordingly
+if factory_cost <= 12000:
+    consumer_price = factory_cost + (factory_cost * 0.05)
+elif 12000 < factory_cost <= 25000:
+    consumer_price = factory_cost + (factory_cost * 0.1) + (factory_cost * 0.15)
 else:
-    print(f"valor do carro séra de {(valor + (valor*0.15)+ (valor*0.2))}")
+    consumer_price = factory_cost + (factory_cost * 0.15) + (factory_cost * 0.2)
+
+# Display the result
+print(f"The consumer price of the car is R${consumer_price:.2f}")

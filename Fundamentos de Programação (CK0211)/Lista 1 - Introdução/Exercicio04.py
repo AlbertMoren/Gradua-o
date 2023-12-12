@@ -1,9 +1,12 @@
-'''Faça um programa que receba duas notas, calcule e mostre a média ponderada dessas notas, considerando peso 2 para a primeira e peso 3 para a segunda.'''
+# Program that receives two grades, calculates, and displays the weighted average of these grades, considering a weight of 2 for the first and 3 for the second.
 
-#minha assinatura 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+# My signature
+print("=+" * 28, "\n", " " * 20, "ALB System", "\n", "=+" * 28, "\n")
 
-x = float(input("Insira um número: "))
-y = float(input("Insira um número: "))
-media = ((x*2)+(y*3))/2
-print(media)
+# Input two grades
+x = float(input("Enter a grade: "))
+y = float(input("Enter another grade: "))
+
+# Calculate and print the weighted average
+weighted_average = ((x * 2) + (y * 3)) / 5
+print(weighted_average)

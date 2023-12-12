@@ -1,6 +1,6 @@
-'''Faça um programa que receba a altura e o sexo de uma pessoa e calcule e mostre seu peso ideal, utilizando as seguintes fórmulas (onde h é a altura):
-■ para homens: (72.7 * h) – 58.
-■ para mulheres: (62.1 * h) – 44.7.'''
+'''Create a program that receives a person's height and gender, and calculates and displays their ideal weight using the following formulas (where h is the height):
+■ For men: (72.7 * h) - 58.
+■ For women: (62.1 * h) - 44.7.'''
 
 #minha assinatura 
 print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")

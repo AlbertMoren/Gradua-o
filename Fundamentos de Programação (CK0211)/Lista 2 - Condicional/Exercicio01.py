@@ -1,15 +1,20 @@
-'''Faça um programa que receba quatro notas de um aluno, calcule e mostre a média aritmética das notas e a mensagem de aprovado ou reprovado, considerando para aprovação média 7.'''
+'''Create a program that receives four grades from a student, calculates and displays the arithmetic average of the grades, and the message of approved or failed, considering 7 as the passing grade.'''
 
-#minha assinatura 
+# My signature 
 print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
 
-n1,n2,n3,n4 = input("Insira as 4 notas do aluno: ").split(" ")
+# Receive the four grades
+n1, n2, n3, n4 = input("Enter the student's 4 grades: ").split(" ")
 n1 = float(n1)
 n2 = float(n2)
 n3 = float(n3)
 n4 = float(n4)
-media = (n1+n2+n3+n4)/4
-if(media >= 7):
-    print("Aluno aprovado")
+
+# Calculate the average
+average = (n1 + n2 + n3 + n4) / 4
+
+# Check if the student is approved or failed
+if average >= 7:
+    print("Student approved")
 else:
-    print("Aluno reprovado")
+    print("Student failed")

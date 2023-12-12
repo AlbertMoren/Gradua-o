@@ -1,8 +1,11 @@
-'''Faça um programa que receba dois números, calcule e mostre a divisão do primeiro número pelo segundo. Sabe-se que o segundo número não pode ser zero, portanto, não é necessário se preocupar com validações.'''
+# Program that receives two numbers, calculates, and displays the division of the first number by the second. It is known that the second number cannot be zero, so there is no need to worry about validations.
 
-#minha assinatura 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+# My signature
+print("=+" * 28, "\n", " " * 20, "ALB System", "\n", "=+" * 28, "\n")
 
-x = float(input("Insira um número: "))
-y = float(input("Insira um número: "))
-print(x/y)
+# Input two numbers
+x = float(input("Enter a number: "))
+y = float(input("Enter another number: "))
+
+# Calculate and print the division
+print(x / y)

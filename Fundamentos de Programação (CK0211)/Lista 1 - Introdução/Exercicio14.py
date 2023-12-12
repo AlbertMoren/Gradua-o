@@ -1,21 +1,24 @@
-'''Faça um programa que receba o ano de nascimento de uma pessoa e o ano atual, calcule e mostre:
-a) a idade dessa pessoa em anos;
-b) a idade dessa pessoa em meses;
-c) a idade dessa pessoa em dias;
-d) a idade dessa pessoa em semanas'''
+# A program that receives a person's year of birth and the current year, calculates and displays:
+# a) the person's age in years;
+# b) the person's age in months;
+# c) the person's age in days;
+# d) the person's age in weeks.
 
-#minha assinatura 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+# My signature
+print("=+" * 28, "\n", " " * 20, "ALB System", "\n", "=+" * 28, "\n")
 
-anoNasc = int(input("Qual seu ano de nascimento? "))
-anoAtual = int(input("Qual o ano atual? "))
+# Input the year of birth and the current year
+year_of_birth = int(input("What is your year of birth? "))
+current_year = int(input("What is the current year? "))
 
-anos = anoAtual - anoNasc
-mes = anos*12
-dias = anos*365
-semanas = anos*52
+# Calculate age in years, months, days, and weeks
+years = current_year - year_of_birth
+months = years * 12
+days = years * 365
+weeks = years * 52
 
-print(f"Voce tem {anos} de idade em anos")
-print(f"Voce tem {mes} de idade em meses")
-print(f"Voce tem {dias} de idade em dias")
-print(f"Voce tem {semanas} de idade em semanas")
+# Display the results
+print(f"You are {years} years old.")
+print(f"You are {months} months old.")
+print(f"You are {days} days old.")
+print(f"You are {weeks} weeks old.")

@@ -1,17 +1,17 @@
-'''Faça um programa que receba o raio, calcule e mostre:
-a) o comprimento de uma esfera; sabe-se que C = 2 * pi R;
-b) a área de uma esfera; sabe-se que A = pi R2;
-c) o volume de uma esfera; sabe-se que V = ¾ * pi R3'''
+'''Create a program that receives the radius, calculates, and shows:
+a) the circumference of a sphere; where C = 2 * pi R;
+b) the area of a sphere; where A = pi R2;
+c) the volume of a sphere; where V = ¾ * pi R3'''
 
 import math
 
-#minha assinatura 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+# My signature
+print("=+"*28, "\n", " "*20, "ALB System", "\n", "=+"*28, "\n")
 
-raio = float(input("Informe o raio: "))
+radius = float(input("Enter the radius: "))
 
-a = 2 * math.pi * raio
-b = math.pi * pow(raio,2)
-c = (3/4) * math.pi * pow(raio,3)
+circumference = 2 * math.pi * radius
+area = math.pi * pow(radius, 2)
+volume = (3/4) * math.pi * pow(radius, 3)
 
-print(f" comprimento = {a:.2f}, a área = {b:.2f} e o volume = {c:.2f}")
+print(f" Circumference = {circumference:.2f}, Area = {area:.2f}, and Volume = {volume:.2f}")
