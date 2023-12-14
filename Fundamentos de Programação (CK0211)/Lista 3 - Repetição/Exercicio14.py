@@ -1,26 +1,27 @@
-'''Cada espectador de um cinema respondeu a um questionário no qual constava sua idade e sua opinião em relação ao filme: ótimo — 3; bom — 2; regular — 1. Faça um programa que receba a idade e a opinião de quinze espectadores, calcule e mostre:
-■ a média das idades das pessoas que responderam ótimo;
-■ a quantidade de pessoas que responderam regular; e
-■ a percentagem de pessoas que responderam bom, entre todos os espectadores analisados.'''
+'''Each moviegoer answered a questionnaire that included their age and their opinion about the movie: excellent — 3; good — 2; regular — 1. Create a program that receives the age and opinion of fifteen moviegoers, calculates and shows:
+■ the average age of people who answered excellent;
+■ the number of people who answered regular; and
+■ the percentage of people who answered good, among all the analyzed moviegoers.'''
 
-#minha assinatura 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+# My signature
+print("=+"*28, "\n", " "*20, "ALB System", "\n", "=+"*28, "\n")
 
-counterOpnion = 0
+counterOpinion = 0
 ages = 0
-counterNormal = 0
+counterRegular = 0
 counterGood = 0
+
 for i in range(15):
     age = int(input("Enter age: "))
-    opnion = float(input("Enter your opnion[1/2/3]: "))
-    if opnion == 3:
-        counterOpnion+=1
-        ages+= age
-    if opnion == 1:
-        counterNormal+=1
-    if opnion == 2:
-        counterGood+=1
-        
-print(f"the average age of people who answered great is {ages/counterOpnion:.2f}")
-print(f"the number of people who answered regular is {counterNormal}")
-print(f"the percentage of people who answered good is {counterGood/15:.2f}")
+    opinion = float(input("Enter your opinion [1/2/3]: "))
+    if opinion == 3:
+        counterOpinion += 1
+        ages += age
+    if opinion == 1:
+        counterRegular += 1
+    if opinion == 2:
+        counterGood += 1
+
+print(f"The average age of people who answered excellent is {ages/counterOpinion:.2f}")
+print(f"The number of people who answered regular is {counterRegular}")
+print(f"The percentage of people who answered good is {counterGood/15*100:.2f}%")

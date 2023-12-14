@@ -1,7 +1,7 @@
-'''Faça um programa que mostre as tabuadas dos números de 1 a 10.'''
+'''Create a program that shows the multiplication tables for numbers from 1 to 10'''
 
-#minha assinatura 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n") 
+# My signature
+print("=+"*28, "\n", " "*20, "ALB System", "\n", "=+"*28, "\n") 
 
 for i in range(11):
     print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")

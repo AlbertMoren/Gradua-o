@@ -1,21 +1,24 @@
-'''Faça um programa que receba dez números, calcule e mostre a soma dos números pares e a soma dos números primos.'''
+'''Create a program that receives ten numbers, calculates and shows the sum of the even numbers and the sum of the prime numbers.'''
 
-#minha assinatura 
+# My signature
 print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
 
-pares = 0
-cont = 0
-pimos = 0
-for i in range(10):
-    numero = int(input("Número? "))
-    if(numero%2==0):
-        pares+=numero
-    for j in range(numero):
-        cont = 0
-        if(numero == 1):
-            cont = 2
-        elif(numero%j==0):
-            cont+=1
-    if(cont>2):
-       pimos += numero
-print(f"A soma dos pars é {pares} a soma dos primos é {pimos}")
+sum_even = 0
+sum_primes = 0
+
+def is_prime(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+for _ in range(10):
+    number = int(input("Number? "))
+    if number % 2 == 0:
+        sum_even += number
+    if is_prime(number):
+        sum_primes += number
+
+print(f"The sum of even numbers is {sum_even} and the sum of prime numbers is {sum_primes}")

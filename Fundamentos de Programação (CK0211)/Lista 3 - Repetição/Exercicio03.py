@@ -1,33 +1,34 @@
-'''Faça um programa que receba a idade de oito pessoas, calcule e mostre:
-a) a quantidade de pessoas em cada faixa etária;
-b) a porcentagem de pessoas na primeira faixa etária com relação ao total de pessoas.
-c) a porcentagem de pessoas na última faixa etária com relação ao total de pessoas
-FAIXA ETÁRIA IDADE
-1a Até 15 anos
-2a De 16 a 30 anos
-3a De 31 a 45 anos
-4a De 46 a 60 anos
-5a Acima de 60 anos'''
+'''Create a program that receives the age of eight people, calculates and shows:
+a) the quantity of people in each age group;
+b) the percentage of people in the first age group relative to the total number of people.
+c) the percentage of people in the last age group relative to the total number of people.
+AGE GROUP       AGE
+1st Up to 15 years
+2nd From 16 to 30 years
+3rd From 31 to 45 years
+4th From 46 to 60 years
+5th Above 60 years'''
 
-#minha assinatura 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+# My signature
+print("=+"*28, "\n", " "*20, "ALB System", "\n", "=+"*28, "\n")
 
-faixa1 = 0
-faixa2  = 0
-faixa3  = 0
-faixa4  = 0
-faixa5 = 0
+group1 = 0
+group2 = 0
+group3 = 0
+group4 = 0
+group5 = 0
+
 for i in range(8):
-    idade = int(input("Idade: "))
-    if(idade <= 15):
-        faixa1 += 1
-    elif(idade>15 and idade<=30):
-        faixa2+=1
-    elif(idade>30 and idade<=45):
-        faixa3+=1
-    elif(idade>45 and idade<=60):
-        faixa4+=1
+    age = int(input("Age: "))
+    if age <= 15:
+        group1 += 1
+    elif 15 < age <= 30:
+        group2 += 1
+    elif 30 < age <= 45:
+        group3 += 1
+    elif 45 < age <= 60:
+        group4 += 1
     else:
-        faixa5+=1
-print(f"Existe {(faixa1/8)*100:.0f}% da faixa1\nExiste {(faixa5/8)*100:.0f}")
-    
+        group5 += 1
+
+print(f"There are {(group1/8)*100:.0f}% in group 1\nThere are {(group5/8)*100:.0f}% in group 5")

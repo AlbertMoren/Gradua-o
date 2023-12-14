@@ -1,32 +1,33 @@
-'''Uma empresa fez uma pesquisa de mercado para saber se as pessoas gostaram ou não de um novo produto lançado. Para isso, forneceu o sexo do entrevistado e sua resposta (S — sim; ou N — não). Sabe-se que foram entrevistadas dez pessoas. Faça um programa que calcule e mostre:
-■ o número de pessoas que responderam sim;
-■ o número de pessoas que responderam não;
-■ o número de mulheres que responderam sim; e
-■ a percentagem de homens que responderam não, entre todos os homens analisados.'''
+'''A company conducted a market survey to find out whether people liked a new product or not. For this, it provided the gender of the interviewee and their response (S — yes; or N — no). It is known that ten people were interviewed. Create a program that calculates and shows:
+■ the number of people who answered yes;
+■ the number of people who answered no;
+■ the number of women who answered yes; and
+■ the percentage of men who answered no, among all the men analyzed.'''
 
-#minha assinatura 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+# My signature
+print("=+"*28, "\n", " "*20, "ALB System", "\n", "=+"*28, "\n")
 
-opnionYes = 0
-opnionNo = 0
-opnionWomans = 0
-opnionMen = 0
-mens = 0
+opinionYes = 0
+opinionNo = 0
+opinionWomen = 0
+opinionMen = 0
+menCount = 0
+
 for i in range(10):
-    sex = input("Enter your gender[M/F]: ")
-    opnion = input("Your interest[S/N]: ")
-    if opnion == 'S':
-        opnionYes += 1
-        if sex == 'F':
-            opnionWomans += 1
-    elif opnion == 'N':
-        opnionNo += 1
-        if sex == 'M':
-            opnionMen += 1
-    if sex == 'M':
-        mens+=1
+    gender = input("Enter your gender [M/F]: ")
+    opinion = input("Your interest [S/N]: ")
+    if opinion == 'S':
+        opinionYes += 1
+        if gender == 'F':
+            opinionWomen += 1
+    elif opinion == 'N':
+        opinionNo += 1
+        if gender == 'M':
+            opinionMen += 1
+    if gender == 'M':
+        menCount += 1
 
-print(f"the number of people who answered yes is {opnionYes}")
-print(f"the number of people who answered no is {opnionNo}")
-print(f"the number of women who answered yes is {opnionWomans}")
-print(f"the percentage of men who answered no is {mens/opnionMen:.2f}")
+print(f"The number of people who answered yes is {opinionYes}")
+print(f"The number of people who answered no is {opinionNo}")
+print(f"The number of women who answered yes is {opinionWomen}")
+print(f"The percentage of men who answered no is {opinionMen/menCount*100:.2f}%")

@@ -1,23 +1,33 @@
-''' Faça um programa que preencha um vetor com sete números inteiros, calcule e mostre:
-■ os números múltiplos de 2;
-■ os números múltiplos de 3;
-■ os números múltiplos de 2 e de 3'''
+# Program Description:
+# Create a program that fills an array with seven integer numbers, calculates, and shows:
+# ■ numbers multiples of 2;
+# ■ numbers multiples of 3;
+# ■ numbers multiples of both 2 and 3.
 
-#minha assinatura 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+# My signature
+print("=+" * 28, "\n", " " * 20, "ALB System", "\n", "=+" * 28, "\n")
 
-vetor_geral = []
-vetor_2 =[]
-vetor_3 = []
-vetor_2e3 = []
-for i in range(6):
-    numero = int(input("número: "))
-    vetor_geral.append(numero)
-for i in range(len(vetor_geral)):
-    if(vetor_geral[i]%2==0 and vetor_geral[i]%3==0):
-        vetor_2e3.append(vetor_geral[i])
-    elif(vetor_geral[i]%2==0):
-        vetor_2.append(vetor_geral[i])
-    elif(vetor_geral[i]%3==0):
-        vetor_3.append(vetor_geral[i])
-print(f"Números múltiplos por 2 são {vetor_2}\nNúmeros múltiplos por 3 são {vetor_3}\nNúmeros Mutiplos por 2 e 3 são {vetor_2e3}")
+# Initialize arrays
+general_array = []
+multiple_of_2 = []
+multiple_of_3 = []
+multiple_of_2_and_3 = []
+
+# Fill the array with user input
+for i in range(7):
+    number = int(input("Enter a number: "))
+    general_array.append(number)
+
+# Separate numbers into different categories
+for i in range(len(general_array)):
+    if general_array[i] % 2 == 0 and general_array[i] % 3 == 0:
+        multiple_of_2_and_3.append(general_array[i])
+    elif general_array[i] % 2 == 0:
+        multiple_of_2.append(general_array[i])
+    elif general_array[i] % 3 == 0:
+        multiple_of_3.append(general_array[i])
+
+# Display results
+print(f"Numbers multiples of 2 are {multiple_of_2}")
+print(f"Numbers multiples of 3 are {multiple_of_3}")
+print(f"Numbers multiples of both 2 and 3 are {multiple_of_2_and_3}")

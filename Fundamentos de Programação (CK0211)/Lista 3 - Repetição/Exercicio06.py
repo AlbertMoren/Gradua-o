@@ -1,23 +1,30 @@
-'''Uma loja utiliza o código V para transação à vista e P para transação a prazo. Faça um programa que receba o código e o valor de quinze transações, calcule e mostre:
-■ o valor total das compras à vista;
-■ o valor total das compras a prazo;
-■ o valor total das compras efetuadas; e
-■ o valor da primeira prestação das compras a prazo juntas, sabendo-se que serão pagas em três vezes.'''
+'''A store uses code V for cash transactions and P for credit transactions. Create a program that receives the code and the value of fifteen transactions, calculates and shows:
+■ the total value of cash purchases;
+■ the total value of credit purchases;
+■ the overall total value of purchases; and
+■ the value of the first installment of all credit purchases, knowing that they will be paid in three installments.'''
 
-#minha assinatura 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n") 
+# My signature
+print("=+"*28, "\n", " "*20, "ALB System", "\n", "=+"*28, "\n") 
 
-total_avista = 0
-total_aprazo = 0
-total_geral = 0
-total_dos_prazos = 0
-for i in range(3):
-    tipo = input("Tipo de transação: V ou P: ")
-    valor = float(input("Qual o valor da compra? "))
-    if(tipo == 'V'):
-        total_avista+=valor
-    else:
-        total_aprazo+=valor
-        total_dos_prazos+=(valor/3)
-    total_geral+= valor
-print(f"Total de compra a vista é R${total_avista:.2f}\nTotal de compra a prazo é R${total_aprazo:.2f}\nTotal de geral é de R${total_geral:.2f}\nTotal das primeiras parcelas de cada compra a prazo é de R${total_dos_prazos:.2f}")
+total_cash = 0
+total_credit = 0
+total_general = 0
+total_credit_installments = 0
+
+for i in range(15):
+    transaction_type = input("Transaction type (V for cash, P for credit): ")
+    value = float(input("Enter the transaction value: "))
+
+    if transaction_type == 'V':
+        total_cash += value
+    elif transaction_type == 'P':
+        total_credit += value
+        total_credit_installments += value / 3
+
+    total_general += value
+
+print(f"Total value of cash transactions: ${total_cash:.2f}")
+print(f"Total value of credit transactions: ${total_credit:.2f}")
+print(f"Overall total value of transactions: ${total_general:.2f}")
+print(f"Total value of the first installment of all credit transactions: ${total_credit_installments:.2f}")
