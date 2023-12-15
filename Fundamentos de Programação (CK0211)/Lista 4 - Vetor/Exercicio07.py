@@ -1,14 +1,18 @@
-'''Faça um programa que preencha um vetor com dez números reais, calcule e mostre a quantidade de números negativos e a soma dos números positivos desse vetor'''
+# minha assinatura
+print("=+" * 28, "\n", " " * 20, "ALB System", "\n", "=+" * 28, "\n")
 
-#minha assinatura 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+vetor = [0] * 10
+cont_negativos = 0
+soma_positivos = 0
 
-vetor = [0]*10
-cont = 0
-soma = 0
+# Input for each element in the vector
 for i in range(len(vetor)):
-    vetor[i] = int(input("Insira número negativos ou positivos: "))
+    vetor[i] = float(input("Insert a real number (positive or negative): "))
     if vetor[i] < 0:
-        cont += 1
+        cont_negativos += 1
     else:
-        soma+=vetor[i]
+        soma_positivos += vetor[i]
+
+# Displaying the results
+print(f"Number of negative numbers: {cont_negativos}")
+print(f"Sum of positive numbers: {soma_positivos}")

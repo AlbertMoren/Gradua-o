@@ -1,31 +1,32 @@
-''' Faça um programa que preencha um vetor com dez números inteiros e um segundo vetor com cinco números inteiros, calcule e mostre dois vetores resultantes. O primeiro vetor resultante será composto pela soma de cada número par do primeiro vetor somado a todos os números do segundo vetor. O segundo vetor resultante será composto pela quantidade de divisores que cada número ímpar do primeiro vetor tem no segundo vetor'''
+# Fill a vector with ten integers and a second vector with five integers, calculate and show two resulting vectors.
+# The first resulting vector will be composed of the sum of each even number from the first vector added to all numbers in the second vector.
+# The second resulting vector will be composed of the number of divisors that each odd number from the first vector has in the second vector.
 
-#minha assinatura 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+# My signature
+print("=+"*28, "\n", " "*20, "ALB System", "\n", "=+"*28, "\n")
 
-vetor1 = [0]*10
-vetor2 = [0]*5
-vetor_result1 = []
-vetor_result2 = []
-cont = 0
+vector1 = [0]*10
+vector2 = [0]*5
+result_vector1 = []
+result_vector2 = []
+divisor_count = 0
 
-print("Preencher vetor 1")
-for i in range(len(vetor1)):
-    vetor1[i] = int(input(f"elemento {i+1}º: "))
+print("Fill vector 1")
+for i in range(len(vector1)):
+    vector1[i] = int(input(f"Element {i+1}º: "))
 
-print("\nPreencher vetor 2")
-for i in range(len(vetor2)):
-    vetor2[i] = int(input(f"elemento {i+1}º: "))
+print("\nFill vector 2")
+for i in range(len(vector2)):
+    vector2[i] = int(input(f"Element {i+1}º: "))
 
-
-for i in range(len(vetor1)):
-    if vetor1[i] % 2 == 0:
-        vetor_result1.append( vetor1[i] + sum(vetor2))
+for i in range(len(vector1)):
+    if vector1[i] % 2 == 0:
+        result_vector1.append(vector1[i] + sum(vector2))
     else:
-        cont = 0
-        for j in range(len(vetor2)):
-            if vetor1[i] % vetor2[j] == 0:
-                cont+= 1
-        vetor_result2.append(cont)
+        divisor_count = 0
+        for j in range(len(vector2)):
+            if vector1[i] % vector2[j] == 0:
+                divisor_count += 1
+        result_vector2.append(divisor_count)
 
-print(f"{vetor_result1}\n{vetor_result2}")
+print(f"{result_vector1}\n{result_vector2}")

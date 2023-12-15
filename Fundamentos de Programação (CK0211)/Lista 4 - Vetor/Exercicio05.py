@@ -1,36 +1,28 @@
-'''Uma escola deseja saber se existem alunos cursando, simultaneamente, as disciplinas Lógica e Linguagem de Programação. Coloque os números das matrículas dos alunos que cursam Lógica em um vetor, quinze alunos. Coloque os números das matrículas dos alunos que cursam Linguagem de Programação em outro vetor, dez alunos. Mostre o número das matrículas que aparecem nos dois vetores.'''
+# Program Description:
+# A school wants to know if there are students simultaneously taking Logic and Programming Language courses.
+# Place the enrollment numbers of students taking Logic in one vector (15 students).
+# Place the enrollment numbers of students taking Programming Language in another vector (10 students).
+# Show the enrollment numbers that appear in both vectors.
 
-#minha assinatura 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+# My signature
+print("=+" * 28, "\n", " " * 20, "ALB System", "\n", "=+" * 28, "\n")
 
-logica = [0]*15
-linguagen = [0]*10
-intersec = []
-for i in range(len(logica)):
-    matrcua = int(input(f"Matricula do aluno {i+1}° de logica  "))
-    if matrcua in logica:
-        flag = 1
-        while(flag == 1):
-            matrcua = int(input("Valor já existe em nosso banco, insira um válido"))
-            if matrcua not in logica:
-                flag = 0
-    logica.append(matrcua)
-    if 0 in logica:
-        logica.remove(0)
-for i in range(len(linguagen)):
-    matrcua = int(input(f"Matricula do aluno {i+1}° de Linguagem  "))
-    if matrcua in linguagen:
-        flag = 1
-        while(flag == 1):
-            matrcua = int(input("Valor já existe em nosso banco, insira um válido: "))
-            if matrcua not in linguagen:
-                flag = 0
-    linguagen.append(matrcua)
-    if 0 in logica:
-        logica.remove(0)
-for i in logica:
-    for j in linguagen:
-        if i == j:
-            intersec.append(i)
-print(intersec)
-    
+# Initialize vectors
+logic_students = set()
+language_students = set()
+
+# Input for Logic students
+for i in range(15):
+    matricula = int(input(f"Enter the enrollment number of the student {i + 1} taking Logic: "))
+    logic_students.add(matricula)
+
+# Input for Language students
+for i in range(10):
+    matricula = int(input(f"Enter the enrollment number of the student {i + 1} taking Programming Language: "))
+    language_students.add(matricula)
+
+# Find the intersection
+common_students = logic_students.intersection(language_students)
+
+# Display the common enrollment numbers
+print("Enrollment numbers that appear in both Logic and Programming Language courses:", common_students)

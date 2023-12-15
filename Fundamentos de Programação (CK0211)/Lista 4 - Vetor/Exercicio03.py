@@ -1,48 +1,44 @@
-'''Faça um programa para controlar o estoque de mercadorias de uma empresa. Inicialmente, o programa deverá preencher dois vetores com dez posições cada, onde o primeiro corresponde ao código do produto e o
-segundo, ao total desse produto em estoque. Logo após, o programa deverá ler um conjunto indeterminado
-de dados contendo o código de um cliente e o código do produto que ele deseja comprar, juntamente com a
-quantidade. Código do cliente igual a zero indica fim do programa. O programa deverá verificar:
-■ se o código do produto solicitado existe. Se existir, tentar atender ao pedido; caso contrário, exibir
-mensagem Código inexistente;
-■ cada pedido feito por um cliente só pode ser atendido integralmente. Caso isso não seja possível,
-escrever a mensagem Não temos estoque suficiente dessa mercadoria. Se puder atendê-lo, escrever
-a mensagem Pedido atendido. Obrigado e volte sempre;
-■ efetuar a atualização do estoque somente se o pedido for atendido integralmente;
-■ no final do programa, escrever os códigos dos produtos com seus respectivos estoques já atualizados.'''
+# Program Description:
+# Create a program to control the stock of goods in a company. Initially, the program should fill two arrays with ten positions each, where the first corresponds to the product code, and the second to the total of that product in stock. Soon after, the program should read an indeterminate set of data containing the customer's code and the product code they want to buy, along with the quantity. A customer code equal to zero indicates the end of the program. The program should check:
+# ■ if the requested product code exists. If it does, try to fulfill the request; otherwise, display the message "Code does not exist";
+# ■ each order made by a customer can only be fully met. If this is not possible, write the message "We do not have enough stock of this product." If you can attend to it, write the message "Order fulfilled. Thank you and come back often.";
+# ■ update the stock only if the order is fully met;
+# ■ at the end of the program, write the product codes with their respective updated stocks.
 
-#minha assinatura 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+# My signature
+print("=+" * 28, "\n", " " * 20, "ALB System", "\n", "=+" * 28, "\n")
 
-codigo = []
-qtd = []
+# Initialize arrays
+codes = []
+quantities = []
+
+# Fill the arrays with initial stock data
 for i in range(3):
-    cod,qt = input("Codigo e quantidade do produto: ").split(" ")
-    cod = int(cod)
-    qt = int(qt)
-    codigo.append(cod)
-    qtd.append(qt)
-cliente = 1
-while(cliente != 0):
-    cliente = int(input("Código cliente: "))
-    if(cliente == 0):
+    code, qt = map(int, input("Product code and quantity: ").split())
+    codes.append(code)
+    quantities.append(qt)
+
+# Process customer orders
+customer = 1
+while customer != 0:
+    customer = int(input("Customer code: "))
+    if customer == 0:
         break
-    desejada = int(input("Codigo do produto desejada: "))
-    if desejada not in codigo:                                          #trecho responsável por validar a entrada do usúario
-        flag = 1
-        while(flag == 1):
-            print("Produto não existe, insira um válido")
-            desejada = int(input("Codigo do produto desejada: "))
-            if desejada in codigo:
-                flag = 0                                                #vai até aqui
-    qt_desejada = int(input("Qual a quantidade desejada? "))             #Trecho respónsavel por achar o produto e interar o valor dele
-    for i in range(len(codigo)):
-        if(desejada == codigo[i]):
-            if(qtd[i] < qt_desejada):
-                print("Não temos estoque suficiente dessa mercadoria")
-            else:
-                qtd[i] = qtd[i] - qt_desejada
-                print("Pedido atendido. Obrigado e volte sempre")
-for i in range(3):
-    print(f"Codigo {codigo[i]} | quantidade {qtd[i]}")
+    desired_code = int(input("Desired product code: "))
+    if desired_code not in codes:
+        while desired_code not in codes:
+            print("Product does not exist, please enter a valid one.")
+            desired_code = int(input("Desired product code: "))
 
-    
+    desired_quantity = int(input("Desired quantity: "))
+    for i in range(len(codes)):
+        if desired_code == codes[i]:
+            if quantities[i] < desired_quantity:
+                print("We do not have enough stock of this product.")
+            else:
+                quantities[i] -= desired_quantity
+                print("Order fulfilled. Thank you and come back often.")
+
+# Display updated stocks
+for i in range(3):
+    print(f"Code {codes[i]} | Quantity {quantities[i]}")

@@ -1,23 +1,27 @@
-'''Faça um programa que preencha um vetor com quinze elementos inteiros e verifique a existência de elementos
-iguais a 30, mostrando as posições em que apareceram.'''
+# Program Description:
+# Create a program that fills a vector with fifteen integer elements and checks for the existence of elements equal to 30, showing the positions where they appeared.
 
-#minha assinatura 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+# My signature
+print("=+" * 28, "\n", " " * 20, "ALB System", "\n", "=+" * 28, "\n")
 
-
-lista = [0]*5
+# Initialize list and positions
+lista = []
 posicoes = []
+
+# Fill the list with fifteen elements
+for i in range(15):
+    valor = int(input("Enter a value: "))
+    lista.append(valor)
+
+# Check for positions with element equal to 30
 for i in range(len(lista)):
-    valor = int(input("Só vá inserindo valores: "))
-    lista.insert(i,valor)
-    if 0 in lista:
-       lista.remove(0)                                  #Remove os 0 do vetor
-for i in range(len(lista)):
-    if(lista[i] == 30):
-        posicoes.append(i)
-if(len(posicoes) == 0):                                 #Impimi na tela caso tenha elemento 30 no vetor
-    print("Não nenhum valor 30 no vetor")
+    if lista[i] == 30:
+        posicoes.append(i + 1)
+
+# Display results
+if not posicoes:
+    print("No value equal to 30 in the list.")
 else:
-    print("Valores iguais a 30, estão nas posições",end="")
-    for i in posicoes:
-        print(f" {i+1}",end="")
+    print("Values equal to 30 are in positions:", end="")
+    for pos in posicoes:
+        print(f" {pos}", end="")
