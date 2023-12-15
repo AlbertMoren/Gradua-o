@@ -1,29 +1,31 @@
-'''Faça um programa que receba dois números e execute as operações listadas a seguir, de acordo com a escolha do usuário.
-ESCOLHA DO USUÁRIO     OPERAÇÃO
-1                   Média entre os números digitados
-2                   Diferença do maior pelo menor
-3                   Produto entre os números digitados
-4                   Divisão do primeiro pelo segundo'''
+'''Create a program that receives two numbers and performs the operations listed below, according to the user's choice.
+USER'S CHOICE    OPERATION
+1                Average of the entered numbers
+2                Difference of the greater from the smaller
+3                Product of the entered numbers
+4                Division of the first by the second'''
 
-#minha assinatura 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+# My signature 
+print("=+"*28, "\n", " " * 20, "ALB System", "\n", "=+"*28, "\n")
 
-n1,n2 = input("Digite dois números: ").split(" ")
+# Receive two numbers
+n1, n2 = input("Enter two numbers: ").split(" ")
 n1 = float(n1)
 n2 = float(n2)
-print("Qual operação deseja?\n1 - Média\n2 - diferença\n3 - Produto\n4 - divisão")
-escolha = int(input())
-if(escolha == 1):
-    print(f"A media é {(n1+n2)/2}")
-elif(escolha == 2):
-    if(n1 > n2):
-        print(f"A diferença é {n1-n2}")
+
+print("What operation do you want?\n1 - Average\n2 - Difference\n3 - Product\n4 - Division")
+choice = int(input())
+
+if choice == 1:
+    print(f"The average is {(n1 + n2) / 2}")
+elif choice == 2:
+    if n1 > n2:
+        print(f"The difference is {n1 - n2}")
     else:
-        print(f"A diferença é {n2-n1}")
-elif(escolha == 3):
-    print(f"O produto é {n1*n2}")
-elif(escolha == 4):
-    print(f"A divisão é {n1/n2}")
+        print(f"The difference is {n2 - n1}")
+elif choice == 3:
+    print(f"The product is {n1 * n2}")
+elif choice == 4:
+    print(f"The division is {n1 / n2}")
 else:
-    print("ERRO")
-    
+    print("ERROR")

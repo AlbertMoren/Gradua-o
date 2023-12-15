@@ -1,13 +1,11 @@
-'''Sabe-se que, para iluminar de maneira correta os cômodos de uma casa, para cada m2, deve-se usar 18 W
-de potência. Faça um programa que receba as duas dimensões de um cômodo (em metros), calcule e mostre
-a sua área (em m2) e a potência de iluminação que deverá ser utilizada.'''
+'''It is known that, to properly illuminate the rooms of a house, for each square meter, 18 W of power should be used. Create a program that receives the two dimensions of a room (in meters), calculates and shows its area (in m2), and the lighting power that should be used.'''
 
-#minha assinatura 
+# My signature
 print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
 
-largura = float(input("Insira o valor da largura: "))
-comprimento = float(input("Insira o valor da comprimento: "))
+width = float(input("Enter the width value: "))
+length = float(input("Enter the length value: "))
 
-area = largura * comprimento
+area = width * length
 
-print(f"Vai ser necessário {area * 18}w para esse comodo")
+print(f"{area * 18} W will be required for this room")

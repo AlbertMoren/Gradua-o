@@ -1,25 +1,34 @@
-'''Faça um programa que preencha um vetor com seis elementos numéricos inteiros. Calcule e mostre:
-■ todos os números pares;
-■ a quantidade de números pares;
-■ todos os números ímpares;
-■ a quantidade de números ímpares'''
+# Program Description:
+# Create a program that fills an array with six integer elements. Calculate and show:
+# ■ all even numbers;
+# ■ the quantity of even numbers;
+# ■ all odd numbers;
+# ■ the quantity of odd numbers.
 
-#minha assinatura 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+# My signature
+print("=+" * 28, "\n", " " * 20, "ALB System", "\n", "=+" * 28, "\n")
 
-vetor_geral = []
-vetor_par =[]
-cont_par = 0
-vetor_impar = []
-cont_impar = 0
+# Initialize arrays and counters
+general_array = []
+even_array = []
+even_count = 0
+odd_array = []
+odd_count = 0
+
+# Fill the array with user input
 for i in range(6):
-    numero = int(input("número: "))
-    vetor_geral.append(numero)
-for i in range(len(vetor_geral)):
-    if(vetor_geral[i]%2==0):
-        vetor_par.append(vetor_geral[i])
-        cont_par+=1
+    number = int(input("Enter a number: "))
+    general_array.append(number)
+
+# Separate even and odd numbers
+for i in range(len(general_array)):
+    if general_array[i] % 2 == 0:
+        even_array.append(general_array[i])
+        even_count += 1
     else:
-        vetor_impar.append(vetor_geral[i])
-        cont_impar+=1
-print(f"temos um total de {cont_par} pares, que sao {vetor_par}\nTemos um total de {cont_impar} ímpares, são eles {vetor_impar}")
+        odd_array.append(general_array[i])
+        odd_count += 1
+
+# Display results
+print(f"We have a total of {even_count} even numbers, which are {even_array}")
+print(f"We have a total of {odd_count} odd numbers, which are {odd_array}")

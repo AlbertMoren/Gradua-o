@@ -1,26 +1,27 @@
-'''Faça um programa que receba dez idades, pesos e alturas, calcule e mostre:
-■ a média das idades das dez pessoas;
-■ a quantidade de pessoas com peso superior a 90 kg e altura inferior a 1,50 metro; e
-■ a porcentagem de pessoas com idade entre 10 e 30 anos entre as pessoas que medem mais de
-1,90 m'''
+'''Create a program that receives ten ages, weights, and heights, calculates and shows:
+■ the average age of the ten people;
+■ the number of people weighing over 90 kg and measuring less than 1.50 meters; and
+■ the percentage of people aged between 10 and 30 among those who are over 1.90 meters tall.'''
 
-#minha assinatura 
+# My signature
 print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
 
-cont_idade = 0
-cont_alt = 0
-cont_geral = 0
+count_age = 0
+count_height = 0
+count_general = 0
+
 for i in range(10):
-    idade,alt,peso = input("Insira a idade, altura e peso em seguida: ").split(" ")
-    idade = int(idade)
-    alt = float(alt)
-    peso = float(peso)
-    cont_idade+=idade
-    if(peso>90 and alt<1.5):
-        cont_alt+=1
-    if(idade>10 and idade<30):
-        if(alt>1,90):
-            cont_geral+=1
-media = cont_idade/10
-print(f"{media:.2f} é a media das idades\n{cont_alt} é a qtd acima de 90kg\n{(cont_geral/10)*100:.0f}% de pessoas no 3º caso")
-    
+    age, height, weight = map(float, input("Enter age, height, and weight separated by space: ").split())
+    count_age += age
+
+    if weight > 90 and height < 1.5:
+        count_height += 1
+
+    if 10 < age < 30 and height > 1.90:
+        count_general += 1
+
+average_age = count_age / 10
+
+print(f"The average age is: {average_age:.2f}")
+print(f"Number of people weighing over 90 kg and measuring less than 1.50 meters: {count_height}")
+print(f"{(count_general/10)*100:.0f}% of people in the third case.")

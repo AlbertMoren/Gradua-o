@@ -1,42 +1,43 @@
-'''Faça um programa que preencha três vetores com dez posições cada um: o primeiro vetor, com os nomes de dez produtos; o segundo vetor, com os códigos dos dez produtos; e o terceiro vetor, com os preços dos produtos. Mostre um relatório apenas com o nome, o código, o preço e o novo preço dos produtos que sofrerão aumento. Sabe-se que os produtos que sofrerão aumento são aqueles que possuem código par ou preço superior a R$ 1.000,00. Sabe-se ainda que, para os produtos que satisfazem as duas condições anteriores, código e preço, o aumento será de 20%; para aqueles que satisfazem apenas a condição de código, o aumento será de 15%; e para aqueles que satisfazem apenas a condição de preço, o aumento será de 10%.'''
+# Fill three arrays with ten positions each: the first array, with the names of ten products; the second array, with the codes of ten products; and the third array, with the prices of the products. 
+# Show a report with only the name, code, price, and the new price of the products that will undergo an increase. 
+# It is known that the products that will undergo an increase are those that have an even code or a price higher than R$ 1,000.00. 
+# It is also known that, for products that satisfy both previous conditions, code and price, the increase will be 20%; for those that satisfy only the code condition, the increase will be 15%; and for those that satisfy only the price condition, the increase will be 10.
 
-#minha assinatura 
+# My signature
 print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
 
-nome_produtos = []
-id_produtos = [0]*3
-precos_produtos = [0]*3
-nome_produtos_att = []
-id_produtos_att = []
-precos_produtos_att = []
+product_names = []
+product_ids = [0]*3
+product_prices = [0]*3
+updated_product_names = []
+updated_product_ids = []
+updated_product_prices = []
 
-
-for i in range(len(id_produtos)):               #Inserção de valores nos vetores
-    id_produtos[i] = int(input("Insira o ID do produto: "))
-    if id_produtos[i] in id_produtos:   #Validar se o ID já existe no  vetor
+for i in range(len(product_ids)):               
+    product_ids[i] = int(input("Enter the product ID: "))
+    if product_ids[i] in product_ids:   
         flag = 1
         while(flag == 1):
-            id_produtos[i] = int(input("Insira um ID do valido: "))
-            if id_produtos[i] not in id_produtos:
+            product_ids[i] = int(input("Enter a valid ID for the product: "))
+            if product_ids[i] not in product_ids:
                 flag = 0
-    nome_produtos.append(input("Insira o nome do produto: "))
-    precos_produtos[i] = float(input("Insira o valor do produto: "))
-    if (id_produtos[i]%2==0) or (precos_produtos[i]>=1000):
-        if (id_produtos[i]%2==0) and (precos_produtos[i]>=1000):
-            nome_produtos_att.append(nome_produtos[i])
-            id_produtos_att.append(id_produtos[i])
-            precos_produtos_att.append(precos_produtos[i]*1.2)
-        if (id_produtos[i]%2==0) and (precos_produtos[i]<1000):
-            nome_produtos_att.append(nome_produtos[i])
-            id_produtos_att.append(id_produtos[i])
-            precos_produtos_att.append(precos_produtos[i]*1.15)
-        if (id_produtos[i]%2!=0) and (precos_produtos[i]>=1000):
-            nome_produtos_att.append(nome_produtos[i])
-            id_produtos_att.append(id_produtos[i])
-            precos_produtos_att.append(precos_produtos[i]*1.1)
+    product_names.append(input("Enter the product name: "))
+    product_prices[i] = float(input("Enter the product price: "))
+    if (product_ids[i] % 2 == 0) or (product_prices[i] >= 1000):
+        if (product_ids[i] % 2 == 0) and (product_prices[i] >= 1000):
+            updated_product_names.append(product_names[i])
+            updated_product_ids.append(product_ids[i])
+            updated_product_prices.append(product_prices[i] * 1.2)
+        if (product_ids[i] % 2 == 0) and (product_prices[i] < 1000):
+            updated_product_names.append(product_names[i])
+            updated_product_ids.append(product_ids[i])
+            updated_product_prices.append(product_prices[i] * 1.15)
+        if (product_ids[i] % 2 != 0) and (product_prices[i] >= 1000):
+            updated_product_names.append(product_names[i])
+            updated_product_ids.append(product_ids[i])
+            updated_product_prices.append(product_prices[i] * 1.1)
 
-
-#Print dos produtos com preços atualizados
-print("\nProdutos com preço atualizados")
-for i in range(len(id_produtos_att)):
-    print(f"O Produto {nome_produtos_att[i]} do id {id_produtos_att[i]} está com novo preço de {precos_produtos_att[i]:.2f}")
+# Print the products with updated prices
+print("\nProducts with updated prices")
+for i in range(len(updated_product_ids)):
+    print(f"The product {updated_product_names[i]} with ID {updated_product_ids[i]} now has a new price of {updated_product_prices[i]:.2f}")

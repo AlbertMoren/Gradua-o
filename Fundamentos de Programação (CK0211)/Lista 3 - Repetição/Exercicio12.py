@@ -1,7 +1,7 @@
-'''Faça um programa que receba dez números inteiros e mostre a quantidade de números primos dentre os números que foram digitados'''
+'''Create a program that receives ten integers and shows the quantity of prime numbers among the entered numbers.'''
 
-#minha assinatura 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+# My signature
+print("=+"*28, "\n", " "*20, "ALB System", "\n", "=+"*28, "\n")
 
 for i in range(10):
     number = int(input("Enter a number: "))
@@ -9,6 +9,6 @@ for i in range(10):
     div = 0
     for j in range(number):
         if numberF % (j+1) == 0:
-            div+=1
+            div += 1
     if div == 2:
         print(number)

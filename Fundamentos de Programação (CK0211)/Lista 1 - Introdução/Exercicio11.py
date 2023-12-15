@@ -1,12 +1,17 @@
-'''Faça um programa que calcule e mostre a área de um losango. Sabe-se que: A = (diagonal maior * diagonal menor)/2'''
+# A program that calculates and displays the area of a rhombus. It is known that: A = (larger diagonal * smaller diagonal) / 2
 
-#minha assinatura 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+# My signature
+print("=+" * 28, "\n", " " * 20, "ALB System", "\n", "=+" * 28, "\n")
 
-diagonal_M,diagonal_m = input(print("Informe a diagonal maior e menor")).split(" ")
+# Input the values for the larger and smaller diagonals
+diagonal_M, diagonal_m = input("Enter the values for the larger and smaller diagonals separated by a space: ").split(" ")
 
+# Convert the inputs to float
 diagonal_M = float(diagonal_M)
 diagonal_m = float(diagonal_m)
-area = (diagonal_M * diagonal_m)/2
 
-print(f"A area é = {area:.2f}")
+# Calculate the area of the rhombus
+area = (diagonal_M * diagonal_m) / 2
+
+# Print the result
+print(f"The area is = {area:.2f}")

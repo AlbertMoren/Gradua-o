@@ -1,10 +1,12 @@
-'''Faça um programa que receba três números, calcule e mostre a multiplicação desses números.'''
+# Program that receives three numbers, calculates, and displays the multiplication of these numbers
 
-#minha assinatura 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+# My signature
+print("=+" * 28, "\n", " " * 20, "ALB System", "\n", "=+" * 28, "\n")
 
-x = int(input("Insira um número: "))
-y = int(input("Insira um número: "))
-z = int(input("Insira um número: "))
+# Input three numbers
+x = int(input("Enter a number: "))
+y = int(input("Enter another number: "))
+z = int(input("Enter another number: "))
 
-print(x*y*z)
+# Calculate and print the multiplication
+print(x * y * z)

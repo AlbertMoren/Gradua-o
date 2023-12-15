@@ -1,12 +1,14 @@
-'''Faça um programa que calcule e mostre a tabuada de um número digitado pelo usuário'''
+# A program that calculates and displays the multiplication table of a number entered by the user.
 
-#minha assinatura 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+# My signature
+print("=+" * 28, "\n", " " * 20, "ALB System", "\n", "=+" * 28, "\n")
 
-numero = int(input("Informe o numero que irar para tabuada: "))
+# Input the number for which the multiplication table will be generated
+number = int(input("Enter the number for the multiplication table: "))
 
-print(f"{numero} * {0}  = {0}", " "*10 , f"{numero} * {6}  = {numero*6}")
-print(f"{numero} * {1}  = {numero}", " "*10 , f"{numero} * {7}  = {numero*7}")
-print(f"{numero} * {2} = {numero*2}", " "*10 ,f"{numero} * {8}  = {numero*8}")
-print(f"{numero} * {3} = {numero*3}", " "*10 ,f"{numero} * {9}  = {numero*9}")
-print(f"{numero} * {4} = {numero*4}", " "*10 ,f"{numero} * {10}  = {numero*10}")
+# Display the multiplication table
+print(f"{number} * {0}  = {number * 0}", " " * 10, f"{number} * {6}  = {number * 6}")
+print(f"{number} * {1}  = {number}", " " * 10, f"{number} * {7}  = {number * 7}")
+print(f"{number} * {2} = {number * 2}", " " * 10, f"{number} * {8}  = {number * 8}")
+print(f"{number} * {3} = {number * 3}", " " * 10, f"{number} * {9}  = {number * 9}")
+print(f"{number} * {4} = {number * 4}", " " * 10, f"{number} * {10}  = {number * 10}")

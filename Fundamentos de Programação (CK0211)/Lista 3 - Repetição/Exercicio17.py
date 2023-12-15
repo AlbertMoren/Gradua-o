@@ -1,9 +1,9 @@
-'''Foi feita uma pesquisa sobre a audiência de canal de TV em várias casas de uma cidade, em determinado dia. Para cada casa consultada foi fornecido o número do canal (4, 5, 7, 12) e o número de pessoas que estavam assistindo àquele canal. Se a televisão estivesse desligada, nada era anotado, ou seja, essa casa não entrava na pesquisa. Faça um programa que:
-■ leia um número indeterminado de dados (número do canal e número de pessoas que estavam assistindo); e
-■ calcule e mostre a porcentagem de audiência de cada canal. Para encerrar a entrada de dados, digite o número do canal ZERO'''
+'''A survey was conducted on the TV channel audience in various houses in a city on a particular day. For each surveyed house, the channel number (4, 5, 7, 12) and the number of people watching that channel were provided. If the television was off, nothing was recorded, meaning that house was not included in the survey. Create a program that:
+■ reads an indefinite number of data (channel number and the number of people watching);
+■ calculates and shows the percentage of audience for each channel. To end data entry, enter the channel number ZERO.'''
 
-#minha assinatura 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+# My signature
+print("=+"*28, "\n", " "*20, "ALB System", "\n", "=+"*28, "\n")
 
 counter = 0
 counterFour = 0
@@ -12,18 +12,21 @@ counterSeven = 0
 counterTwelve = 0
 
 while True:
-    channel = int(input("which channel do you watch[4/5/7/12]? "))
+    channel = int(input("Which channel do you watch [4/5/7/12]? "))
     if channel == 0:
         break
-    amount = int(input("how many peoplo watch? "))
-    counter+=1
+    amount = int(input("How many people are watching? "))
+    counter += 1
     if channel == 4:
-        counterFour+=amount
+        counterFour += amount
     elif channel == 5:
-        counterFive+=amount
+        counterFive += amount
     elif channel == 7:
-        counterSeven+=amount
+        counterSeven += amount
     elif channel == 12:
-        counterTwelve+=amount
+        counterTwelve += amount
 
-print(f"the percentage of people who watch channel 4 is {counterFour/counter}\nthe percentage of people who watch channel 5 is {counterFive/counter}\nthe percentage of people who watch channel 7 is {counterSeven/counter}\nthe percentage of people who watch channel 12 is {counterTwelve/counter}")
+print(f"The percentage of people who watch channel 4 is {counterFour/counter:.2%}")
+print(f"The percentage of people who watch channel 5 is {counterFive/counter:.2%}")
+print(f"The percentage of people who watch channel 7 is {counterSeven/counter:.2%}")
+print(f"The percentage of people who watch channel 12 is {counterTwelve/counter:.2%}")

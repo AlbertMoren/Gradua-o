@@ -1,28 +1,35 @@
-'''Faça um programa que receba um conjunto de valores inteiros e positivos, calcule e mostre o maior e o menor valor do conjunto. Considere que:
-■ para encerrar a entrada de dados, deve ser digitado o valor zero;
-■ para valores negativos, deve ser enviada uma mensagem;
-■ os valores negativos ou iguais a zero não entrarão nos cálculos.'''
+# Program Description:
+# This program receives a set of positive integer values, calculates and displays the largest and smallest values in the set.
+# Considerations:
+# - To end the data entry, the value zero must be entered.
+# - For negative values, a message should be displayed.
+# - Negative values or values equal to zero will not be considered in the calculations.
 
-#my signature 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+# Initialize variables to store the largest and smallest values
+largest_value = float('-inf')  # Initialize as negative infinity, so any positive value will be larger
+smallest_value = float('inf')  # Initialize as positive infinity, so any positive value will be smaller
 
-highestValue = 0
-lowerValue = 0
-cont = 0
+# Loop to process user input
 while True:
-    number = int(input("Enter a number: "))
-    if number == 0:
+    # Get user input
+    value = int(input("Enter a positive integer value (enter 0 to finish): "))
+
+    # Check if user wants to finish
+    if value == 0:
         break
-    elif number < 0:
-        print("This value will be desregarded")
-    else:
-        if cont == 0:
-            highestValue = number
-            lowerValue = number
-        else:
-            if number > highestValue:
-                highestValue = number
-            if number < lowerValue:
-                lowerValue = number
-    
-print(f"the largest number entered was {highestValue}\nThe smallest number entered was {lowerValue} ")
+
+    # Check if the value is positive
+    if value <= 0:
+        print("Invalid input. Please enter a positive integer.")
+        continue
+
+    # Update largest and smallest values
+    largest_value = max(largest_value, value)
+    smallest_value = min(smallest_value, value)
+
+# Display the results
+if largest_value == float('-inf') and smallest_value == float('inf'):
+    print("No valid values entered.")
+else:
+    print(f"The largest value is: {largest_value}")
+    print(f"The smallest value is: {smallest_value}")

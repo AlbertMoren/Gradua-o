@@ -1,17 +1,22 @@
-'''Faça um programa que receba três números e mostre o menor.'''
+'''Create a program that receives three numbers and displays the smallest one'''
 
-#minha assinatura 
+# My signature 
 print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
 
-n1,n2,n3 = input("Insira as 3 números: ").split(" ")
+# Receive the three numbers
+n1, n2, n3 = input("Enter 3 numbers: ").split(" ")
 n1 = int(n1)
 n2 = int(n2)
 n3 = int(n3)
-menor = n1
-if(n2 < menor or n3< menor):
-    if(n2 < n3):
-        print(f"O {n2} é o menor de todos eles")
+
+# Find the smallest number
+smallest = n1
+if n2 < smallest or n3 < smallest:
+    if n2 < n3:
+        smallest = n2
+        print(f"The {n2} is the smallest of all.")
     else:
-        print(f"O {n3} é o menor de todos eles")
+        smallest = n3
+        print(f"The {n3} is the smallest of all.")
 else:
-    print(f"O {menor} é o menor de todos eles")
+    print(f"The {smallest} is the smallest of all.")

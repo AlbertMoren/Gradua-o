@@ -1,27 +1,22 @@
-'''Faça um programa que receba o nome e a nota de oito alunos e mostre o relatório a seguir:
-Digite o nome do 1o aluno: Carlos
-Digite a nota do Carlos: 8
-Digite o nome do 2o aluno: Pedro
-Digite a nota do Pedro: 5
-Relatórios de notas
-Carlos 8.0
-Pedro 5.0
-..
-..
-..
-Média da classe = ??'''
+# Receive names and grades of eight students and show the report as described:
+# "Enter the name of the 1st student:", "Enter the grade of Carlos:", ..., "Enter the grade of Pedro:".
+# Display the report of names and grades and calculate and display the class average.
 
-vectorNote = []
-vectorName = []
+# My signature
+print("=+"*28, "\n", " "*20, "ALB System", "\n", "=+"*28, "\n")
+
+names = []
+grades = []
 
 for i in range(8):
     name = input(f"Enter the name of the {i+1}st student: ")
-    note = float(input(f"Enter {name}' note: "))
-    vectorName.append(name)
-    vectorNote.append(note)
+    grade = float(input(f"Enter the grade of {name}: "))
+    names.append(name)
+    grades.append(grade)
 
+print("Reports of grades:")
 for i in range(8):
-    print(f"{vectorName[i]} {vectorNote[i]:.1f}")
+    print(f"{names[i]} {grades[i]}")
 
-everage = sum(vectorNote)/8
-print(f"class everage = {everage:.2f}")
+class_average = sum(grades) / len(grades)
+print(f"\nClass average = {class_average:.2f}")

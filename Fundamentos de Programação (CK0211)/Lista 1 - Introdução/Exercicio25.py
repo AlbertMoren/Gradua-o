@@ -1,20 +1,24 @@
-'''Faça um programa que receba uma hora (uma variável para hora e outra para minutos), calcule e mostre:
-a) a hora digitada convertida em minutos;
-b) o total dos minutos, ou seja, os minutos digitados mais a conversão anterior;
-c) o total dos minutos convertidos em segundos'''
+'''Create a program that receives an hour (one variable for hours and another for minutes), calculates, and displays:
+a) the entered hour converted to minutes;
+b) the total minutes, i.e., the minutes entered plus the previous conversion;
+c) the total minutes converted to seconds'''
 
-#minha assinatura 
+# My signature
 print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
 
-hour, minute = input(" Insert hours and minutes: ").split(":")
-
+# Receive hours and minutes
+hour, minute = input("Insert hours and minutes: ").split(":")
 hour = float(hour)
 minute = float(minute)
 
-newMinute = hour*60
-minute = minute + newMinute
-segunds = minute * 60
+# Convert hours to minutes
+new_minute = hour * 60
+total_minutes = minute + new_minute
 
-print(f" The hour convert to minuite is {newMinute}")
-print(f" the total in minutes is {minute}")
-print(f" The total in segunds is {segunds}")
+# Convert total minutes to seconds
+total_seconds = total_minutes * 60
+
+# Display the results
+print(f"The hour converted to minutes is {new_minute}")
+print(f"The total in minutes is {total_minutes}")
+print(f"The total in seconds is {total_seconds}")

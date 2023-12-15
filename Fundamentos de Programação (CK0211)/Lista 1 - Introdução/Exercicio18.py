@@ -1,12 +1,10 @@
-'''Faça um programa que receba uma temperatura em Celsius, calcule e mostre essa temperatura em
-Fahrenheit. Sabe-se que F = 180*(C + 32)/100'''
+'''Create a program that receives a temperature in Celsius, calculates, and shows that temperature in Fahrenheit. It is known that F = 180*(C + 32)/100'''
 
-#minha assinatura 
+# My signature
 print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
 
-celciu = float(input("Qual a temp em celsius: "))
+celsius = float(input("What is the temperature in Celsius: "))
 
-far = 180*(celciu+32)/100
+fahrenheit = 180 * (celsius + 32) / 100
 
-print(f"A temp em fahrenheit = {celciu}")
-
+print(f"The temperature in Fahrenheit = {fahrenheit}")

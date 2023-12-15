@@ -1,40 +1,62 @@
-'''Faça um programa que apresente o menu de opções a seguir, que permita ao usuário escolher a opção desejada, receba os dados necessários para executar a operação e mostre o resultado. Verifique a possibilidade de opção inválida e não se preocupe com as restrições como salário inválido.
-Menu de opções:
-1. Novo salário
-2. Férias
-3. Décimo terceiro
-4. Sair
-Digite a opção desejada.
-'''
+# Program Description:
+# This program presents a menu of options that allows the user to choose an operation.
+# It receives the necessary data to perform the chosen operation and displays the result.
+# It checks for the possibility of an invalid option, and it doesn't concern itself with constraints such as invalid salary.
+#
+# Menu options:
+# 1. New salary
+# 2. Vacation
+# 3. Thirteenth salary
+# 4. Exit
+# Enter the desired option.
+#
+# For option 1: receive the salary of an employee, calculate and show the new salary using the following rules:
+# SALARIES                                      | PERCENTAGE INCREASE
+# Up to R$ 210.00                               | 15%
+# From R$ 210.00 to R$ 600.00 (inclusive)       | 10%
+# Above R$ 600.00                               | 5%
+#
+# For option 2: receive the salary of an employee, calculate and show the value of their vacation.
+# Vacation is equal to their salary plus one-third of the salary.
+#
+# For option 3: receive the salary of an employee and the number of months worked in the company, up to twelve.
+# Calculate and show the value of the thirteenth salary. The thirteenth salary is equal to their salary
+# multiplied by the number of months worked divided by 12.
+#
+# For option 4: exit the program.
 
-#my signature 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
-
+# Loop to process user input
 while True:
-    print("1 - New salary")
-    print("2 - Vacation ")
-    print("3 - Thirteenth")
-    print("4 - Exit")
-    choice = int(input())
-    if choice == 4:
-        break
-    elif choice == 1:
-        salary = float(input("Enter your salary: "))
-        if salary < 210:
-            salary = salary * 1.15
-        elif salary >= 210 and salary <= 600:
-            salary = salary * 1.10
+    # Get user choice
+    choice = int(input("Enter your choice (1-4): "))
+
+    # Check user choice
+    if choice == 1:
+        # Option 1: New Salary
+        current_salary = float(input("Enter current salary: "))
+        # Calculate new salary based on rules
+        if current_salary <= 210.00:
+            new_salary = current_salary + (current_salary * 0.15)
+        elif 210.00 < current_salary <= 600.00:
+            new_salary = current_salary + (current_salary * 0.10)
         else:
-            salary = salary * 1.05
-        print(f"Your new salary is {salary:.2f}")
+            new_salary = current_salary + (current_salary * 0.05)
+        print(f"The new salary is: {new_salary:.2f}")
     elif choice == 2:
-        salary = float(input("Enter your salary: "))
-        salary = salary * (1/3)
-        print(f"Your vacation will be {salary:.2f}")
+        # Option 2: Vacation
+        current_salary = float(input("Enter current salary: "))
+        # Calculate vacation value
+        vacation_value = current_salary + (current_salary / 3)
+        print(f"The vacation value is: {vacation_value:.2f}")
     elif choice == 3:
-        salary = float(input("Enter your salary: "))
-        months = int(input("how much months in the company: "))
-        salary = (salary * months)/12
-        print(f"Your thirteenth will be {salary:.2f}")
+        # Option 3: Thirteenth Salary
+        current_salary = float(input("Enter current salary: "))
+        months_worked = int(input("Enter the number of months worked (up to 12): "))
+        # Calculate thirteenth salary
+        thirteenth_salary = (current_salary * months_worked) / 12
+        print(f"The thirteenth salary is: {thirteenth_salary:.2f}")
+    elif choice == 4:
+        # Option 4: Exit
+        break
     else:
-        print("invalid option. Try again")
+        print("Invalid option. Please enter a number between 1 and 4.")

@@ -1,19 +1,23 @@
-'''Faça um programa que receba dez números inteiros e armazene-os em um vetor. Calcule e mostre dois vetores resultantes: o primeiro com os números pares e o segundo, com os números ímpares.'''
+# Receive ten integers and store them in a vector. Calculate and show two resulting vectors:
+# the first one with even numbers, and the second one with odd numbers.
 
-#my signature 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+# My signature
+print("=+"*28, "\n", " "*20, "ALB System", "\n", "=+"*28, "\n")
 
-vectorMain = [0]*10
-vectorOdd = []
-vectorPair = []
+numbers = [0] * 10
+even_numbers = []
+odd_numbers = []
 
+print("Enter ten integers:")
 for i in range(10):
-    vectorMain[i] = int(input("Enter number: "))
+    numbers[i] = int(input(f"Number {i+1}: "))
 
-for i in range(10):
-    if vectorMain[i]%2==0:
-        vectorPair.append(vectorMain[i])
+for number in numbers:
+    if number % 2 == 0:
+        even_numbers.append(number)
     else:
-        vectorOdd.append(vectorMain[i])
+        odd_numbers.append(number)
 
-print(f"the even values are {vectorPair}\nThe odd valeus are {vectorOdd}")
+print(f"Even numbers: {even_numbers}")
+print(f"Odd numbers: {odd_numbers}")
+

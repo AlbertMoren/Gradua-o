@@ -1,15 +1,20 @@
-'''Faça um programa que receba duas notas, calcule e mostre a média aritmética e a mensagem que se encontra na tabela a seguir:'''
+'''Create a program that receives two grades, calculates and displays the arithmetic average, and the message found in the following table:'''
 
-#minha assinatura 
+# My signature 
 print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
 
-n1,n2 = input("Insira as 2 notas do aluno: ").split(" ")
+# Receive the two grades
+n1, n2 = input("Enter the student's 2 grades: ").split(" ")
 n1 = float(n1)
 n2 = float(n2)
-media = (n1+n2)/2
-if(media >=0 and media<3):
-    print("Reprovado")
-elif(media >= 3 and media < 7):
-    print("Exame")
+
+# Calculate the average
+average = (n1 + n2) / 2
+
+# Check the range and display the corresponding message
+if 0 <= average < 3:
+    print("Failed")
+elif 3 <= average < 7:
+    print("Exam")
 else:
-    print("Aprovado")
+    print("Approved")

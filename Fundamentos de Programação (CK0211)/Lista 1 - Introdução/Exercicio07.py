@@ -1,10 +1,15 @@
-'''Faça um programa que receba o peso de uma pessoa, calcule e mostre:
-a) o novo peso, se a pessoa engordar 15% sobre o peso digitado;
-b) o novo peso, se a pessoa emagrecer 20% sobre o peso digitado'''
+# A program that receives a person's weight, calculates and displays:
+# a) the new weight if the person gains 15% of the entered weight;
+# b) the new weight if the person loses 20% of the entered weight.
 
-#minha assinatura 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+# My signature
+print("=+" * 28, "\n", " " * 20, "ALB System", "\n", "=+" * 28, "\n")
 
-peso = float(input("Insira seu peso: "))
-print(f"Se voçe engorda 15%, fica com {peso+(peso*0.15)}")
-print(f"Se voçe emagrecer 20%, fica com {peso-(peso*0.20)}")
+# Input the person's weight
+weight = float(input("Enter your weight: "))
+
+# Calculate and print the new weight if the person gains 15%
+print(f"If you gain 15%, your weight will be {weight + (weight * 0.15)}")
+
+# Calculate and print the new weight if the person loses 20%
+print(f"If you lose 20%, your weight will be {weight - (weight * 0.20)}")

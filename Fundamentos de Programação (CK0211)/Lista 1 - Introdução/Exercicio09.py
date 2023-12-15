@@ -1,10 +1,14 @@
-'''Faça um programa que calcule e mostre a área de um trapézio. Sabe-se que: A = ((base maior + base menor) * altura)/2'''
+# A program that calculates and displays the area of a trapezoid. It is known that: A = ((larger base + smaller base) * height) / 2
 
-#minha assinatura 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+# My signature
+print("=+" * 28, "\n", " " * 20, "ALB System", "\n", "=+" * 28, "\n")
 
-base_M, Base_m, altura = input("Valor da base maio, base menor e a altura:").split(" ")
-base_M = float(base_M)
-Base_m = float(Base_m)
-altura = float(altura)
-print(f"A área do trapezio é de {((base_M+Base_m)*altura)/2}")
+# Input the values for the larger base, smaller base, and height
+larger_base, smaller_base, height = input("Enter the values for the larger base, smaller base, and height: ").split(" ")
+larger_base = float(larger_base)
+smaller_base = float(smaller_base)
+height = float(height)
+
+# Calculate and print the area of the trapezoid
+area = ((larger_base + smaller_base) * height) / 2
+print(f"The area of the trapezoid is {area}")

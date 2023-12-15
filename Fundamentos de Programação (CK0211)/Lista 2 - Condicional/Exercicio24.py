@@ -1,4 +1,4 @@
-'''Faça um programa que receba o preço, a categoria (1 — limpeza; 2 — alimentação; ou 3 — vestuário) e a situação (R — produtos que necessitam de refrigeração; e N — produtos que não necessitam de refrigeração). Calcule e mostre:'''
+'''Create a program that receives the price, the category (1 — cleaning; 2 — food; or 3 — clothing) and the status (R — products that require refrigeration; and N — products that do not require refrigeration). Calculate and show:'''
 
 #minha assinatura 
 print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")

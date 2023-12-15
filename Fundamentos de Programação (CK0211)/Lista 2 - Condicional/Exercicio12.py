@@ -1,27 +1,31 @@
-'''Faça um programa que receba o salário bruto de um funcionário e, usando a tabela a seguir, calcule e mostre o valor a receber. Sabe-se que este é composto pelo salário bruto acrescido de gratificação e descontado o imposto de 7% sobre o salário.
+'''Create a program that receives the gross salary of an employee and, using the following table, calculates and shows the value to receive. It is known that this is composed of the gross salary plus gratuity and deducted 7% tax on the salary.
 
-    TABELA DAS GRATIFICAÇÕES
-SALÁRIO             |GRATIFICAÇÃO
-Até R$ 350,00       |R$ 100,00
-R$ 350,00 R$ 600,00 |R$ 75,00
-R$ 600,00 R$ 900,00 |R$ 50,00
-Acima de R$ 900,00  |R$ 35,00'''
+    GRATUITY TABLE
+SALARY             | GRATUITY
+Up to R$ 350.00   | R$ 100.00
+R$ 350.00 R$ 600.00 | R$ 75.00
+R$ 600.00 R$ 900.00 | R$ 50.00
+Above R$ 900.00    | R$ 35.00
+'''
 
-#minha assinatura 
+# My signature 
 print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
 
-salary = float(input("enter your salary: R$"))
+# Receive the gross salary
+salary = float(input("Enter your salary: R$"))
 
-
-if(salary <= 350.00):
-    salary = salary + 100
-elif(salary > 350.00 and salary<600.00):
-    salary = salary + 75
-elif(salary >= 600.00 and salary<=900.00):
-    salary = salary + 20
+# Check the salary range and calculate the gratuity accordingly
+if salary <= 350.00:
+    salary += 100.00
+elif 350.00 < salary <= 600.00:
+    salary += 75.00
+elif 600.00 < salary <= 900.00:
+    salary += 50.00
 else:
-    salary+= 35
+    salary += 35.00
 
-salary = salary * 0.93
+# Deduct 7% tax
+salary *= 0.93
 
-print(f"Your new salay well be {salary:.2f}")
+# Display the result
+print(f"Your net salary will be R${salary:.2f}")

@@ -1,14 +1,14 @@
-'''Faça um programa que receba o preço de um produto e seu código de origem e mostre sua procedência. A procedência obedece à tabela a seguir.
+'''Create a program that receives the price of a product and its origin code and shows its origin. The origin follows the table below.
 
-CÓDIGO DE ORIGEM    |PROCEDÊNCIA
-1                   |Sul
-2                   |Norte
-3                   |Leste
-4                   |Oeste
-5 ou 6              |Nordeste
-7 ou 8 ou 9         |Sudeste
-10 a 20             |Centro-oeste
-21 a 30             |Nordeste'''
+ORIGIN CODE | ORIGIN
+1           | South
+2           | North
+3           | East
+4           | West
+5 or 6      | Northeast
+7 or 8 or 9 | Southeast
+10 to 20    | Midwest
+21 to 30    | Northeast'''
 
 #minha assinatura 
 print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")

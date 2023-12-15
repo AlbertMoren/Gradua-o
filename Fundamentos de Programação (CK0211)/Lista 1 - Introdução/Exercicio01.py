@@ -1,11 +1,11 @@
-'''Faça um programa que receba dois números, calcule e mostre a subtração do primeiro número pelo segundo'''
+'''Program that receives two numbers, calculates and displays the subtraction of the first number by the second'''
 
-#minha assinatura 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+# My signature
+print("=+" * 28, "\n", " " * 20, "ALB System", "\n", "=+" * 28, "\n")
 
+# Input two numbers
+x = int(input("Enter a number: "))
+y = int(input("Enter another number: "))
 
-x = int(input("Insira um número: "))
-y = int(input("Insira um número: "))
-print(x-y)
-
-
+# Calculate and print the subtraction
+print(x - y)

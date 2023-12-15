@@ -1,7 +1,10 @@
-'''Faça um programa que receba o peso de uma pessoa em quilos, calcule e mostre esse peso em gramas.'''
+# A program that receives a person's weight in kilograms, calculates and displays that weight in grams.
 
-#minha assinatura 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+# My signature
+print("=+" * 28, "\n", " " * 20, "ALB System", "\n", "=+" * 28, "\n")
 
-peso_kg = float(input("Insira o peso em kg: "))
-print(f"O valo em gramas é {peso_kg*1000:.2f}g")
+# Input the weight in kilograms
+weight_kg = float(input("Enter the weight in kg: "))
+
+# Calculate and print the weight in grams
+print(f"The weight in grams is {weight_kg * 1000:.2f}g")

@@ -1,19 +1,15 @@
-'''Faça um programa que receba cinco números e mostre a saída a seguir:
-Digite o 1º número 5
-Digite o 2º número 3
-Digite o 3º número 2
-Digite o 4º número 0
-Digite o 5º número 2
-Os números digitados foram: 5 + 3 + 2 + 0 + 2 = 12'''
+# Receive five numbers and show the output as described:
+# "Digite o 1º número", "Digite o 2º número", ..., "Digite o 5º número".
+# Display the sum of the entered numbers.
 
-#my signature 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+# My signature
+print("=+"*28, "\n", " "*20, "ALB System", "\n", "=+"*28, "\n")
 
-vectorMain = [0]*5
-
+numbers = []
 for i in range(5):
-    vectorMain[i] = int(input("Enter number: "))
+    number = int(input(f"Enter the {i+1}st number: "))
+    numbers.append(number)
 
-sum = sum(vectorMain)
-exitWord = " + ".join(map(str,vectorMain))
-print(f"The numbers entered were = {exitWord} = {sum}")
+sum_of_numbers = sum(numbers)
+formatted_numbers = " + ".join(map(str, numbers))
+print(f"The entered numbers are: {formatted_numbers} = {sum_of_numbers}.")
