@@ -1,26 +1,27 @@
 from random import randint
-'''Faça um programa que preencha uma matriz 3 X 5 com números inteiros, calcule e mostre a quantidade de elementos entre 15 e 20'''
-#minha assinatura 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+'''Create a program that fills a 3 x 5 matrix with integers, calculates, and shows the quantity of elements between 15 and 20.'''
 
-#Função que gera uma matriz
-def crie_matriz(n_linhas, n_colunas, valor):
-    matriz = [] # lista vazia
-    for i in range(n_linhas):
-        linha = [] 
-        for j in range(n_colunas):
-            linha.append(valor)		        # coloque linha na matriz
-        matriz.append(linha)	
-    return matriz
+# My signature
+print("=+"*28, "\n", " "*20, "ALB System", "\n", "=+"*28, "\n")
 
-mat = crie_matriz(3,5,0)
-cont = 0
+# Function that generates a matrix
+def create_matrix(n_rows, n_columns, value):
+    matrix = []  # empty list
+    for i in range(n_rows):
+        row = [] 
+        for j in range(n_columns):
+            row.append(value)  # place the row in the matrix
+        matrix.append(row)	
+    return matrix
 
-for i in range(len(mat)):   #Valida a regra de negocio
-    for j in range(len(mat[i])):
-        mat[i][j] = randint(10,25)
-        if mat[i][j] > 15 and mat[i][j] < 20:
-            cont+=1
-            
-print(mat)
-print(f"Tem {cont} elementos entre 15 e 20")
+matrix = create_matrix(3, 5, 0)
+count = 0
+
+for i in range(len(matrix)):  # Validate the business rule
+    for j in range(len(matrix[i])):
+        matrix[i][j] = randint(10, 25)
+        if 15 < matrix[i][j] < 20:
+            count += 1
+
+print(matrix)
+print(f"There are {count} elements between 15 and 20.")

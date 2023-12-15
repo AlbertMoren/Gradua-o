@@ -1,55 +1,54 @@
-'''Crie um programa que preencha uma matriz 5 X 5 com números inteiros, calcule e mostre a soma:
-■ dos elementos da linha 4;
-■ dos elementos da coluna 2;
-■ dos elementos da diagonal principal;
-■ dos elementos da diagonal secundária;
-■ de todos os elementos da matriz'''
-
-#minha assinatura 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+'''Create a program that fills a 5 X 5 matrix with integers, calculates and displays the sum:
+■ of the elements in line 4;
+■ of the elements in column 2;
+■ of the elements of the main diagonal;
+■ of the elements of the secondary diagonal;
+■ of all elements in the array'''
 
 from random import randint
 
-def crie_matriz(n_linhas, n_colunas, valor):   #Criar matriz desejada
-    matriz = [] # lista vazia
-    for i in range(n_linhas):
-        linha = [] 
-        for j in range(n_colunas):
-            linha.append(valor)		        
-        matriz.append(linha)	
-    return matriz
+# My signature 
+print("=+" * 28, "\n", " " * 20, "ALB System", "\n", "=+" * 28, "\n")
 
-mat = crie_matriz(5,5,0)
+def create_matrix(n_rows, n_columns, value):   # Create the desired matrix
+    matrix = []  # empty list
+    for i in range(n_rows):
+        row = [] 
+        for j in range(n_columns):
+            row.append(value)		        
+        matrix.append(row)	
+    return matrix
+
+mat = create_matrix(5, 5, 0)
 soma_linha_4 = 0
 soma_coluna_2 = 0
 soma_diagonal_principal = 0
-soma_diagonal_segundaria = 0
+soma_diagonal_secundaria = 0
 total = 0
 
-for i in range(len(mat)):                       #Preenchendo a matriz 1
+for i in range(len(mat)):                       # Filling the matrix
     for j in range(len(mat[i])):
-        mat[i][j] = randint(0,10)
-        total+=mat[i][j]
+        mat[i][j] = randint(0, 10)
+        total += mat[i][j]
 
-
-for linha in mat:                               #Imprimir a matriz na tela
-    print("|",end='')  
-    for valor in linha:
-        print(f" {valor:3} |",end=' ')
+for row in mat:                               # Print the matrix on the screen
+    print("|", end='')  
+    for value in row:
+        print(f" {value:3} |", end=' ')
     print("")
 
 for i in range(len(mat)):
-    soma_linha_4+=mat[3][i]
+    soma_linha_4 += mat[3][i]
 
 for i in range(len(mat)):
-    soma_coluna_2+=mat[i][1]
+    soma_coluna_2 += mat[i][1]
 
 for i in range(len(mat)):
     for j in range(len(mat[i])):
         if i == j:
-            soma_diagonal_principal+=mat[i][j]
+            soma_diagonal_principal += mat[i][j]
 
 for i in range(len(mat)):
-    soma_diagonal_segundaria+=mat[i][5-1-i]
+    soma_diagonal_secundaria += mat[i][4 - i]
 
-print(f"A soma total dos valores da matriz é {total}\nA soma da linha 4 = {soma_linha_4}\nA soma da coluna 2 = {soma_coluna_2}\nA soma da diagonal príncipal = {soma_diagonal_principal}\nA soma da diagonal segúndaria = {soma_diagonal_segundaria}")
+print(f"A soma total dos valores da matriz é {total}\nA soma da linha 4 = {soma_linha_4}\nA soma da coluna 2 = {soma_coluna_2}\nA soma da diagonal principal = {soma_diagonal_principal}\nA soma da diagonal secundária = {soma_diagonal_secundaria}")

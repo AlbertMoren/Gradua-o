@@ -1,43 +1,44 @@
-'''Elabore um programa que preencha uma matriz 6 X 3, calcule e mostre:
-■ o maior elemento da matriz e sua respectiva posição, ou seja, linha e coluna;
-■ o menor elemento da matriz e sua respectiva posição, ou seja, linha e coluna.'''
+'''Create a program that fills a 6 X 3 matrix, calculates and shows:
+■ the largest element of the matrix and its respective position, that is, row and column;
+■ the smallest element of the matrix and its respective position, that is, row and column.'''
 
-#minha assinatura 
+# My signature 
 print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
 
 from random import randint
 
-def crie_matriz(n_linhas, n_colunas, valor):   #Criar matriz desejada
-    matriz = [] # lista vazia
-    for i in range(n_linhas):
-        linha = [] 
-        for j in range(n_colunas):
-            linha.append(valor)		        
-        matriz.append(linha)	
-    return matriz
+def create_matrix(n_rows, n_columns, value):   # Create the desired matrix
+    matrix = []  # empty list
+    for i in range(n_rows):
+        row = [] 
+        for j in range(n_columns):
+            row.append(value)		        
+        matrix.append(row)	
+    return matrix
 
-mat = crie_matriz(6,3,0)
-maior,linha_maior,coluna_maior  = 0,0,0
-menor,linha_menor,coluna_menor  = 0,0,0
+mat = create_matrix(6, 3, 0)
+largest, row_largest, column_largest = 0, 0, 0
+smallest, row_smallest, column_smallest = 0, 0, 0
 
-for i in range(len(mat)):                       #Preenchendo a matriz
+for i in range(len(mat)):                       # Filling the matrix
     for j in range(len(mat[i])):
-        mat[i][j] = randint(0,30)
-        if i==0 and j==0:
-            menor = mat[i][j]
-        if mat[i][j] < menor:
-            menor = mat[i][j]
-            linha_menor = i
-            coluna_menor = j
-        if mat[i][j] > maior:
-            maior = mat[i][j]
-            linha_maior = i
-            coluna_maior = j
+        mat[i][j] = randint(0, 30)
+        if i == 0 and j == 0:
+            smallest = mat[i][j]
+        if mat[i][j] < smallest:
+            smallest = mat[i][j]
+            row_smallest = i
+            column_smallest = j
+        if mat[i][j] > largest:
+            largest = mat[i][j]
+            row_largest = i
+            column_largest = j
 
-for linha in mat:                               #Imprimir a matriz na tela
-    print("|",end='')  
-    for valor in linha:
-        print(f" {valor:3} |",end=' ')
+for row in mat:                               # Print the matrix on the screen
+    print("|", end='')  
+    for value in row:
+        print(f" {value:3} |", end=' ')
     print("")
 
-print(f"O maior elemento fica na linha {linha_maior+1} coluna {coluna_maior+1} e é o valor {maior}\nO menor elemento fica na linha {linha_menor+1} coluna {coluna_menor+1} e é o valor {menor}")
+print(f"The largest element is in row {row_largest + 1}, column {column_largest + 1}, and has the value {largest}")
+print(f"The smallest element is in row {row_smallest + 1}, column {column_smallest + 1}, and has the value {smallest}")

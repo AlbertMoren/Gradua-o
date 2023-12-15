@@ -1,43 +1,42 @@
-'''Faça um programa que receba:
-■ as notas de 15 alunos em cinco provas diferentes e armazene-as em uma matriz 15 x 5;
-■ os nomes dos 15 alunos e armazene-os em um vetor de 15 posições.
-O programa deverá calcular e mostrar:
-■ para cada aluno, o nome, a média aritmética das cinco provas e a situação (aprovado, reprovado
-ou exame);
-■ a média da classe'''
+'''Create a program that receives:
+■ the grades of 15 students on five different tests and store them in a 15 x 5 matrix;
+■ the names of the 15 students and store them in a 15-position vector.
+The program should calculate and display:
+■ for each student, the name, the arithmetic mean of the five tests and the status (passed, failed
+or examination);
+■ the class average'''
 
-#minha assinatura 
+# My signature 
 print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
 
 from random import uniform
 
-def crie_matriz(n_linhas, n_colunas, valor):   #Criar matriz desejada
-    matriz = [] # lista vazia
-    for i in range(n_linhas):
-        linha = [] 
-        for j in range(n_colunas):
-            linha.append(valor)		        
-        matriz.append(linha)	
-    return matriz
+def create_matrix(n_rows, n_columns, value):   # Create the desired matrix
+    matrix = []  # empty list
+    for i in range(n_rows):
+        row = [] 
+        for j in range(n_columns):
+            row.append(value)		        
+        matrix.append(row)	
+    return matrix
 
-mat = crie_matriz(15,5,0)
-nomes = ["alb","ert","sss","ggg","bbb","ccc","dd","ttt","ooo","xxx","zzz","hhh","qqqq","dddd","aaaa"]
-medias = []
+mat = create_matrix(15, 5, 0)
+names = ["alb","ert","sss","ggg","bbb","ccc","dd","ttt","ooo","xxx","zzz","hhh","qqqq","dddd","aaaa"]
+averages = []
 status = []
 
 for i in range(len(mat)):
-    soma = 0                       #Preenchendo a matriz
+    total = 0                       # Filling the matrix
     for j in range(len(mat[i])):
-        mat[i][j] = uniform(0,10)
-        soma+=mat[i][j]
-    medias.append(soma/5)
-    if medias[i] >= 7:
-        status.append("Aprovado")
-    elif medias[i] >= 5 and medias[i] < 7:
-        status.append("AF")
+        mat[i][j] = uniform(0, 10)
+        total += mat[i][j]
+    averages.append(total / 5)
+    if averages[i] >= 7:
+        status.append("Approved")
+    elif 5 <= averages[i] < 7:
+        status.append("Exam")
     else:
-        status.append("Reprovado")
+        status.append("Failed")
 
-                        
-for i in range(len(medias)):                               #Imprimir a matriz na tela
-    print(f"Aluno {nomes[i]:2} teve uma media {medias[i]:.1f} e está {status[i]}")
+for i in range(len(averages)):                               # Print the matrix on the screen
+    print(f"Student {names[i]:2} had an average of {averages[i]:.1f} and is {status[i]}")

@@ -1,60 +1,60 @@
-'''Crie um programa que preencha duas matrizes 3 X 8 com números inteiros, calcule e mostre:
-■ a soma das duas matrizes, resultando em uma terceira matriz também de ordem 3 X 8;
-■ a diferença das duas matrizes, resultando em uma quarta matriz também de ordem 3 X 8'''
+'''Create a program that fills two 3 X 8 matrices with integers, calculates and displays:
+■ the sum of the two matrices, resulting in a third matrix also of order 3 X 8;
+■ the difference of the two matrices, resulting in a fourth matrix also of order 3 X 8'''
 
-#minha assinatura 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+# My signature 
+print("=+"*28, "\n", " "*20, "ALB System", "\n", "=+"*28, "\n")
 
 from random import randint
 
-def crie_matriz(n_linhas, n_colunas, valor):   #Criar matriz desejada
-    matriz = [] # lista vazia
-    for i in range(n_linhas):
-        linha = [] 
-        for j in range(n_colunas):
-            linha.append(valor)		        
-        matriz.append(linha)	
-    return matriz
+def create_matrix(n_rows, n_columns, value):   # Create the desired matrix
+    matrix = []  # empty list
+    for i in range(n_rows):
+        row = [] 
+        for j in range(n_columns):
+            row.append(value)		        
+        matrix.append(row)	
+    return matrix
 
-mat1 = crie_matriz(3,8,0)
+mat1 = create_matrix(3, 8, 0)
 
-for i in range(len(mat1)):                       #Preenchendo a matriz 1
+for i in range(len(mat1)):                       # Filling the first matrix
     for j in range(len(mat1[i])):
-        mat1[i][j] = randint(0,100)
+        mat1[i][j] = randint(0, 100)
 
-mat2 = crie_matriz(3,8,0)
+mat2 = create_matrix(3, 8, 0)
 
-for i in range(len(mat2)):                       #Preenchendo a matriz 2
+for i in range(len(mat2)):                       # Filling the second matrix
     for j in range(len(mat2[i])):
-        mat2[i][j] = randint(0,100)
+        mat2[i][j] = randint(0, 100)
 
-mat_rest_soma = []
-for i in range(len(mat1)):                      #Soma as matrizes
-    linha = []
+mat_result_sum = []
+for i in range(len(mat1)):                      # Sum the matrices
+    row = []
     for j in range(len(mat1[i])):
-        linha.append(mat1[i][j]+mat2[i][j])
-    mat_rest_soma.append(linha)
+        row.append(mat1[i][j] + mat2[i][j])
+    mat_result_sum.append(row)
 
-for linha in mat_rest_soma:                               #Imprimir a matriz na tela
-    print("|",end='')  
-    for valor in linha:
-        print(f" {valor:3} |",end=' ')
+for row in mat_result_sum:                               # Print the matrix on the screen
+    print("|", end='')  
+    for value in row:
+        print(f" {value:3} |", end=' ')
     print("")
 
 print("="*60)
 
-mat_rest_diferenca = []
-for i in range(len(mat1)):                      #subtrair as matrizes
-    linha = []
+mat_result_difference = []
+for i in range(len(mat1)):                      # Subtract the matrices
+    row = []
     for j in range(len(mat1[i])):
         if mat2[i][j] < 0:
-            linha.append(mat1[i][j]-(-mat2[i][j]))
+            row.append(mat1[i][j] - (-mat2[i][j]))
         else:
-            linha.append(mat1[i][j]-mat2[i][j])
-    mat_rest_diferenca.append(linha)
+            row.append(mat1[i][j] - mat2[i][j])
+    mat_result_difference.append(row)
 
-for linha in mat_rest_diferenca:                               #Imprimir a matriz na tela
-    print("|",end='')  
-    for valor in linha:
-        print(f" {valor:3} |",end=' ')
+for row in mat_result_difference:                               # Print the matrix on the screen
+    print("|", end='')  
+    for value in row:
+        print(f" {value:3} |", end=' ')
     print("")

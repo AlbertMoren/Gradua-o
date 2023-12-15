@@ -1,49 +1,47 @@
-'''Crie um programa que preencha uma matriz 2 X 4 com números inteiros calcule e mostre:
-■ a quantidade de elementos entre 12 e 20 em cada linha;
-■ a média dos elementos pares da matriz'''
+'''Create a program that fills a 2 X 4 matrix with integers and calculates and displays:
+■ the number of elements between 12 and 20 in each line;
+■ the average of the even elements of the matrix'''
+
 from random import randint
 
-#minha assinatura 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+# My signature
+print("=+" * 28, "\n", " " * 20, "ALB System", "\n", "=+" * 28, "\n")
 
-def crie_matriz(n_linhas, n_colunas, valor):   #Criar matriz desejada
-    matriz = [] # lista vazia
-    for i in range(n_linhas):
-        linha = [] 
-        for j in range(n_colunas):
-            linha.append(valor)		        
-        matriz.append(linha)	
-    return matriz
+def create_matrix(n_rows, n_columns, value):   # Create the desired matrix
+    matrix = []  # empty list
+    for i in range(n_rows):
+        row = [] 
+        for j in range(n_columns):
+            row.append(value)		        
+        matrix.append(row)	
+    return matrix
 
-mat = crie_matriz(2,4,0)
-soma = 0
-linha1 = 0
-linha2 = 0
-cont1 = 0
+mat = create_matrix(2, 4, 0)
+total_sum = 0
+line1_count = 0
+line2_count = 0
+even_count = 0
 
-for i in range(len(mat)):                       #Preenchendo a matriz
+for i in range(len(mat)):                       # Filling the matrix
     for j in range(len(mat[i])):
-        mat[i][j] = randint(0,25)
-
+        mat[i][j] = randint(0, 25)
                         
-for linha in mat:                               #Imprimir a matriz na tela
-    print("|",end='')  
-    for valor in linha:
-        print(f" {valor:3} |",end=' ')
+for row in mat:                               # Print the matrix on the screen
+    print("|", end='')  
+    for value in row:
+        print(f" {value:3} |", end=' ')
     print("")
     
-
-for i in range(len(mat)):                       #Regras de negocio
+for i in range(len(mat)):                       # Business rules
     for j in range(len(mat[i])):
         if mat[i][j] % 2 == 0:
-            soma+=mat[i][j]
-            cont1+=1
+            total_sum += mat[i][j]
+            even_count += 1
         if i == 0:
-            if mat[i][j]>12 and mat[i][j] <20:
-                linha1+=1
+            if 12 < mat[i][j] < 20:
+                line1_count += 1
         else:
-            if mat[i][j]>12 and mat[i][j] <20:
-                linha2+=1
+            if 12 < mat[i][j] < 20:
+                line2_count += 1
     
-
-print(f"A média dos elementos pares da matriz é {soma/cont1:.2f}\nElementos entre 12 e 20 temos o seguinte\nNa linha 1 = {linha1} e na linha 2 = {linha2}")
+print(f"The average of the even elements in the matrix is {total_sum / even_count:.2f}\nElements between 12 and 20 are as follows\nIn line 1 = {line1_count} and in line 2 = {line2_count}")
