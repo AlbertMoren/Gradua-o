@@ -1,11 +1,13 @@
-'''Faça uma sub-rotina que receba como parâmetro o raio de uma esfera, calcule e mostre no programa principal o seu volume: v = 4/3 * R3.'''
+'''Create a subroutine that receives the radius of a sphere as a parameter, calculates and displays its volume in the main program: v = 4/3 * R3.'''
 
-#minha assinatura 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+# My signature
+print("=+" * 28, "\n", " " * 20, "ALB System", "\n", "=+" * 28, "\n")
 
-def sub_rotina(raio):
-    volume = (4/3)*3.14*(raio**3)
+import math
+
+def calculate_sphere_volume(radius):
+    volume = (4/3) * math.pi * (radius**3)
     return volume
 
-raio = float(input("Insira o raio da esfera: "))
-print(F"O volume da esfera é {sub_rotina(raio):.2f}")
+radius = float(input("Enter the radius of the sphere: "))
+print(f"The volume of the sphere is {calculate_sphere_volume(radius):.2f}")

@@ -1,16 +1,25 @@
-'''Faça uma sub-rotina que receba um valor inteiro e verifique se ele é positivo ou negativo.'''
+'''Make a subroutine that takes an integer value and checks whether it is positive or negative.'''
 
+# My signature 
+print("=+" * 28, "\n", " " * 20, "ALB System", "\n", "=+" * 28, "\n")
 
-#minha assinatura 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
-
-def sub_rotina(n):
-    if n > 0:
-        print("Esse número é positivo")
-    elif n == 0:
-        print("Esse número é neutro")
+def check_number(n):
+    if isinstance(n, (int, float)):
+        if n > 0:
+            print("This number is positive.")
+        elif n == 0:
+            print("This number is neutral.")
+        else:
+            print("This number is negative.")
     else:
-        print("Esse número é negativo")
+        print("Invalid input. Please enter a valid number.")
 
-n = int(input("Insira um número: "))
-sub_rotina(n)
+# Get user input
+user_input = input("Enter a number: ")
+
+# Try to convert the input to a number
+try:
+    number = float(user_input)
+    check_number(number)
+except ValueError:
+    print("Invalid input. Please enter a valid number.")

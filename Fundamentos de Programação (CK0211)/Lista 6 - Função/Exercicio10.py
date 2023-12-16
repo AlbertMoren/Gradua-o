@@ -1,15 +1,13 @@
-'''Crie uma sub-rotina que receba como parâmetro dois valores X e Z, calcule e retorne X^Z sem utilizar funções ou operadores de potência prontos.'''
+'''Create a subroutine that receives two values X and Z as parameters, calculates and returns X^Z without using ready-made functions or power operators.'''
 
-#minha assinatura 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+# My signature 
+print("=+" * 28, "\n", " " * 20, "ALB System", "\n", "=+" * 28, "\n")
 
-def sub_rotina(x,z):
+def sub_routine(x, z):
     if z == 1:
         return x
     else:
-        return x * sub_rotina(x,z-1)
+        return x * sub_routine(x, z - 1)
 
-number1,number2 = input("Insira dois valor: ").split(" ")
-number1= int(number1)
-number2 = int(number2)
-print(f" {number1} elevado a {number2}  = {sub_rotina(number1,number2)}")
+number1, number2 = map(int, input("Enter two values: ").split(" "))
+print(f"{number1} raised to the power of {number2} = {sub_routine(number1, number2)}")

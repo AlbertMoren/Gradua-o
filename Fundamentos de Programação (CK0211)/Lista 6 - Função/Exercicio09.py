@@ -1,17 +1,17 @@
-'''Crie uma sub-rotina que receba como parâmetro um valor inteiro e positivo e retorne a soma dos divisores desse valor.'''
+'''Create a subroutine that takes a positive integer value as a parameter and returns the sum of the divisors of that value.'''
 
-#minha assinatura 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+# My signature 
+print("=+" * 28, "\n", " " * 20, "ALB System", "\n", "=+" * 28, "\n")
 
-def sub_rotina(numero,i):
-    if i == numero:
-        return numero
+def sub_routine(number, i):
+    if i == number:
+        return number
     else:
-        if numero%i==0:
-            return i + sub_rotina(numero,i+1)
+        if number % i == 0:
+            return i + sub_routine(number, i + 1)
         else:
-            return sub_rotina(numero,i+1)
+            return sub_routine(number, i + 1)
 
 i = 1
-numero = int(input("Insira um valor: "))
-print(f"A soma dos valores dos div de  {numero} = {sub_rotina(numero,i)}")
+number = int(input("Enter a value: "))
+print(f"The sum of divisors of {number} = {sub_routine(number, i)}")

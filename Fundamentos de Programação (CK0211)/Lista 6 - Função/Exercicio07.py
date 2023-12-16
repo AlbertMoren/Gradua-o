@@ -1,19 +1,21 @@
-'''Elabore uma sub-rotina que leia um número não determinado de valores positivos e retorne a média aritmética desses valores. Terminar a entrada de dados com o valor zero'''
+'''Write a subroutine that reads an undetermined number of positive values ​​and returns the arithmetic mean of these values. End data entry with the value zero'''
 
-#minha assinatura 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+# My signature 
+print("=+" * 28, "\n", " " * 20, "ALB System", "\n", "=+" * 28, "\n")
 
-def sub_rotina(list):
-    media = sum(list)/len(list)
-    return media
+def sub_rotina(numbers):
+    average = sum(numbers) / len(numbers)
+    return average
 
-
-numero = []
-while(True):
-    number = int(input("Insira um valor: "))
+numbers = []
+while True:
+    number = int(input("Enter a value (enter 0 to stop): "))
     if number == 0:
         break
-    numero.append(number)
+    numbers.append(number)
 
-med = sub_rotina(numero)
-print(f"A media dos valores inseridos é {med:.1f}")
+if numbers:
+    avg = sub_rotina(numbers)
+    print(f"The average of the entered values is {avg:.1f}")
+else:
+    print("No values entered.")

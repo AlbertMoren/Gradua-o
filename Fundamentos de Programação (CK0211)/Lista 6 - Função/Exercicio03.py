@@ -1,27 +1,25 @@
-'''Elabore uma sub-rotina que receba dois números como parâmetros e retorne 0, se o primeiro número for divisível pelo segundo número. Caso contrário, deverá retornar o próximo divisor.'''
+'''Write a subroutine that takes two numbers as parameters and returns 0 if the first number is divisible by the second number. Otherwise, the next divisor must be returned.'''
 
-#minha assinatura 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+# My signature
+print("=+" * 28, "\n", " " * 20, "ALB System", "\n", "=+" * 28, "\n")
 
-def sub_rotina(n1,n2):
-    
-    if n1%n2 == 0:
+def next_divisor_or_zero(num1, num2):
+    if num1 % num2 == 0:
         return 0
-    elif n2 > n1:
-        return n1
+    elif num2 > num1:
+        return num1
     else:
-        i = n2+1
-        while(n1%i!=0):
-            i= i+1
+        i = num2 + 1
+        while num1 % i != 0:
+            i += 1
         return i
-        
-            
 
-number1,number2 = input("Insira 2 números: ").split(" ")
-number1 = int(number1)
-number2 = int(number2)
+# Input two numbers
+num1, num2 = map(int, input("Enter two numbers separated by space: ").split())
 
-if(sub_rotina(number1,number2) == 0):
-    print(f"{number1} e {number2} são divisiveis entre si")
+result = next_divisor_or_zero(num1, num2)
+
+if result == 0:
+    print(f"{num1} and {num2} are divisible.")
 else:
-    print(f"{number1} é divisivel por {sub_rotina(number1,number2)}")
+    print(f"{num1} is divisible by the next divisor: {result}")

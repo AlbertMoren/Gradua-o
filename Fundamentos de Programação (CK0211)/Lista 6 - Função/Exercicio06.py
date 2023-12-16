@@ -1,18 +1,28 @@
-'''Crie uma sub-rotina que receba como parâmetro a altura (alt) e o sexo de uma pessoa e retorne seu peso ideal. Para homens, deverá calcular o peso ideal usando a fórmula: peso ideal = 72.7 *alt − 58; para mulheres: peso ideal = 62.1 *alt − 44.7'''
+'''Create a subroutine that receives a person's height (alt) and gender as parameters and returns their ideal weight. For men, you should calculate the ideal weight using the formula: ideal weight = 72.7 *alt − 58; for women: ideal weight = 62.1 *alt − 44.7'''
 
-#minha assinatura 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+# My signature 
+print("=+" * 28, "\n", " " * 20, "ALB System", "\n", "=+" * 28, "\n")
 
-def sub_rotina(alt,sexo):
-    if sexo == 'F':
-        peso = 72.7*alt-58
-        return peso
+def calculate_ideal_weight(height, gender):
+    if gender.upper() == 'F':
+        weight = 72.7 * height - 58
+    elif gender.upper() == 'M':
+        weight = 62.1 * height - 44.7
     else:
-        peso = 62.1*alt-44.7
-        return peso
+        weight = None  # Invalid gender
 
+    return weight
 
-altura, sexo = input("Informe a altura e o sexo: " ).split(" ")
-altura = float(altura)
+# Get user input
+try:
+    height, gender = input("Enter height and gender (M/F): ").split()
+    height = float(height)
 
-print(f"Seu peso idela é fe {sub_rotina(altura,sexo):.2f}")
+    ideal_weight = calculate_ideal_weight(height, gender)
+    
+    if ideal_weight is not None:
+        print(f"Your ideal weight is {ideal_weight:.2f} kg.")
+    else:
+        print("Invalid gender. Please enter 'M' or 'F'.")
+except ValueError:
+    print("Invalid input. Please enter valid height and gender.")

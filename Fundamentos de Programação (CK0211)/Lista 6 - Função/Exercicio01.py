@@ -1,13 +1,14 @@
-'''Faça uma sub-rotina que receba um número inteiro e positivo N como parâmetro e retorne a soma dos números inteiros existentes entre o número 1 e N (inclusive).'''
-#minha assinatura 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+'''Make a subroutine that takes a positive integer N as a parameter and returns the sum of the integers between the number 1 and N (inclusive).'''
 
-def func(n):
-    soma=0
-    for i in range(n+1):
-        soma+=i
-    return soma
+# My signature
+print("=+" * 28, "\n", " " * 20, "ALB System", "\n", "=+" * 28, "\n")
 
-n = int(input("Insira um número: "))
-soma = func(n)
-print(f"{soma}")
+def calculate_sum(n):
+    sum_result = 0
+    for i in range(n + 1):
+        sum_result += i
+    return sum_result
+
+user_input = int(input("Enter a number: "))
+result_sum = calculate_sum(user_input)
+print(f"The sum of integers between 1 and {user_input} (inclusive) is: {result_sum}")
