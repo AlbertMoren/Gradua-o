@@ -1,20 +1,18 @@
-'''Faça um programa que receba uma frase e mostre quantas letras diferentes ela contém'''
+'''Write a program that takes a sentence and shows how many different letters it contains'''
 
-#minha assinatura 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+# My signature
+print("=+" * 28, "\n", " " * 20, "ALB System", "\n", "=+" * 28, "\n")
 
-def sub_rotina_contabilizar(text):
-    lista = list(text)
-    lista1 = []
-    cont = 0
-    for i in range(len(lista)):
-        if lista[i] in lista1:
-            continue
-        else:
-            if lista[i] != " ":
-                cont+=1
-                lista1.append(lista[i])
-    return cont
+def count_unique_characters(text):
+    char_list = list(text)
+    unique_chars = []
 
-texto = input("Insira um texto: ").lower()
-print(f"Essa frase tem {sub_rotina_contabilizar(texto)} caracteres diferentes")
+    for char in char_list:
+        if char not in unique_chars:
+            if char != " ":
+                unique_chars.append(char)
+
+    return len(unique_chars)
+
+text_input = input("Enter a text: ").lower()
+print(f"This phrase has {count_unique_characters(text_input)} different characters")

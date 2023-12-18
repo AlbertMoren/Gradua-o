@@ -1,182 +1,151 @@
 from random import randint
 from time import sleep
-#linha necessarias para poder limpar tela
 import os
 
-#printa na tela o game
 def tela():
     print("\n" * os.get_terminal_size().lines)
-    print("\n","+="*15)
+    print("\n", "+=" * 15)
     print("\t  1   2   3 ")
     print(f"\t1 {mat[0][0]} | {mat[0][1]} | {mat[0][2]}  ")
     print("\t ---+---+---")
     print(f"\t2 {mat[1][0]} | {mat[1][1]} | {mat[1][2]}  ")
     print("\t ---+---+---")
     print(f"\t3 {mat[2][0]} | {mat[2][1]} | {mat[2][2]}  ")
-    print("+="*15)
+    print("+=" * 15)
 
-#criar a matrix do game
 def crie_matriz_game(n_linhas, n_colunas, valor):
-    matriz = [] # lista vazia
-    for i in range(n_linhas):
-        linha = [] 
-        for j in range(n_colunas):
-            linha.append(valor)		        # coloque linha na matriz
-        matriz.append(linha)	
+    matriz = [[valor] * n_colunas for _ in range(n_linhas)]
     return matriz
 
-#Usuario seleciona seu icone e valida se é uma opção valida
 def pegar_icone():
-    print("\nQual icone deseja? ")
+    print("\nQual ícone deseja? ")
     print("1 para 'X'")
     print("2 para 'O'")
-    escolha = input()
-    while(escolha != '1' and escolha != '2'):
-        print("Valor incorreto, só é aceito 1 e 2")
-        print("1 para 'X'")
-        print("2 para 'O'")
-        escolha = input()
-    escolha = int(escolha)
-    if escolha == 1:
-        player[0] = 'X'
-        player[1] = 'O'
-    else:
-        player[0] = 'O'
-        player[1] = 'X'
-    sleep(3)
-    print(f" ** Você sera o '{player[0]}' e a máquina será '{player[1]}' **")
-      
-#Função que solicita a jogada do player e a valida
-def jogada_player():
-    linha = 0
-    coluna = 0
-    linha,coluna = input("Informe a sua jogada: ").split(",")
-    linha = int(linha)
-    coluna = int(coluna)
-    print("Processando sua jogada...")
-    sleep(2)
-    flag = 1
-    while(flag == 1):
-        if linha-1>2 or linha-1<0 or coluna-1>2 or coluna-1<0 or mat[linha-1][coluna-1] == "X" or mat[linha-1][coluna-1] == "O":
-            print("Jogada invalida, tente novamente")
-            linha,coluna = input("Informe a sua jogada: ").split(",")
-            linha = int(linha)
-            coluna = int(coluna)
-            print("Processando sua jogada...")
-            sleep(2)
-        else:
-            mat[linha-1][coluna-1] = player[0]
-            flag = 0
     
-#Função que execulta a jogada da maquina e a valida
+    while True:
+        escolha = input()
+        if escolha in ('1', '2'):
+            global player
+            player = ('X', 'O') if escolha == '1' else ('O', 'X')
+            break
+        print("Valor incorreto, só é aceito 1 e 2")
+
+    sleep(3)
+    print(f" ** Você será o '{player[0]}' e a máquina será '{player[1]}' **")
+
+def jogada_player():
+    while True:
+        try:
+            linha, coluna = map(int, input("Informe a sua jogada (linha,coluna): ").split(","))
+        except ValueError:
+            print("Entrada inválida. Use o formato linha,coluna.")
+            continue
+
+        print("Processando sua jogada...")
+        sleep(2)
+
+        if 1 <= linha <= 3 and 1 <= coluna <= 3 and mat[linha-1][coluna-1] == " ":
+            mat[linha-1][coluna-1] = player[0]
+            break
+        else:
+            print("Jogada inválida, tente novamente")
+
 def jogada_maquina():
-    cont = 0
-    for i in range(len(mat)):
-        for j in range(len(mat[i])):
-            if mat[i][j] == 'X' or mat[i][j] == 'O':
-                cont+=1
-    if cont == 9:
-        print("Deu empate Negada")
+    best_score = float('-inf')
+    best_move = None
+
+    for i in range(3):
+        for j in range(3):
+            if mat[i][j] == ' ':
+                mat[i][j] = player[1]
+                score = minimax(mat, 0, False)
+                mat[i][j] = ' '
+
+                if score > best_score:
+                    best_score = score
+                    best_move = (i, j)
+
+    mat[best_move[0]][best_move[1]] = player[1]
+
+def minimax(board, depth, is_maximizing):
+    scores = {'X': -1, 'O': 1, 'Tie': 0}
+
+    result = win_conditions()
+    if result in scores:
+        return scores[result]
+
+    if is_maximizing:
+        best_score = float('-inf')
+        for i in range(3):
+            for j in range(3):
+                if board[i][j] == ' ':
+                    board[i][j] = player[1]
+                    score = minimax(board, depth + 1, False)
+                    board[i][j] = ' '
+                    best_score = max(score, best_score)
+        return best_score
     else:
-        print("Processando jogada da máquina...")
-        sleep(4)
-        while True:
-            linha = randint(0,2)
-            coluna = randint(0,2)
-            if mat[linha][coluna] not in ('X','O'):
-                mat[linha][coluna] = player[1]
-                break
-            
-#Função que reseta toda a matrix
+        best_score = float('inf')
+        for i in range(3):
+            for j in range(3):
+                if board[i][j] == ' ':
+                    board[i][j] = player[0]
+                    score = minimax(board, depth + 1, True)
+                    board[i][j] = ' '
+                    best_score = min(score, best_score)
+        return best_score        
+
 def resetar_game():
     for i in range(len(mat)):
         for j in range(len(mat[i])):
             mat[i][j] = ' '
 
-#condições de vitoria
 def win_conditions():
     for i in range(3):
-        print(i)
-        if((mat[i][0] ==  mat[i][1]) and (mat[i][1] == mat[i][2]) and (mat[i][0] != " ")):
-            if(mat[i][0] == player[0]):
-                tela()
-                print("\n-------Parabêns, você ganhou!!!!!-------")
-                pontuacao[0] += 1
-                return 1
-            else:
-                tela()
-                print("\n-------Computador venceu essa!!!!-------")
-                pontuacao[1] += 1
-                return 1
-    for i in range(3):
-        if (mat[0][i] ==  mat[1][i] and mat[1][i] == mat[2][i] and mat[1][i] != " "):
-            if(mat[1][i] == player[0]):
-                tela()
-                print("\n-------Parabêns, você ganhou!!!!!-------")
-                pontuacao[0] += 1
-                return 1
-            else:
-                tela()
-                print("\n-------Computador venceu essa!!!!-------")
-                pontuacao[1] += 1
-                return 1
-    if (mat[0][0] ==  mat[1][1] and mat[1][1] == mat[2][2] and mat[0][0]!= " "):#diagonal principal
-        if(mat[0][0] == "X"):
-            tela()
-            print("\n-------Parabêns, você ganhou!!!!!-------")
-            pontuacao[0] += 1
-            return 1
-        else:
-            tela()
-            print("\n-------Computador venceu essa!!!!-------")
-            pontuacao[1] += 1
-            return 1
-    if (mat[2][0] ==  mat[1][1] and mat[0][2] ==  mat[1][1] and mat[2][0] != " "):#diagonal segundaria
-        if(mat[2][0] == "X"):
-            tela()
-            print("\n-------Parabêns, você ganhou!!!!!-------")
-            pontuacao[0] += 1
-            return 1
-        else:
-            tela()
-            print("\n-------Computador venceu essa!!!!-------")
-            pontuacao[1] += 1
-            return 1
-    else:
-        return 0
-     
+        if all(cell == mat[i][0] and cell != " " for cell in mat[i]):
+            return mat[i][0]
+
+        if all(cell == mat[0][i] and cell != " " for cell in [mat[j][i] for j in range(3)]):
+            return mat[0][i]
+
+    if mat[0][0] == mat[1][1] == mat[2][2] and mat[0][0] != " ":
+        return mat[0][0]
+
+    if mat[2][0] == mat[1][1] == mat[0][2] and mat[2][0] != " ":
+        return mat[2][0]
+
+    return None
+
 def regras():
     sleep(1)
-    print("1 - Você vai selecionar o icone do seu jogador, e o complementar ficarar para o computador")
-    print("2 - Para realizar a jogada basta inserir as coordenadas desejadas, como padrão temos 'linha,coluna' separado por virgula ")
+    print("1 - Você vai selecionar o ícone do seu jogador, e o complementar ficará para o computador")
+    print("2 - Para realizar a jogada basta inserir as coordenadas desejadas, como padrão temos 'linha,coluna' separado por vírgula ")
     print("3 - Atualmente só temos a opção de jogar contra a máquina ")
     print("Divirta-se")
     sleep(5)
     print("\n" * os.get_terminal_size().lines)
 
-#Condição para verificar se o jogo deve finalizar
-def processar_ganhador():
-    value = win_conditions()
-    if value == 1:
-        sleep(3)
-        return 0
-    else:
-        return 1
-
-#PRimeira opção do menu
 def opcao1():
     flag = 1
     pegar_icone()
-    while(flag == 1):
+    while flag:
         tela()
         jogada_player()
-        flag = processar_ganhador()
-        if flag == 0:
+        vencedor = win_conditions()
+        if vencedor:
+            tela()
+            print(f"\n-------Parabéns, {vencedor} ganhou!!!!!-------")
+            pontuacao[0 if vencedor == player[0] else 1] += 1
             break
+
         tela()
         jogada_maquina()
-        flag = processar_ganhador()
-            
+        vencedor = win_conditions()
+        if vencedor:
+            tela()
+            print(f"\n-------Computador venceu essa!!!!-------")
+            pontuacao[1] += 1
+            break
 
 def opcao2():
     sleep(1)
@@ -184,21 +153,20 @@ def opcao2():
     sleep(3)
     print("\n" * os.get_terminal_size().lines)
 
-#Menu do programa
 def jogo():
     jogar = 1
-    while(jogar == 1):
+    while jogar == 1:
         print()
-        print("=+"*10)
-        print(" "*5,"Alb system")
-        print("=+"*10)
+        print("=+" * 10)
+        print(" " * 5, "Alb system")
+        print("=+" * 10)
         print("1 - jogar")
         print("2 - placar")
         print("3 - Regras")
         print("4 - Sair")
         escolha = input()
-        while(escolha != '1' and escolha != '2' and escolha != '3' and escolha != '4'):
-            print("Valor incorreto, só é aceito 1,2,3 e 4, 'SISTEMA LIMITADO POW!!!!!' ")
+        while escolha not in ('1', '2', '3', '4'):
+            print("Valor incorreto, só é aceito 1, 2, 3 e 4, 'SISTEMA LIMITADO POW!!!!!' ")
             print("1 - jogar")
             print("2 - placar")
             print("3 - Regras")
@@ -215,8 +183,7 @@ def jogo():
         elif escolha == 4:
             exit()
 
-#main
-mat = crie_matriz_game(3,3," ")
-player = [0]*2
-pontuacao = [0]*2
+mat = crie_matriz_game(3, 3, " ")
+player = [0] * 2
+pontuacao = [0] * 2
 jogo()

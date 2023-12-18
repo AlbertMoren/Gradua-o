@@ -1,21 +1,25 @@
-'''Faça um programa que receba uma frase e um caractere e verifique se o caractere digitado é encontrado na frase ou não e, se for encontrado, quantas vezes isso acontece.'''
+'''Make a program that takes a sentence and a character and checks whether the character entered is found in the sentence or not, and if it is found, how many times it happens.'''
 
-#minha assinatura 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+# My signature 
+print("=+" * 28, "\n", " " * 20, "ALB System", "\n", "=+" * 28, "\n")
 
-def sub_rotina_contabilizar(text,caracter):
-    lista= list(text)
-    cont =0
-    if caracter in lista:
-        for i in range(len(lista)):
-            if lista[i] == caracter:
-                cont+=1
-    return cont
+def count_occurrences(text, character):
+    char_list = list(text)
+    count = 0
 
-texto = input("Insira um texto: ").lower()
-caracteres = input("Insira um texto: ").lower()
-valor = sub_rotina_contabilizar(texto,caracteres)
-if valor >0:
-    print(f"O '{caracteres}' se encontra {valor} vezes na frase")
+    if character in char_list:
+        for char in char_list:
+            if char == character:
+                count += 1
+
+    return count
+
+text_input = input("Enter a text: ").lower()
+character_input = input("Enter a character: ").lower()
+
+result = count_occurrences(text_input, character_input)
+
+if result > 0:
+    print(f"The character '{character_input}' appears {result} times in the phrase.")
 else:
-    print(f"O caracater {caracteres} não aparece na frase")
+    print(f"The character {character_input} does not appear in the phrase.")

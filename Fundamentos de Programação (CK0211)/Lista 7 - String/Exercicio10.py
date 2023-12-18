@@ -1,31 +1,40 @@
-'''Faça um programa que receba uma frase e um caractere e verifique em que posição da frase o caracteredigitado aparece pela última vez'''
+'''Write a program that receives a sentence and a character and checks where in the sentence the character last appears'''
 
-def sub_rotina_contabilizar(text,caracter):
-    lista= list(text)
+# My signature 
+print("=+" * 28, "\n", " " * 20, "ALB System", "\n", "=+" * 28, "\n")
+
+def find_last_occurrence(text, character):
+    char_list = list(text)
     indices = []
-    indice = -1
-    last = 0
-    if " " in lista:
-        for i in range(len(lista)):
-            if lista[i] == " ":
-                indices.append(i)
-        last = indices[-1]
-        while(last != len(lista)):
-            if lista[last] == caracter:
-                indice = last
-                break
-            last+=1
-    else:
-        for i in range(lista):
-            if lista[i] == caracter:
-                indice = i
-    return indice
+    last_index = -1
+    last_space_index = 0
 
-#main
-texto = input("Insira um texto: ").lower()
-caracteres = input("Insira um texto: ").lower()
-valor = sub_rotina_contabilizar(texto,caracteres)
-if valor >=0:
-    print(f"O '{caracteres}' se encontra na posição {valor+1} nessa na ultima palavra dessa frase")
+    if " " in char_list:
+        for i in range(len(char_list)):
+            if char_list[i] == " ":
+                indices.append(i)
+
+        last_space_index = indices[-1]
+
+        while last_space_index != len(char_list):
+            if char_list[last_space_index] == character:
+                last_index = last_space_index
+                break
+            last_space_index += 1
+    else:
+        for i in range(len(char_list)):
+            if char_list[i] == character:
+                last_index = i
+
+    return last_index
+
+# Main
+text_input = input("Enter a text: ").lower()
+character_input = input("Enter a character: ").lower()
+
+result = find_last_occurrence(text_input, character_input)
+
+if result >= 0:
+    print(f"The character '{character_input}' is found at position {result + 1} in the last word of the phrase.")
 else:
-    print(f"O caracater {caracteres} não aparece na ultima palavra da frase")
+    print(f"The character {character_input} does not appear in the last word of the phrase.")

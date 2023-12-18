@@ -1,21 +1,21 @@
-'''Faça um programa para criptografar uma frase dada pelo usuário. Na criptografia, a frase deverá ser invertida e as consoantes deverão ser trocadas por #. Exemplo:
-Frase: EU ESTOU NA ESCOLA
-Saída: A#O##E A# UO##E UE'''
+'''by the user. In encryption, the sentence must be inverted and the consonants must be replaced by #. Example:
+Phrase: I'M AT SCHOOL
+Output: A#O##E A# UO##E UE'''
 
-#minha assinatura 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+# My signature
+print("=+" * 28, "\n", " " * 20, "ALB System", "\n", "=+" * 28, "\n")
 
-maiusculas = ('b','c','d','f','g','h','i','j','l','m','n','p','q','r','s','t','v','x','w','y','z')
+consonants = ('b', 'c', 'd', 'f', 'g', 'h', 'i', 'j', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'x', 'w', 'y', 'z')
 
-def sub_rotina(texto):
-    lista = list(texto)
-    for i in range(len(lista)):
-        for elemeto in maiusculas:
-            if lista[i] == elemeto:
-                lista[i] = '#'
-    texto = "".join(lista)
-    print(texto[::-1])
+def encrypt_phrase(text):
+    char_list = list(text)
+    for i in range(len(char_list)):
+        for consonant in consonants:
+            if char_list[i] == consonant:
+                char_list[i] = '#'
+    encrypted_text = "".join(char_list)
+    print(encrypted_text[::-1])
 
-#Main
-texto = input("Insira um texto: ").lower()
-sub_rotina(texto)
+# Main
+text = input("Enter a phrase: ").lower()
+encrypt_phrase(text)

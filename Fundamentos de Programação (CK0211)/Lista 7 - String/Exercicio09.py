@@ -1,4 +1,4 @@
-'''Faça um programa que receba uma frase e um caractere e verifique em que posição da frase o caractere digitado aparece pela primeira vez.'''
+'''Make a program that takes a sentence and a character and checks whether the character entered is found in the sentence or not, and if it is found, how many times it happens.'''
 
 #minha assinatura 
 print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")

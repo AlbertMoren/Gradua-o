@@ -1,21 +1,21 @@
-'''Faça um programa que receba uma frase e mostre cada palavra dela em uma linha separada. Exemplo:
-Frase: COMPUTADORES SÃO MÁQUINAS POTENTES
-Saída:
-COMPUTADORES
-SÃO
-MÁQUINAS
-POTENTES'''
+'''Write a program that takes a sentence and displays each word in it on a separate line. Example:
+Quote: COMPUTERS ARE POWERFUL MACHINES
+Exit:
+COMPUTERS
+THEY ARE
+MACHINES
+POWERFULS'''
 
-#minha assinatura 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+# My signature
+print("=+" * 28, "\n", " " * 20, "ALB System", "\n", "=+" * 28, "\n")
 
-def sub_rotina(texto):
-    for i in range(len(texto)):
-        if texto[i] != ' ':
-            print(texto[i],end="")
+def sub_routine(text):
+    for i in range(len(text)):
+        if text[i] != ' ':
+            print(text[i], end="")
         else:
             print("")
 
-#Main
-texto = input("Insira um texto: ").lower()
-sub_rotina(texto)
+# Main
+text = input("Enter a text: ").lower()
+sub_routine(text)

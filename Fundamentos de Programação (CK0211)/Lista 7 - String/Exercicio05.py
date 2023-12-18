@@ -1,22 +1,22 @@
-'''Faça um programa que receba duas cadeias de caracteres e verifique se a primeira cadeia digitada é permutação da segunda cadeia, ou seja, se todos os caracteres da primeira cadeia estão presentes na segunda cadeia, mesmo que em posições diferentes. Exemplo:
-“abccde” é uma permutação de “cbadce”, mas não é de “abcdef” nem de “abcde”'''
+'''Write a program that receives two strings of characters and checks if the first string entered is a permutation of the second string, that is, if all characters from the first string are present in the second string, even if in different positions. Example:
+“abccde” is a permutation of “cbadce”, but is neither “abcdef” nor “abcde”'''
 
-#minha assinatura 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+# My signature
+print("=+" * 28, "\n", " " * 20, "ALB System", "\n", "=+" * 28, "\n")
 
-def sub_rotina_comparar(tex1, tex2):
-    lista1 = list(tex1)
-    lista2 = list(tex2)
-    for i in range(len(lista1)):
-        if lista1[i] in lista2:
-            if i+1 == len(lista1):
-                print(f"{tex1} é permutação de {tex2}")
+def compare_subroutine(text1, text2):
+    list1 = list(text1)
+    list2 = list(text2)
+    for i in range(len(list1)):
+        if list1[i] in list2:
+            if i + 1 == len(list1):
+                print(f"{text1} is a permutation of {text2}")
             continue
         else:
-            print("Não")
+            print("No")
             break
-            
-#Main
-texto1 = input("Insira uma palavra: ").lower()
-texto2 = input("Insira uma palavra: ").lower()
-sub_rotina_comparar(texto1,texto2)
+
+# Main
+text1 = input("Enter a word: ").lower()
+text2 = input("Enter another word: ").lower()
+compare_subroutine(text1, text2)

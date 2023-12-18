@@ -1,24 +1,25 @@
-'''Faça um programa que receba uma frase e gere uma nova frase, duplicando cada caractere da frase digitada. Exemplo:
-Frase: PROGRAMAR É BOM
-Saída: PPRROOGGRRAAMMAARR ÉÉ BBOOMM'''
+'''Write a program that receives a sentence and generates a new sentence, duplicating each character of the entered sentence. Example:
+Phrase: PROGRAMMING IS GOOD
+Output: PPRROOGGRRAAMMMMIINNGG IISS GGOOOODD'''
 
-#minha assinatura 
-print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+# My signature
+print("=+"*28, "\n", " "*20, "ALB System", "\n", "=+"*28, "\n")
 
-def sub_rotina_editar(text):
-    lista = list(text)
-    lista1= []
-    for i in range(len(lista)):
-        caracter = lista[i]
-        if caracter == " ":
-            lista1.append(caracter)
+def edit_subroutine(text):
+    list_text = list(text)
+    edited_list = []
+
+    for character in list_text:
+        if character == " ":
+            edited_list.append(character)
         else:
-            for j in range(2):
-                lista1.append(caracter)
-    text = "".join(lista1)
-    return text
+            for _ in range(2):
+                edited_list.append(character)
 
-#Main
-texto = input("Insira um texto: ").lower()
-texto = sub_rotina_editar(texto)
-print(texto)
+    edited_text = "".join(edited_list)
+    return edited_text
+
+# Main
+text_input = input("Enter a text: ").lower()
+edited_text = edit_subroutine(text_input)
+print(edited_text)
