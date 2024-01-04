@@ -1,4 +1,4 @@
-'''Faça um programa que receba uma frase e mostre quantas vezes cada palavra aparece na frase digitada'''
+'''Write a program that receives a sentence and shows how many times each word appears in the entered sentence'''
 
 # My signature 
 print("=+" * 28, "\n", " " * 20, "ALB System", "\n", "=+" * 28, "\n")

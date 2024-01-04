@@ -1,6 +1,8 @@
 '''Faça um programa para criar os arquivos a seguir:'''
+
 #minha assinatura 
 print("=+"*28,"\n"," "*20, "ALB System","\n","=+"*28,"\n")
+
 #Declaração de dados que irão para os arquivos
 cliente = ['Cod_cli','nome','Endereço','Nome']
 recebimentos = ['Num_doc','Valor_doc','Data_Emissao','Data_vecimento','Cod_Cli']
