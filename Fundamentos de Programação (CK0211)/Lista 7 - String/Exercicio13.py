@@ -5,6 +5,9 @@ Chain = Ouch!
 Number = 3
 New string = Ouch! Ouch! Ouch!'''
 
+# My signature 
+print("=+" * 28, "\n", " " * 20, "ALB System", "\n", "=+" * 28, "\n")
+
 def fuctions(phrase,number ):
     number = min(number, 5)
     newPhrase = [phrase] * number
