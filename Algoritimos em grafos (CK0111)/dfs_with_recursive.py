@@ -6,13 +6,22 @@ g = grafo.add_vertex(g,2)
 g = grafo.add_vertex(g,1)
 g = grafo.add_vertex(g,3)
 g = grafo.add_vertex(g,4)
+g = grafo.add_vertex(g,5)
+g = grafo.add_vertex(g,6)
 grafo.add_edge(g,0,1)
 grafo.add_edge(g,2,1)
 grafo.add_edge(g,0,1)
 grafo.add_edge(g,3,1)
 grafo.add_edge(g,4,2)
+grafo.add_edge(g,5,6)
 grafo.print_graf(g)
 
+def print_grafo(g):
+    for i in range(len(g)):
+        if i < len(g) - 1:
+            print(f"{g[i]} -> ",end="")
+        else:
+            print(f"{g[i]}")
 
 def dfs(grafo,v,visited=None):
     if visited == None:
@@ -25,10 +34,8 @@ def dfs(grafo,v,visited=None):
     return visited
 
 ordem = dfs(g,0)
-
-for i in range(len(ordem)):
-    if i < len(ordem) - 1:
-        print(f"{ordem[i]} -> ",end="")
-    else:
-        print(f"{ordem[i]}")   
-    
+print_grafo(ordem)
+for i in range(len(g)):#this to ensure that all vertices are visited
+    if i not in ordem:
+        ordem = dfs(g,i)
+        print_grafo(ordem)
