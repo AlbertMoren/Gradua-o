@@ -1,4 +1,6 @@
 import grafo
+
+# Função recursiva de busca em profundidade (DFS) para encontrar pontos de articulação em um grafo.
 def dfs_articulacao(grafo, vertice, visitado, pai, tempo, low, disc, pontos_articulacao):
     
     filhos = 0
@@ -23,6 +25,7 @@ def dfs_articulacao(grafo, vertice, visitado, pai, tempo, low, disc, pontos_arti
         elif vizinho != pai[vertice]:  
             low[vertice] = min(low[vertice], disc[vizinho])
 
+# Função principal para encontrar os pontos de articulação em um grafo.
 def encontrar_pontos_de_articulacao(grafo):
     num_vertices = len(grafo)
     visitado = [False] * num_vertices

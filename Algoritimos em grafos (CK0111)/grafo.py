@@ -1,3 +1,5 @@
+#classe responsável por estruturar grafo não-direcional, para ser ultiliza por outras classes, afim de testar os algoritimos em determinadas situações
+
 def criar_grafo():
     grafo = []
     return grafo

@@ -1,5 +1,6 @@
 import heapq
 
+# Algoritmo de Prim para encontrar a Árvore Geradora Mínima (AGM) de um grafo ponderado.
 def prim(grafo,vertici_inicial=0):
     n = len(grafo)
     visited = [False] * n

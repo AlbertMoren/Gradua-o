@@ -1,13 +1,16 @@
+# Uma estrutura de dados eficiente utilizada para gerenciar e unir conjuntos disjuntos
 class UnionFind:
     def __init__(self,n):
         self.pai = list(range(n))
         self.rank =  [0] * n
-
+    
+    # Encontra a raiz do conjunto ao qual o elemento u pertence, aplicando compressão de caminho.
     def find(self,u):
         if self.pai[u] != u:
             self.pai[u] = self.find(self.pai[u])
         return self.pai[u]
     
+    # Une os conjuntos que contêm os elementos u e v.
     def union(self,u,v):
         raiz_u = self.find(u)
         raiz_v = self.find(v)
@@ -21,33 +24,25 @@ class UnionFind:
                 self.pai[raiz_v] = raiz_u
                 self.rank[raiz_u] += 1
 
+# Implementa o algoritmo de Kruskal para encontrar a Árvore Geradora Mínima (AGM) de um grafo ponderado.  
 def kruskal(grafo):
     n = len(grafo)
-    
     arestas = []
-
-    
     for u in range(n):
         for v, peso in grafo[u]:
             if u < v:  
                 arestas.append((peso, u, v))
-
-    
     arestas.sort()
-
-    
     uf = UnionFind(n)
-
     agm = []
     custo_total = 0
-
     for peso, u, v in arestas:
         if uf.find(u) != uf.find(v):
             uf.union(u, v)
             agm.append((u, v, peso))
             custo_total += peso
-
     return agm, custo_total
+
 
 import GrafoPonderado
 grafo = GrafoPonderado.criar_grafo()

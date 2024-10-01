@@ -1,30 +1,23 @@
 import grafo
 
-def dfs(grafo,V):
-    visited = []
-    no_visited = []
-    for i in range(len(grafo)):
-        no_visited.append(i)
-    stack = []#declared a stack
-    stack.append(V)
-    no_visited.remove(V)
-    while len(stack) != 0 :
-        U = stack.pop()
-        visited.append(U)
-        for i in grafo[U]:
-            if i in no_visited:
-                stack.append(i)
-                no_visited.remove(i)
+#função de busca em profundidade em grafo não-direcionado usando recursividade
+def dfs(grafo,v,visited=None):
+    if visited == None:
+        visited = []
+    if v not in visited:
+        visited.append(v)
+        for i in grafo[v]:
+            if i not in visited:
+                dfs(grafo,i,visited)
     return visited
 
-
+#Imprimi a ordem de como o grafo é visitado
 def print_grafo(g):
     for i in range(len(g)):
         if i < len(g) - 1:
             print(f"{g[i]} -> ",end="")
         else:
             print(f"{g[i]}")
-
 
 g = grafo.criar_grafo()
 g = grafo.add_vertex(g,0)
@@ -44,7 +37,7 @@ grafo.print_graf(g)
 
 ordem = dfs(g,0)
 print_grafo(ordem)
-for i in range(len(g)):#this to ensure that all vertices are visited
+for i in range(len(g)):
     if i not in ordem:
         ordem = dfs(g,i)
         print_grafo(ordem)
