@@ -24,31 +24,15 @@ def prim(grafo,vertici_inicial=0):
     return agm, custo_total
 
 
-import GrafoPonderado
-grafo = GrafoPonderado.criar_grafo()
-grafo = GrafoPonderado.add_vertex(grafo,0)
-grafo = GrafoPonderado.add_vertex(grafo,1)
-grafo = GrafoPonderado.add_vertex(grafo,2)
-grafo = GrafoPonderado.add_vertex(grafo,3)
-grafo = GrafoPonderado.add_vertex(grafo,4)
-grafo = GrafoPonderado.add_vertex(grafo,5)
-grafo = GrafoPonderado.add_vertex(grafo,6)
-
-GrafoPonderado.add_edge(grafo,0, 1, 7)
-GrafoPonderado.add_edge(grafo,0, 2, 5)
-GrafoPonderado.add_edge(grafo,1, 2, 10)
-GrafoPonderado.add_edge(grafo,1, 4, 2)
-GrafoPonderado.add_edge(grafo,1, 3, 18)
-GrafoPonderado.add_edge(grafo,2, 6, 16)
-GrafoPonderado.add_edge(grafo,2, 4, 3)
-GrafoPonderado.add_edge(grafo,3, 4, 12)
-GrafoPonderado.add_edge(grafo,3, 5, 4)
-GrafoPonderado.add_edge(grafo,4, 6, 30)
-GrafoPonderado.add_edge(grafo,5, 6, 26)
-GrafoPonderado.add_edge(grafo,5, 4, 14)
-GrafoPonderado.add_edge(grafo,1, 3, 18)
-
-GrafoPonderado.print_graf(grafo)
+grafo = {
+    0: [(1, 4), (2, 1), (6, 3)],  
+    1: [(0, 4), (2, 5), (5, 2)],  
+    2: [(0, 1), (1, 5), (3, 3), (4, 2)],  
+    3: [(2, 3), (4, 6), (5, 4)], 
+    4: [(2, 2), (3, 6), (6, 5)],
+    5: [(1, 2), (3, 4)],  
+    6: [(0, 3), (4, 5)]   
+}
 
 
 agm, custo_total = prim(grafo)

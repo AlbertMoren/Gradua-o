@@ -18,26 +18,21 @@ def bfs(grafo, V):
                 no_visited.remove(i)
     return visited
 
-import grafo
-
-g = grafo.criar_grafo()
-g = grafo.add_vertex(g,0)
-g = grafo.add_vertex(g,2)
-g = grafo.add_vertex(g,1)
-g = grafo.add_vertex(g,3)
-g = grafo.add_vertex(g,4)
-grafo.add_edge(g,0,1)
-grafo.add_edge(g,2,1)
-grafo.add_edge(g,0,1)
-grafo.add_edge(g,3,1)
-grafo.add_edge(g,4,2)
-grafo.print_graf(g)
+grafo = {
+    0: [1, 2, 6],
+    1: [0, 2, 5],
+    2: [0, 1, 3, 4],
+    3: [2, 4, 5],
+    4: [2, 3, 6],
+    5: [1, 3],
+    6: [0, 4]
+}
 
 
-ordem = bfs(g,0)
+ordem = bfs(grafo, 0)
 
 for i in range(len(ordem)):
     if i < len(ordem) - 1:
-        print(f"{ordem[i]} -> ",end="")
+        print(f"{ordem[i]} -> ", end="")
     else:
         print(f"{ordem[i]}")

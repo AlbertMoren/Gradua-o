@@ -1,51 +1,38 @@
 import grafo
 
 #função de busca em profundidade em grafo não-direcionado usando pilha
-def dfs(grafo,V):
+def dfs(grafo,s):
     visited = []
     no_visited = []
     for i in range(len(grafo)):
         no_visited.append(i)
     stack = []
-    stack.append(V)
-    no_visited.remove(V)
+    stack.append(s)
+    no_visited.remove(s)
     while len(stack) != 0 :
-        U = stack.pop()
-        visited.append(U)
-        for i in grafo[U]:
-            if i in no_visited:
-                stack.append(i)
-                no_visited.remove(i)
+        v = stack.pop()
+        visited.append(v)
+        for u in grafo[v]:
+            if u in no_visited:
+                stack.append(u)
+                no_visited.remove(u)
     return visited
 
-#Imprimi a ordem de como o grafo é visitado
-def print_grafo(g):
-    for i in range(len(g)):
-        if i < len(g) - 1:
-            print(f"{g[i]} -> ",end="")
-        else:
-            print(f"{g[i]}")
 
+grafo = {
+    0: [1, 2, 6],
+    1: [0, 2, 5],
+    2: [0, 1, 3, 4],
+    3: [2, 4, 5],
+    4: [2, 3, 6],
+    5: [1, 3],
+    6: [0, 4]
+}
 
-g = grafo.criar_grafo()
-g = grafo.add_vertex(g,0)
-g = grafo.add_vertex(g,2)
-g = grafo.add_vertex(g,1)
-g = grafo.add_vertex(g,3)
-g = grafo.add_vertex(g,4)
-g = grafo.add_vertex(g,5)
-g = grafo.add_vertex(g,6)
-grafo.add_edge(g,0,1)
-grafo.add_edge(g,2,1)
-grafo.add_edge(g,0,1)
-grafo.add_edge(g,3,1)
-grafo.add_edge(g,4,2)
-grafo.add_edge(g,5,6)
-grafo.print_graf(g)
+ordem = dfs(grafo, 0)
 
-ordem = dfs(g,0)
-print_grafo(ordem)
-for i in range(len(g)):
-    if i not in ordem:
-        ordem = dfs(g,i)
-        print_grafo(ordem)
+for i in range(len(ordem)):
+    if i < len(ordem) - 1:
+        print(f"{ordem[i]} -> ", end="")
+    else:
+        print(f"{ordem[i]}")
